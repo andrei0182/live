@@ -66,8 +66,10 @@ câteva minute.
 Aplicația Android Superbet nu preia singură linkurile `superbet.ro/cote/...`, iar
 Telegram acceptă în mesaje doar linkuri `https`. De aceea alerta conține și un
 link spre `docs/m.html` (GitHub Pages: *Settings → Pages → Deploy from a branch →
-main, /docs*), care pe Android cere explicit aplicației `ro.superbet.sport` să
-deschidă meciul, cu un buton de rezervă care pornește aplicația și unul spre site.
+main, /docs*), care afișează meciul și, pe Android, pornește aplicația
+`ro.superbet.sport` prin Google Play (`market://launch`). Testat pe 2026-10-17:
+aplicația nu acceptă linkuri spre un meci anume, iar Chrome nu pornește aplicații
+direct, deci meciul se caută în aplicație după numele jucătorilor.
 
 ## Local
 

@@ -25,35 +25,31 @@
 </head>
 <body>
 <main>
-  <h1>Meci Superbet</h1>
-  <p id="msg">Alege cum deschizi meciul.</p>
-  <a id="match" class="btn primary" href="#">Deschide meciul în aplicație</a>
-  <a id="app" class="btn" href="#">Deschide aplicația Superbet</a>
-  <a id="web" class="btn" href="#">Deschide pe site</a>
+  <h1 id="title">Meci Superbet</h1>
+  <p id="msg">Deschide aplicația și caută meciul după numele jucătorilor.</p>
+  <a id="app" class="btn primary" href="#">Deschide aplicația Superbet</a>
+  <a id="web" class="btn" href="#">Deschide meciul pe site</a>
 </main>
 <script>
-  // Pagina primește ?e=<event_id> de la monitorul live (vezi livemon/superbet.py).
-  // Pe Android, butonul roșu cere explicit aplicației ro.superbet.sport să
-  // deschidă pagina meciului. Fără deschidere automată și fără fallback pe acest
-  // buton: dacă aplicația refuză, pagina rămâne pe ecran pentru celelalte butoane.
+  // Pagina primește ?e=<event_id>&m=<Jucător 1 vs Jucător 2> de la monitorul live
+  // (vezi livemon/superbet.py). Testat pe Android (2026-10-17): aplicația Superbet
+  // nu acceptă linkuri spre un meci anume, iar Chrome nu pornește aplicații direct,
+  // așa că butonul cere Google Play să pornească aplicația instalată.
   (function () {
     var PKG = "ro.superbet.sport";
-    var id = (new URLSearchParams(location.search).get("e") || "").replace(/\D/g, "");
+    var q = new URLSearchParams(location.search);
+    var id = (q.get("e") || "").replace(/\D/g, "");
+    var match = (q.get("m") || "").slice(0, 120);
     var web = id ? "https://superbet.ro/cote/tenis/" + id : "https://superbet.ro/";
-    var path = id ? "superbet.ro/cote/tenis/" + id : "superbet.ro/";
-    var matchIntent = "intent://" + path + "#Intent;scheme=https;package=" + PKG + ";end";
-    var appIntent = "intent://#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package=" +
-      PKG + ";S.browser_fallback_url=" + encodeURIComponent(web) + ";end";
 
+    if (match) document.getElementById("title").textContent = match;
     document.getElementById("web").href = web;
     if (!/Android/i.test(navigator.userAgent)) {
-      document.getElementById("match").classList.add("hidden");
       document.getElementById("app").classList.add("hidden");
-      document.getElementById("msg").textContent = "Deschiderea directă în aplicație merge doar pe Android.";
+      document.getElementById("msg").textContent = "Deschiderea aplicației merge doar pe Android.";
       return;
     }
-    document.getElementById("match").href = matchIntent;
-    document.getElementById("app").href = appIntent;
+    document.getElementById("app").href = "market://launch?id=" + PKG;
   })();
 </script>
 </body>
