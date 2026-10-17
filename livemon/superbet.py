@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import datetime as dt
 import json
+from urllib.parse import urlencode
 import logging
 from dataclasses import dataclass, field
 from typing import Optional
@@ -30,8 +31,9 @@ EVENTS_URL = "https://production-superbet-offer-ro.freetls.fastly.net/v3/ro-RO/e
 TENNIS_SPORT_ID = 2
 MARKET_ID_FINAL = 521
 ODD_STATUS_ACTIVE = 1
-# Pagina-trambulină din docs/m.html (GitHub Pages): pe Android cere aplicației
-# Superbet să deschidă meciul. Telegram acceptă doar linkuri https în mesaje.
+# Pagina-trambulină din docs/m.html (GitHub Pages): pe Android pornește aplicația
+# Superbet prin Google Play și afișează meciul de căutat. Telegram acceptă doar
+# linkuri https în mesaje.
 APP_LINK_URL = "https://andrei0182.github.io/live/m.html"
 
 _session = requests.Session()
@@ -65,7 +67,7 @@ class LiveMatch:
 
     @property
     def app_url(self) -> str:
-        return f"{APP_LINK_URL}?e={self.event_id}"
+        return f"{APP_LINK_URL}?{urlencode({'e': self.event_id, 'm': f'{self.home} vs {self.away}'})}"
 
     def score_text(self) -> str:
         sets = " ".join(f"{h}-{a}" for h, a in self.set_games)
