@@ -1,12 +1,14 @@
 # live
 
-Alerte live pe Telegram pentru pick-urile modelelor de tenis din
-[andrei0182/pariuri](https://github.com/andrei0182/pariuri) (`tennis/stats/`):
+Alerte live pe Telegram pentru pronosticurile din
+[andrei0182/pariuri](https://github.com/andrei0182/pariuri):
 
-- `picks_log.csv`: raportul zilnic de tenis (probabilitatea modelului în `comp_pct`);
-- `model90_log.csv`: „Model 90%” (probabilitatea în `probability`, ca fracție).
+- `tennis/stats/picks_log.csv`: raportul zilnic de tenis (probabilitatea modelului în `comp_pct`);
+- `tennis/stats/model90_log.csv`: „Model 90%” (probabilitatea în `probability`, ca fracție);
+- `football/recommendations_log.csv`: recomandările de fotbal Peste 2.5 (doar cele
+  `pending`, fără `excluded`).
 
-Un meci prezent în ambele surse se urmărește o singură dată.
+Un meci de tenis prezent în ambele surse se urmărește o singură dată.
 
 ## Sursa de date
 
@@ -28,7 +30,7 @@ scraperele de tenis. TennisExplorer nu e necesar.
 
 ## Regulile
 
-Pentru fiecare pick `pending` de azi/ieri din cele două surse, cu jucătorul
+Pentru tenis, la fiecare pick `pending` de azi/ieri, cu jucătorul
 recomandat favorit în model (`comp_pct >= MIN_MODEL_PCT`, implicit 50):
 
 1. **Set 1 pierdut**: favoritul a pierdut setul 1, e încă în urmă la seturi și
@@ -42,6 +44,14 @@ recomandat favorit în model (`comp_pct >= MIN_MODEL_PCT`, implicit 50):
    referința e ultima citire dinainte de start. Dacă monitorul nu a apucat să
    vadă meciul înainte de start, regula nu se aplică pe acel meci.
 
+3. **Fotbal, 0-0 în prima repriză**: meciul cu pronostic Peste 2.5 e încă 0-0 în
+   prima repriză (`event_status_label` = `1H`) din minutul `FH_MINUTE` (implicit 25).
+   Alerta are cotele live la „Prima repriză - Total goluri” Peste 0.5 și „Total
+   goluri” Peste 2.5. Regula se închide la primul gol sau la finalul reprizei.
+   Meciul se urmărește de la ora de start din log până la ~55 de minute după.
+   Echipele se potrivesc după cuvintele specifice din nume (cel puțin jumătate pe
+   fiecare echipă, aceeași categorie juniori/fete), alegând meciul cel mai apropiat.
+
 Fiecare regulă trimite cel mult o alertă pe pick. Monitorul nu mai urmărește un
 pick după ce ambele reguli s-au închis sau meciul s-a terminat.
 
@@ -52,7 +62,7 @@ pick după ce ambele reguli s-au închis sau meciul s-a terminat.
    `https://api.telegram.org/bot<TOKEN>/getUpdates` și copiază `chat.id`.
 3. În repo: *Settings → Secrets and variables → Actions*:
    - secrete: `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`;
-   - opțional, variabile: `ODDS_FACTOR`, `MIN_ODDS`, `MIN_MODEL_PCT`, `GAMES_DROP`.
+   - opțional, variabile: `ODDS_FACTOR`, `MIN_ODDS`, `MIN_MODEL_PCT`, `GAMES_DROP`, `FH_MINUTE`.
 4. *Actions → Live tennis alerts → Run workflow* cu „Trimite doar un mesaj de
    test” bifat, ca să verifici botul.
 

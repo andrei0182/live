@@ -150,3 +150,13 @@ def test_parse_model90_probability_scaled_to_pct():
     m.home, m.away = "Ondrej Hujo", "Sebastian Bozemoj"
     d = evaluate(pick, m, "home", CFG)
     assert d.outcome is Outcome.ALERT and d.threshold == 1.8
+
+
+def test_singles_pick_never_matches_doubles():
+    pick = Pick(date="2026-10-16", player="Felitsata Dorofeeva-Rybas", opponent="Arina Gamretkaia",
+                rec_odds=1.01, comp_pct=86.3, games_line=8.5)
+    doubles = LiveMatch(event_id=1, home="E.Agureeva/F.Dorofeeva-Rybas", away="A.Gamretkaia/L.Belibova",
+                        status="STARTED")
+    singles = LiveMatch(event_id=2, home="Felitsata Dorofeeva-Rybas", away="Arina Gamretkaia", status="STARTED")
+    assert match_pick(pick, [doubles]) is None
+    assert match_pick(pick, [doubles, singles]) == (singles, "home")

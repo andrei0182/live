@@ -1,12 +1,13 @@
 name: Live tennis alerts (Telegram)
 
 # La fiecare 20 de minute: citește pick-urile pending din andrei0182/pariuri
-# (tennis/stats/picks_log.csv și model90_log.csv) și urmărește meciurile lor pe Superbet live timp de
+# (tennis/stats/picks_log.csv, model90_log.csv și football/recommendations_log.csv)
+# și urmărește meciurile lor pe Superbet live timp de
 # max. 18 minute, cu o verificare pe minut. Iese imediat dacă niciun pick nu
 # e live și niciunul nu începe în fereastra asta.
 # Secrete necesare: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID.
 # Pragurile se pot schimba din Settings > Secrets and variables > Actions >
-# Variables: ODDS_FACTOR, MIN_ODDS, MIN_MODEL_PCT, GAMES_DROP.
+# Variables: ODDS_FACTOR, MIN_ODDS, MIN_MODEL_PCT, GAMES_DROP, FH_MINUTE.
 
 on:
   schedule:
@@ -40,6 +41,7 @@ jobs:
       MIN_ODDS: ${{ vars.MIN_ODDS || '1.8' }}
       MIN_MODEL_PCT: ${{ vars.MIN_MODEL_PCT || '50' }}
       GAMES_DROP: ${{ vars.GAMES_DROP || '2' }}
+      FH_MINUTE: ${{ vars.FH_MINUTE || '25' }}
       MAX_MINUTES: ${{ inputs.minutes || '18' }}
     steps:
       - name: Skip if Telegram secrets are missing
