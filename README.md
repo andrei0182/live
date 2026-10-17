@@ -16,21 +16,28 @@ Același API Superbet pe care îl folosește deja `tenis_scraper/events.py`, cu
 | stare | `inplay_stats_metadata.status` (`STARTED` / `FINISHED`), `period_status` (`S1`, `S2`…) |
 | cote live câștigător | market `Final` (id 521), `status` 1 = activă, 2 = suspendată |
 
-Piețele extinse live (total game-uri id 1002, total pe set id 524, handicap id 520…)
-vin prin endpoint-ul SSE `v3/subscription/ro-RO/events?events=<id>`, deja folosit
-în `tenis`. Acum nu sunt folosite, dar sunt disponibile pentru o regulă pe linia
-de game-uri. TennisExplorer nu e necesar.
+Piețele extinse (total game-uri pe jucător id 999/996, total pe meci id 1002,
+total pe set id 524, handicap id 520…) vin, atât pre-meci cât și live, prin
+endpoint-ul SSE `v3/subscription/ro-RO/events?events=<id>`, deja folosit în
+`tenis`. TennisExplorer nu e necesar.
 
-## Regula
+## Regulile
 
-Pentru fiecare pick `pending` de azi/ieri din `stats/picks_log.csv`:
+Pentru fiecare pick `pending` de azi/ieri din `stats/picks_log.csv`, cu jucătorul
+recomandat favorit în model (`comp_pct >= MIN_MODEL_PCT`, implicit 50):
 
-- jucătorul recomandat e favorit în model (`comp_pct >= MIN_MODEL_PCT`, implicit 50);
-- a pierdut setul 1 și e încă în urmă la seturi;
-- cota lui live >= `max(rec_odds × ODDS_FACTOR, MIN_ODDS)` (implicit 1.5 și 1.8).
+1. **Set 1 pierdut**: favoritul a pierdut setul 1, e încă în urmă la seturi și
+   cota lui live >= `max(rec_odds × ODDS_FACTOR, MIN_ODDS)` (implicit 1.5 și 1.8).
+   Regula se închide dacă favoritul câștigă setul 1 sau egalează la seturi.
+2. **Linia de game-uri**: linia principală live la „Total game-uri <favorit>”
+   scade cu cel puțin `GAMES_DROP` game-uri (implicit 2) sub linia principală
+   pre-meci. Linia principală e cea cu cotele Sub/Peste cele mai apropiate.
+   Linia pre-meci se salvează la fiecare rulare cât meciul nu a început, deci
+   referința e ultima citire dinainte de start. Dacă monitorul nu a apucat să
+   vadă meciul înainte de start, regula nu se aplică pe acel meci.
 
-Fiecare pick primește cel mult o alertă. Monitorul nu mai urmărește un pick
-după ce favoritul câștigă setul 1, egalează la seturi sau meciul se termină.
+Fiecare regulă trimite cel mult o alertă pe pick. Monitorul nu mai urmărește un
+pick după ce ambele reguli s-au închis sau meciul s-a terminat.
 
 ## Configurare
 
@@ -39,7 +46,7 @@ după ce favoritul câștigă setul 1, egalează la seturi sau meciul se termin�
    `https://api.telegram.org/bot<TOKEN>/getUpdates` și copiază `chat.id`.
 3. În repo: *Settings → Secrets and variables → Actions*:
    - secrete: `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`;
-   - opțional, variabile: `ODDS_FACTOR`, `MIN_ODDS`, `MIN_MODEL_PCT`.
+   - opțional, variabile: `ODDS_FACTOR`, `MIN_ODDS`, `MIN_MODEL_PCT`, `GAMES_DROP`.
 4. *Actions → Live tennis alerts → Run workflow* cu „Trimite doar un mesaj de
    test” bifat, ca să verifici botul.
 

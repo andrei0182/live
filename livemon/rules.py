@@ -1,10 +1,15 @@
-"""Regula de alertă: favoritul modelului pierde setul 1 și cota lui live crește.
+"""Regulile de alertă.
 
-Se declanșează când:
+1. Set 1 pierdut (`evaluate`): favoritul modelului pierde setul 1 și cota lui
+live crește. Se declanșează când:
 - pick-ul are `comp_pct >= min_model_pct` (jucătorul e favorit în model);
 - setul 1 s-a terminat și l-a câștigat adversarul;
 - meciul nu e terminat și favoritul nu a egalat deja la seturi;
 - cota live (activă, nesuspendată) a favoritului >= `max(rec_odds * odds_factor, min_odds)`.
+
+2. Linia de game-uri (`evaluate_games`): linia principală live la "Total
+game-uri <favorit>" scade cu cel puțin `games_drop` față de linia principală
+pre-meci (salvată de monitor înainte de start).
 """
 from __future__ import annotations
 
@@ -21,6 +26,7 @@ class RuleConfig:
     odds_factor: float = 1.5
     min_odds: float = 1.8
     min_model_pct: float = 50.0
+    games_drop: float = 2.0
 
 
 class Outcome(Enum):
@@ -33,7 +39,7 @@ class Outcome(Enum):
 class Decision:
     outcome: Outcome
     reason: str
-    live_odds: Optional[float] = None
+    live_value: Optional[float] = None  # cota live (set 1) sau linia live (game-uri)
     threshold: Optional[float] = None
 
 
@@ -82,6 +88,34 @@ def format_alert(pick: Pick, match: LiveMatch, decision: Decision) -> str:
         f"{match.home} vs {match.away}",
         f"Scor: {match.score_text()}",
         f"Pick: {pick.player} (model {pick.comp_pct:.0f}%, cotă pre-meci {pick.rec_odds})",
-        f"Cotă live acum: {decision.live_odds} (prag {decision.threshold:.2f})",
+        f"Cotă live acum: {decision.live_value} (prag {decision.threshold:.2f})",
+        match.url,
+    ])
+
+
+def evaluate_games(pick: Pick, match: LiveMatch, prematch_line: Optional[float],
+                   live_line: Optional[float], cfg: RuleConfig) -> Decision:
+    if pick.comp_pct is None or pick.comp_pct < cfg.min_model_pct:
+        return Decision(Outcome.DONE, f"nu e favorit în model (comp_pct={pick.comp_pct})")
+    if prematch_line is None:
+        return Decision(Outcome.DONE, "linia pre-meci nu a fost salvată")
+    if match.status == "FINISHED":
+        return Decision(Outcome.DONE, "meci terminat")
+
+    threshold = prematch_line - cfg.games_drop
+    if live_line is None:
+        return Decision(Outcome.WAIT, "linie live indisponibilă", threshold=threshold)
+    if live_line > threshold:
+        return Decision(Outcome.WAIT, f"linia {live_line} > prag {threshold}", live_line, threshold)
+    return Decision(Outcome.ALERT, f"linia {live_line} <= prag {threshold}", live_line, threshold)
+
+
+def format_games_alert(pick: Pick, match: LiveMatch, prematch_line: float, decision: Decision) -> str:
+    return "\n".join([
+        "📉 Linia de game-uri a favoritului a scăzut",
+        f"{match.home} vs {match.away}",
+        f"Scor: {match.score_text()}",
+        f"Pick: {pick.player} (model {pick.comp_pct:.0f}%)",
+        f"Total game-uri {pick.player}: pre-meci {prematch_line}, live acum {decision.live_value}",
         match.url,
     ])

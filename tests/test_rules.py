@@ -1,8 +1,8 @@
 import json
 
 from livemon.picks import Pick, match_pick, parse_picks
-from livemon.rules import Outcome, RuleConfig, evaluate, set1_winner
-from livemon.superbet import LiveMatch, parse_live_event
+from livemon.rules import Outcome, RuleConfig, evaluate, evaluate_games, set1_winner
+from livemon.superbet import LiveMatch, parse_live_event, player_games_main_line
 
 # Event real (prescurtat) din răspunsul active-live, 2026-10-17.
 RAW_EVENT = json.loads("""
@@ -100,3 +100,37 @@ def test_parse_picks_filters_pending_and_dates():
     picks = parse_picks(csv_text, {"2026-10-16", "2026-10-17"})
     assert [p.player for p in picks] == ["A B"]
     assert picks[0].rec_odds == 2.1 and picks[0].comp_pct == 60
+
+
+def _games_market(player, lines, status=1):
+    odds = []
+    for total, under, over in lines:
+        odds.append({"price": under, "status": status, "metadata": {"name": f"Sub {total}", "specifiers": {"total": str(total)}}})
+        odds.append({"price": over, "status": status, "metadata": {"name": f"Peste {total}", "specifiers": {"total": str(total)}}})
+    return {"id": 999, "name": f"Total game-uri {player}", "odds": odds}
+
+
+def test_player_games_main_line():
+    markets = [
+        _games_market("Ana Pop", [(11.5, 3.25, 1.28), (12.5, 2.65, 1.4), (13.5, 1.57, 2.2), (14.5, 1.3, 3.1)]),
+        # piața pe set are alt nume și nu trebuie să intre în calcul
+        {"id": 230656, "name": "Setul 1 - Total game-uri Ana Pop", "odds": [
+            {"price": 1.9, "status": 1, "metadata": {"name": "Sub 5.5", "specifiers": {"total": "5.5", "setnr": "1"}}},
+            {"price": 1.9, "status": 1, "metadata": {"name": "Peste 5.5", "specifiers": {"total": "5.5", "setnr": "1"}}}]},
+    ]
+    assert player_games_main_line(markets, "Ana Pop") == 13.5
+    assert player_games_main_line(markets, "Maria Ionescu") is None
+    suspended = [_games_market("Ana Pop", [(13.5, 1.57, 2.2)], status=2)]
+    assert player_games_main_line(suspended, "Ana Pop") is None
+
+
+def test_games_rule():
+    m = make_match([(3, 5)])
+    assert evaluate_games(PICK, m, 12.5, 11.5, CFG).outcome is Outcome.WAIT
+    d = evaluate_games(PICK, m, 12.5, 10.5, CFG)
+    assert d.outcome is Outcome.ALERT and d.threshold == 10.5
+    assert evaluate_games(PICK, m, 12.5, None, CFG).outcome is Outcome.WAIT
+    assert evaluate_games(PICK, m, None, 8.5, CFG).outcome is Outcome.DONE
+    assert evaluate_games(PICK, make_match([(6, 4), (6, 3)], status="FINISHED"), 12.5, 8.5, CFG).outcome is Outcome.DONE
+    underdog = Pick(**{**PICK.__dict__, "comp_pct": 40.0})
+    assert evaluate_games(underdog, m, 12.5, 8.5, CFG).outcome is Outcome.DONE
