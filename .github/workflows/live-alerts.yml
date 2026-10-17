@@ -10,7 +10,7 @@ name: Live tennis alerts (Telegram)
 
 on:
   schedule:
-    - cron: "2,22,42 * * * *"
+    - cron: "7,27,47 * * * *"
   workflow_dispatch:
     inputs:
       test_telegram:
