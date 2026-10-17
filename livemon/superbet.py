@@ -15,6 +15,7 @@ desfășurare cu:
 from __future__ import annotations
 
 import datetime as dt
+import json
 import logging
 from dataclasses import dataclass, field
 from typing import Optional
@@ -136,3 +137,71 @@ def fetch_live_matches(today: dt.date) -> list[LiveMatch]:
 
 def fetch_prematch_matches(today: dt.date) -> list[LiveMatch]:
     return [parse_live_event(e) for e in fetch_events("active-prematch", today)]
+
+
+# ============================================================
+# Piețele extinse ale unui meci (total game-uri pe jucător etc.).
+# CONFIRMAT (2026-10-17) via curl, pe un meci live: endpoint-ul de
+# subscription din `tenis` (SSE, text/event-stream) întoarce, pe prima linie
+# "data:[...]", toate piețele meciului, atât prematch cât și live. Stream-ul
+# nu se închide singur, așa că citim până la primul sfârșit de linie.
+# "Total game-uri <Nume>" (id 999 pentru home, 996 pentru away) are câte o
+# pereche "Sub X" / "Peste X" pentru mai multe linii X.
+# ============================================================
+
+MARKETS_URL = "https://production-superbet-offer-ro.freetls.fastly.net/v3/subscription/ro-RO/events"
+
+
+def fetch_event_markets(event_id: int, timeout: float = 10.0, max_bytes: int = 2_000_000) -> Optional[list[dict]]:
+    try:
+        resp = _session.get(MARKETS_URL, params={"events": str(event_id)}, timeout=timeout, stream=True)
+    except requests.RequestException as exc:
+        logger.warning("fetch_event_markets(%s) a eșuat: %s", event_id, exc)
+        return None
+
+    buf = b""
+    try:
+        for chunk in resp.iter_content(chunk_size=16384):
+            buf += chunk
+            if b"\n" in buf or len(buf) > max_bytes:
+                break
+    except Exception as exc:  # stream întrerupt: parsăm ce avem
+        logger.debug("fetch_event_markets(%s): stream oprit: %s", event_id, exc)
+    finally:
+        resp.close()
+
+    line = buf.split(b"\n", 1)[0].decode("utf-8", errors="replace")
+    if line.startswith("data:"):
+        line = line[len("data:"):]
+    try:
+        data = json.loads(line)
+    except json.JSONDecodeError:
+        logger.warning("fetch_event_markets(%s): JSON incomplet", event_id)
+        return None
+    return data[0].get("markets", []) if data else None
+
+
+def player_games_main_line(markets: list[dict], player_name: str) -> Optional[float]:
+    """Linia principală la "Total game-uri <player_name>" (pe tot meciul, nu pe
+    set): linia cu cotele Sub/Peste cele mai apropiate, doar dintre perechile
+    cu ambele cote active. `player_name` trebuie să fie numele exact din
+    Superbet (LiveMatch.home / .away)."""
+    lines: dict[float, dict[str, float]] = {}
+    for market in markets:
+        if market.get("name") != f"Total game-uri {player_name}":
+            continue
+        for odd in market.get("odds") or []:
+            if odd.get("status", ODD_STATUS_ACTIVE) != ODD_STATUS_ACTIVE or not odd.get("price"):
+                continue
+            meta = odd.get("metadata") or {}
+            total = (meta.get("specifiers") or {}).get("total")
+            name = meta.get("name", "")
+            if total is None:
+                continue
+            side = "under" if name.startswith("Sub") else "over" if name.startswith("Peste") else None
+            if side:
+                lines.setdefault(float(total), {})[side] = odd["price"]
+    pairs = {line: p for line, p in lines.items() if "under" in p and "over" in p}
+    if not pairs:
+        return None
+    return min(pairs, key=lambda line: (abs(pairs[line]["under"] - pairs[line]["over"]), line))

@@ -6,7 +6,7 @@ name: Live tennis alerts (Telegram)
 # e live și niciunul nu începe în fereastra asta.
 # Secrete necesare: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID.
 # Pragurile se pot schimba din Settings > Secrets and variables > Actions >
-# Variables: ODDS_FACTOR, MIN_ODDS, MIN_MODEL_PCT.
+# Variables: ODDS_FACTOR, MIN_ODDS, MIN_MODEL_PCT, GAMES_DROP.
 
 on:
   schedule:
@@ -32,6 +32,7 @@ jobs:
       ODDS_FACTOR: ${{ vars.ODDS_FACTOR || '1.5' }}
       MIN_ODDS: ${{ vars.MIN_ODDS || '1.8' }}
       MIN_MODEL_PCT: ${{ vars.MIN_MODEL_PCT || '50' }}
+      GAMES_DROP: ${{ vars.GAMES_DROP || '2' }}
       MAX_MINUTES: "18"
     steps:
       - name: Skip if Telegram secrets are missing
@@ -55,7 +56,7 @@ jobs:
         if: env.TELEGRAM_BOT_TOKEN != '' && env.TELEGRAM_CHAT_ID != '' && inputs.test_telegram
         run: python live_monitor.py --test-telegram
 
-      # Pick-urile deja alertate trec de la o rulare la alta prin cache.
+      # Regulile deja tratate și liniile pre-meci trec de la o rulare la alta prin cache.
       - name: Restore state
         if: env.TELEGRAM_BOT_TOKEN != '' && env.TELEGRAM_CHAT_ID != '' && !inputs.test_telegram
         uses: actions/cache/restore@v4
