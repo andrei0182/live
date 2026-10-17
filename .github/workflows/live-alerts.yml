@@ -1,16 +1,16 @@
 name: Live tennis alerts (Telegram)
 
-# O dată pe oră: citește pick-urile pending din andrei0182/tenis
+# La fiecare 20 de minute: citește pick-urile pending din andrei0182/tenis
 # (stats/picks_log.csv) și urmărește meciurile lor pe Superbet live timp de
-# max. 55 de minute, cu o verificare pe minut. Ieșe imediat dacă niciun pick nu
-# e live și niciunul nu începe în ora asta.
+# max. 18 minute, cu o verificare pe minut. Iese imediat dacă niciun pick nu
+# e live și niciunul nu începe în fereastra asta.
 # Secrete necesare: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID.
 # Pragurile se pot schimba din Settings > Secrets and variables > Actions >
 # Variables: ODDS_FACTOR, MIN_ODDS, MIN_MODEL_PCT.
 
 on:
   schedule:
-    - cron: "2 * * * *"
+    - cron: "2,22,42 * * * *"
   workflow_dispatch:
     inputs:
       test_telegram:
@@ -25,13 +25,14 @@ concurrency:
 jobs:
   monitor:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 25
     env:
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       ODDS_FACTOR: ${{ vars.ODDS_FACTOR || '1.5' }}
       MIN_ODDS: ${{ vars.MIN_ODDS || '1.8' }}
       MIN_MODEL_PCT: ${{ vars.MIN_MODEL_PCT || '50' }}
+      MAX_MINUTES: "18"
     steps:
       - name: Skip if Telegram secrets are missing
         if: env.TELEGRAM_BOT_TOKEN == '' || env.TELEGRAM_CHAT_ID == ''

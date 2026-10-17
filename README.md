@@ -43,9 +43,9 @@ după ce favoritul câștigă setul 1, egalează la seturi sau meciul se termin�
 4. *Actions → Live tennis alerts → Run workflow* cu „Trimite doar un mesaj de
    test” bifat, ca să verifici botul.
 
-Workflow-ul pornește în fiecare oră (minutul 2) și urmărește meciurile cel mult
-55 de minute, cu o verificare pe minut. Dacă niciun pick nu e live și niciunul nu
-începe în ora respectivă, se oprește imediat. Cron-ul GitHub poate întârzia
+Workflow-ul pornește la fiecare 20 de minute (minutele 2, 22, 42) și urmărește
+meciurile cel mult 18 minute, cu o verificare pe minut. Dacă niciun pick nu e live și niciunul nu
+începe în fereastra respectivă, se oprește imediat. Cron-ul GitHub poate întârzia
 câteva minute.
 
 ## Local
