@@ -1,11 +1,16 @@
 # live
 
-Alerte live pe Telegram pentru pick-urile modelului de tenis din
-[andrei0182/tenis](https://github.com/andrei0182/tenis).
+Alerte live pe Telegram pentru pick-urile modelelor de tenis din
+[andrei0182/pariuri](https://github.com/andrei0182/pariuri) (`tennis/stats/`):
+
+- `picks_log.csv`: raportul zilnic de tenis (probabilitatea modelului în `comp_pct`);
+- `model90_log.csv`: „Model 90%” (probabilitatea în `probability`, ca fracție).
+
+Un meci prezent în ambele surse se urmărește o singură dată.
 
 ## Sursa de date
 
-Același API Superbet pe care îl folosește deja `tenis_scraper/events.py`, cu
+Același API Superbet pe care îl folosesc deja scraperele de tenis, cu
 `index=active-live` în loc de `active-prematch`. Verificat pe 2026-10-17:
 
 | Ce | Unde în răspuns |
@@ -18,16 +23,17 @@ Același API Superbet pe care îl folosește deja `tenis_scraper/events.py`, cu
 
 Piețele extinse (total game-uri pe jucător id 999/996, total pe meci id 1002,
 total pe set id 524, handicap id 520…) vin, atât pre-meci cât și live, prin
-endpoint-ul SSE `v3/subscription/ro-RO/events?events=<id>`, deja folosit în
-`tenis`. TennisExplorer nu e necesar.
+endpoint-ul SSE `v3/subscription/ro-RO/events?events=<id>`, deja folosit de
+scraperele de tenis. TennisExplorer nu e necesar.
 
 ## Regulile
 
-Pentru fiecare pick `pending` de azi/ieri din `stats/picks_log.csv`, cu jucătorul
+Pentru fiecare pick `pending` de azi/ieri din cele două surse, cu jucătorul
 recomandat favorit în model (`comp_pct >= MIN_MODEL_PCT`, implicit 50):
 
 1. **Set 1 pierdut**: favoritul a pierdut setul 1, e încă în urmă la seturi și
    cota lui live >= `max(rec_odds × ODDS_FACTOR, MIN_ODDS)` (implicit 1.5 și 1.8).
+   La pick-urile Model 90% (cote ~1.00–1.15) pragul e practic `MIN_ODDS`.
    Regula se închide dacă favoritul câștigă setul 1 sau egalează la seturi.
 2. **Linia de game-uri**: linia principală live la „Total game-uri <favorit>”
    scade cu cel puțin `GAMES_DROP` game-uri (implicit 2) sub linia principală

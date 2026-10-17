@@ -82,12 +82,16 @@ def evaluate(pick: Pick, match: LiveMatch, side: str, cfg: RuleConfig) -> Decisi
     return Decision(Outcome.ALERT, f"cota {live_odds} >= prag {threshold:.2f}", live_odds, threshold)
 
 
+def _source(pick: Pick) -> str:
+    return f" · {pick.source}" if pick.source else ""
+
+
 def format_alert(pick: Pick, match: LiveMatch, decision: Decision) -> str:
     return "\n".join([
         "🎾 Favoritul modelului a pierdut setul 1",
         f"{match.home} vs {match.away}",
         f"Scor: {match.score_text()}",
-        f"Pick: {pick.player} (model {pick.comp_pct:.0f}%, cotă pre-meci {pick.rec_odds})",
+        f"Pick: {pick.player} (model {pick.comp_pct:.0f}%, cotă pre-meci {pick.rec_odds}){_source(pick)}",
         f"Cotă live acum: {decision.live_value} (prag {decision.threshold:.2f})",
         match.url,
     ])
@@ -115,7 +119,7 @@ def format_games_alert(pick: Pick, match: LiveMatch, prematch_line: float, decis
         "📉 Linia de game-uri a favoritului a scăzut",
         f"{match.home} vs {match.away}",
         f"Scor: {match.score_text()}",
-        f"Pick: {pick.player} (model {pick.comp_pct:.0f}%)",
+        f"Pick: {pick.player} (model {pick.comp_pct:.0f}%){_source(pick)}",
         f"Total game-uri {pick.player}: pre-meci {prematch_line}, live acum {decision.live_value}",
         match.url,
     ])
