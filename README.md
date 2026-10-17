@@ -61,15 +61,12 @@ meciurile cel mult 18 minute, cu o verificare pe minut. Dacă niciun pick nu e l
 începe în fereastra respectivă, se oprește imediat. Cron-ul GitHub poate întârzia
 câteva minute.
 
-## Link spre aplicația Superbet
+## Link din alertă
 
-Aplicația Android Superbet nu preia singură linkurile `superbet.ro/cote/...`, iar
-Telegram acceptă în mesaje doar linkuri `https`. De aceea alerta conține și un
-link spre `docs/m.html` (GitHub Pages: *Settings → Pages → Deploy from a branch →
-main, /docs*), care afișează meciul și, pe Android, pornește aplicația
-`ro.superbet.sport` prin Google Play (`market://launch`). Testat pe 2026-10-17:
-aplicația nu acceptă linkuri spre un meci anume, iar Chrome nu pornește aplicații
-direct, deci meciul se caută în aplicație după numele jucătorilor.
+Alerta conține linkul spre meci pe site (`superbet.ro/cote/tenis/<id>`).
+Testat pe Android (2026-10-17): aplicația Superbet nu acceptă linkuri spre un
+meci anume, iar nici Chrome, nici Google Play nu o pornesc dintr-o pagină web,
+deci în aplicație meciul se caută după numele jucătorilor din alertă.
 
 ## Local
 
