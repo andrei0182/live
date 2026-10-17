@@ -61,6 +61,14 @@ meciurile cel mult 18 minute, cu o verificare pe minut. Dacă niciun pick nu e l
 începe în fereastra respectivă, se oprește imediat. Cron-ul GitHub poate întârzia
 câteva minute.
 
+## Link spre aplicația Superbet
+
+Aplicația Android Superbet nu preia singură linkurile `superbet.ro/cote/...`, iar
+Telegram acceptă în mesaje doar linkuri `https`. De aceea alerta conține și un
+link spre `docs/m.html` (GitHub Pages: *Settings → Pages → Deploy from a branch →
+main, /docs*), care pe Android cere explicit aplicației `ro.superbet.sport` să
+deschidă meciul, cu un buton de rezervă care pornește aplicația și unul spre site.
+
 ## Local
 
 ```bash

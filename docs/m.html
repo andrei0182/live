@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Deschide în Superbet</title>
+<style>
+  :root { --bg: #f6f6f4; --fg: #1d1d1b; --muted: #6b6b66; --accent: #e30613; --card: #fff; --line: #deded8; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #151514; --fg: #f2f2ee; --muted: #a3a39c; --card: #1f1f1d; --line: #34342f; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 16px;
+         background: var(--bg); color: var(--fg); font: 16px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { width: 100%; max-width: 420px; background: var(--card); border: 1px solid var(--line);
+         border-radius: 14px; padding: 24px 20px; }
+  h1 { font-size: 20px; margin: 0 0 6px; }
+  p { margin: 0 0 18px; color: var(--muted); }
+  a.btn { display: block; text-align: center; text-decoration: none; font-weight: 600;
+          padding: 14px 16px; border-radius: 10px; margin-top: 10px; border: 1px solid var(--line); color: var(--fg); }
+  a.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Meci Superbet</h1>
+  <p id="msg">Se deschide aplicația Superbet…</p>
+  <a id="match" class="btn primary" href="#">Deschide meciul în aplicație</a>
+  <a id="app" class="btn" href="#">Deschide aplicația Superbet</a>
+  <a id="web" class="btn" href="#">Deschide pe site</a>
+</main>
+<script>
+  // Pagina primește ?e=<event_id> de la monitorul live (vezi livemon/superbet.py).
+  // Pe Android cere explicit aplicației ro.superbet.sport să deschidă pagina
+  // meciului; dacă aplicația nu o poate deschide, Chrome merge pe fallback (site).
+  (function () {
+    var PKG = "ro.superbet.sport";
+    var id = (new URLSearchParams(location.search).get("e") || "").replace(/\D/g, "");
+    var web = id ? "https://superbet.ro/cote/tenis/" + id : "https://superbet.ro/";
+    var path = id ? "superbet.ro/cote/tenis/" + id : "superbet.ro/";
+    var matchIntent = "intent://" + path + "#Intent;scheme=https;package=" + PKG +
+      ";S.browser_fallback_url=" + encodeURIComponent(web) + ";end";
+    var appIntent = "intent://#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package=" +
+      PKG + ";S.browser_fallback_url=" + encodeURIComponent(web) + ";end";
+
+    document.getElementById("web").href = web;
+    if (!/Android/i.test(navigator.userAgent)) {
+      document.getElementById("match").classList.add("hidden");
+      document.getElementById("app").classList.add("hidden");
+      document.getElementById("msg").textContent = "Deschiderea directă în aplicație merge doar pe Android.";
+      return;
+    }
+    document.getElementById("match").href = matchIntent;
+    document.getElementById("app").href = appIntent;
+    // Încercare automată; Chrome o poate bloca fără o atingere, de aceea rămân butoanele.
+    location.href = matchIntent;
+    setTimeout(function () {
+      document.getElementById("msg").textContent = "Dacă aplicația nu s-a deschis, apasă un buton.";
+    }, 1500);
+  })();
+</script>
+</body>
+</html>
