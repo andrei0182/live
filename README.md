@@ -57,7 +57,8 @@ pick după ce ambele reguli s-au închis sau meciul s-a terminat.
    test” bifat, ca să verifici botul.
 
 Workflow-ul pornește la fiecare 20 de minute (minutele 7, 27, 47) și urmărește
-meciurile cel mult 18 minute, cu o verificare pe minut. Dacă niciun pick nu e live și niciunul nu
+meciurile cel mult 18 minute (o rulare manuală poate alege 60, 120 sau 180 de
+minute din *Run workflow*), cu o verificare pe minut. Dacă niciun pick nu e live și niciunul nu
 începe în fereastra respectivă, se oprește imediat. Cron-ul GitHub poate întârzia
 câteva minute.
 

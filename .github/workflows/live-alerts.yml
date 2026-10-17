@@ -17,6 +17,11 @@ on:
         description: "Trimite doar un mesaj de test pe Telegram"
         type: boolean
         default: false
+      minutes:
+        description: "Cât timp urmărește meciurile (minute)"
+        type: choice
+        options: ["18", "60", "120", "180"]
+        default: "18"
 
 concurrency:
   group: live-monitor
@@ -25,7 +30,9 @@ concurrency:
 jobs:
   monitor:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    # Acoperă și cea mai lungă rulare manuală (180 de minute) plus instalarea;
+    # rulările programate se opresc singure după MAX_MINUTES.
+    timeout-minutes: 195
     env:
       TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
       TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
@@ -33,7 +40,7 @@ jobs:
       MIN_ODDS: ${{ vars.MIN_ODDS || '1.8' }}
       MIN_MODEL_PCT: ${{ vars.MIN_MODEL_PCT || '50' }}
       GAMES_DROP: ${{ vars.GAMES_DROP || '2' }}
-      MAX_MINUTES: "18"
+      MAX_MINUTES: ${{ inputs.minutes || '18' }}
     steps:
       - name: Skip if Telegram secrets are missing
         if: env.TELEGRAM_BOT_TOKEN == '' || env.TELEGRAM_CHAT_ID == ''
