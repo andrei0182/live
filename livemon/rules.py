@@ -93,7 +93,8 @@ def format_alert(pick: Pick, match: LiveMatch, decision: Decision) -> str:
         f"Scor: {match.score_text()}",
         f"Pick: {pick.player} (model {pick.comp_pct:.0f}%, cotă pre-meci {pick.rec_odds}){_source(pick)}",
         f"Cotă live acum: {decision.live_value} (prag {decision.threshold:.2f})",
-        match.url,
+        f"📱 Aplicație: {match.app_url}",
+        f"🌐 Site: {match.url}",
     ])
 
 
@@ -121,5 +122,6 @@ def format_games_alert(pick: Pick, match: LiveMatch, prematch_line: float, decis
         f"Scor: {match.score_text()}",
         f"Pick: {pick.player} (model {pick.comp_pct:.0f}%){_source(pick)}",
         f"Total game-uri {pick.player}: pre-meci {prematch_line}, live acum {decision.live_value}",
-        match.url,
+        f"📱 Aplicație: {match.app_url}",
+        f"🌐 Site: {match.url}",
     ])

@@ -30,6 +30,9 @@ EVENTS_URL = "https://production-superbet-offer-ro.freetls.fastly.net/v3/ro-RO/e
 TENNIS_SPORT_ID = 2
 MARKET_ID_FINAL = 521
 ODD_STATUS_ACTIVE = 1
+# Pagina-trambulină din docs/m.html (GitHub Pages): pe Android cere aplicației
+# Superbet să deschidă meciul. Telegram acceptă doar linkuri https în mesaje.
+APP_LINK_URL = "https://andrei0182.github.io/live/m.html"
 
 _session = requests.Session()
 _session.headers.update({
@@ -59,6 +62,10 @@ class LiveMatch:
     @property
     def url(self) -> str:
         return f"https://superbet.ro/cote/tenis/{self.event_id}"
+
+    @property
+    def app_url(self) -> str:
+        return f"{APP_LINK_URL}?e={self.event_id}"
 
     def score_text(self) -> str:
         sets = " ".join(f"{h}-{a}" for h, a in self.set_games)
