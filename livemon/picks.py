@@ -120,7 +120,13 @@ def match_pick(pick: Pick, matches: list[LiveMatch]) -> Optional[tuple[LiveMatch
     partea pe care e `recommended_player`. Potrivire pe cuvinte comune din nume
     (fără diacritice, minim 3 litere), pentru ambii jucători, ca să tolereze
     diferențele de format între surse (ex. "Stosovic M." vs "Milica Stosovic")."""
+    singles = "/" not in pick.player and "/" not in pick.opponent
     for m in matches:
+        # CONFIRMAT (2026-10-17): fără verificarea asta, pick-ul de simplu
+        # "Dorofeeva-Rybas vs Gamretkaia" se potrivea cu dublul
+        # "E.Agureeva/F.Dorofeeva-Rybas vs A.Gamretkaia/L.Belibova".
+        if singles and ("/" in m.home or "/" in m.away):
+            continue
         if _same_player(pick.player, m.home) and _same_player(pick.opponent, m.away):
             return m, "home"
         if _same_player(pick.player, m.away) and _same_player(pick.opponent, m.home):

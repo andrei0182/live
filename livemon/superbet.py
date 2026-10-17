@@ -28,6 +28,7 @@ logger = logging.getLogger(__name__)
 
 EVENTS_URL = "https://production-superbet-offer-ro.freetls.fastly.net/v3/ro-RO/events"
 TENNIS_SPORT_ID = 2
+FOOTBALL_SPORT_ID = 5  # CONFIRMAT în pariuri/football/superbet/events.py
 MARKET_ID_FINAL = 521
 ODD_STATUS_ACTIVE = 1
 
@@ -112,15 +113,15 @@ def parse_live_event(event: dict) -> LiveMatch:
     )
 
 
-def fetch_events(index: str, today: dt.date, timeout: float = 15.0) -> list[dict]:
-    """Toate meciurile de tenis din `index` ("active-live" / "active-prematch"),
-    de ieri până mâine inclusiv (prinde și meciurile începute înainte de miezul
-    nopții UTC)."""
+def fetch_events(index: str, today: dt.date, timeout: float = 15.0, sport: int = TENNIS_SPORT_ID) -> list[dict]:
+    """Toate meciurile sportului `sport` (implicit tenis) din `index`
+    ("active-live" / "active-prematch"), de ieri până mâine inclusiv (prinde și
+    meciurile începute înainte de miezul nopții UTC)."""
     params = {
         "startDate": _iso_utc(today - dt.timedelta(days=1)),
         "endDate": _iso_utc(today + dt.timedelta(days=2)),
         "index": index,
-        "sports": TENNIS_SPORT_ID,
+        "sports": sport,
     }
     try:
         resp = _session.get(EVENTS_URL, params=params, timeout=timeout)
@@ -205,3 +206,16 @@ def player_games_main_line(markets: list[dict], player_name: str) -> Optional[fl
     if not pairs:
         return None
     return min(pairs, key=lambda line: (abs(pairs[line]["under"] - pairs[line]["over"]), line))
+
+
+def market_odds(markets: list[dict], market_name: str, outcome: str) -> Optional[float]:
+    """Cota activă a rezultatului `outcome` (ex. "Peste 0.5") din piața cu numele
+    exact `market_name` (ex. "Prima repriză - Total goluri"); None dacă lipsește
+    sau e suspendată."""
+    for market in markets:
+        if market.get("name") != market_name:
+            continue
+        for odd in market.get("odds") or []:
+            if (odd.get("metadata") or {}).get("name") == outcome and odd.get("status", ODD_STATUS_ACTIVE) == ODD_STATUS_ACTIVE:
+                return odd.get("price")
+    return None

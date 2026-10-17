@@ -2,7 +2,9 @@
 
 - set 1: favoritul modelului pierde setul 1 și cota lui live trece de prag;
 - game-uri: linia live la "Total game-uri <favorit>" scade cu cel puțin
-  --games-drop față de linia principală pre-meci.
+  --games-drop față de linia principală pre-meci;
+- fotbal: un meci cu pronostic Peste 2.5 e încă 0-0 în prima repriză după
+  minutul --fh-minute.
 
 Rulează cel mult --max-minutes, verificând la fiecare --interval secunde, și
 se oprește mai devreme dacă niciun pick nu e live sau nu începe în fereastra
@@ -25,11 +27,14 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 from livemon import telegram
+from livemon.football import (FIRST_HALF_MARKET, MATCH_TOTAL_MARKET, FootballPick, evaluate_first_half,
+                              fetch_football_live, fetch_football_picks, first_half_over,
+                              format_first_half_alert, in_watch_window, match_football)
 from livemon.picks import Pick, fetch_pending_picks, match_pick
 from livemon.rules import (Decision, Outcome, RuleConfig, evaluate, evaluate_games, format_alert,
                            format_games_alert)
 from livemon.superbet import (LiveMatch, fetch_event_markets, fetch_live_matches, fetch_prematch_matches,
-                              player_games_main_line)
+                              market_odds, player_games_main_line)
 
 logger = logging.getLogger("live_monitor")
 
@@ -103,26 +108,13 @@ def check_rule(rule: str, pick: Pick, match: LiveMatch, side: str, state: dict,
     return decision, text
 
 
-def run(args: argparse.Namespace) -> None:
-    now = dt.datetime.now(dt.timezone.utc)
-    today_ro = now.astimezone(RO_TZ).date()
-    deadline = now + dt.timedelta(minutes=args.max_minutes)
-    cfg = RuleConfig(odds_factor=args.odds_factor, min_odds=args.min_odds, min_model_pct=args.min_model_pct,
-                     games_drop=args.games_drop)
-    state_path = Path(args.state)
-    state = load_state(state_path)
-
-    picks = [p for p in fetch_pending_picks(today_ro) if pending_rules(p, state)]
-    if not picks:
-        logger.info("Niciun pick pending netratat pentru %s.", today_ro)
-        return
-
-    live = fetch_live_matches(now.date())
-    prematch = fetch_prematch_matches(now.date())
-    # Pick-urile care nu sunt nici live, nici nu încep înainte de deadline
-    # rămân pentru rularea următoare. Linia de game-uri pre-meci o salvăm
-    # pentru toate pick-urile încă neîncepute, ca să existe referința chiar
-    # dacă o rulare întârzie și meciul pornește între două rulări.
+def select_tennis(picks: list[Pick], live: list[LiveMatch], prematch: list[LiveMatch],
+                  deadline: dt.datetime, state: dict) -> list[Pick]:
+    """Pick-urile de tenis de urmărit în rularea asta. Cele care nu sunt nici
+    live, nici nu încep înainte de deadline rămân pentru rularea următoare.
+    Linia de game-uri pre-meci o salvăm pentru toate pick-urile încă neîncepute,
+    ca să existe referința chiar dacă o rulare întârzie și meciul pornește
+    între două rulări."""
     watch: list[Pick] = []
     for p in picks:
         if match_pick(p, live):
@@ -137,36 +129,95 @@ def run(args: argparse.Namespace) -> None:
             logger.info("%s începe la %s UTC, după fereastra acestei rulări.", p.player, found[0].start_time)
         else:
             logger.info("%s vs %s nu e în oferta Superbet live/prematch.", p.player, p.opponent)
-    save_state(state_path, state, today_ro)
+    return watch
 
-    while watch:
-        for p in list(watch):
-            found = match_pick(p, live)
-            if not found:
-                pre = match_pick(p, prematch)
-                if pre:
-                    save_prematch_line(p, *pre, state)
-                continue
-            match, side = found
-            for rule in pending_rules(p, state):
-                decision, text = check_rule(rule, p, match, side, state, cfg)
-                logger.info("%s [%s] (%s) %s: %s", p.player, rule, match.score_text(),
-                            decision.outcome.value, decision.reason)
-                if decision.outcome is Outcome.ALERT and not telegram.send(text):
-                    continue  # încercăm din nou la iterația următoare
-                if decision.outcome in (Outcome.ALERT, Outcome.DONE):
-                    state["done"][rule_key(p, rule)] = decision.reason
-            if not pending_rules(p, state):
+
+def check_tennis(watch: list[Pick], live: list[LiveMatch], prematch: list[LiveMatch], state: dict,
+                 cfg: RuleConfig) -> None:
+    for p in list(watch):
+        found = match_pick(p, live)
+        if not found:
+            pre = match_pick(p, prematch)
+            if pre:
+                save_prematch_line(p, *pre, state)
+            continue
+        match, side = found
+        for rule in pending_rules(p, state):
+            decision, text = check_rule(rule, p, match, side, state, cfg)
+            logger.info("%s [%s] (%s) %s: %s", p.player, rule, match.score_text(),
+                        decision.outcome.value, decision.reason)
+            if decision.outcome is Outcome.ALERT and not telegram.send(text):
+                continue  # încercăm din nou la iterația următoare
+            if decision.outcome in (Outcome.ALERT, Outcome.DONE):
+                state["done"][rule_key(p, rule)] = decision.reason
+        if not pending_rules(p, state):
+            watch.remove(p)
+
+
+def check_football(watch: list[FootballPick], now: dt.datetime, state: dict, min_minute: int) -> None:
+    live = fetch_football_live(now.date())
+    for p in list(watch):
+        match = match_football(p, live)
+        if match is None:
+            if first_half_over(p, now):
+                logger.info("%s vs %s: prima repriză a trecut și meciul nu e live.", p.home, p.away)
                 watch.remove(p)
+            continue
+        decision = evaluate_first_half(match, min_minute)
+        logger.info("%s vs %s [fotbal] (%s-%s, %s' %s) %s: %s", p.home, p.away, match.home_goals,
+                    match.away_goals, match.minute, match.label, decision.outcome.value, decision.reason)
+        if decision.outcome is Outcome.ALERT:
+            markets = fetch_event_markets(match.event_id) or []
+            text = format_first_half_alert(p, match, market_odds(markets, FIRST_HALF_MARKET, "Peste 0.5"),
+                                           market_odds(markets, MATCH_TOTAL_MARKET, "Peste 2.5"))
+            if not telegram.send(text):
+                continue  # încercăm din nou la iterația următoare
+        if decision.outcome in (Outcome.ALERT, Outcome.DONE):
+            state["done"][p.key] = decision.reason
+            watch.remove(p)
+
+
+def run(args: argparse.Namespace) -> None:
+    now = dt.datetime.now(dt.timezone.utc)
+    today_ro = now.astimezone(RO_TZ).date()
+    deadline = now + dt.timedelta(minutes=args.max_minutes)
+    cfg = RuleConfig(odds_factor=args.odds_factor, min_odds=args.min_odds, min_model_pct=args.min_model_pct,
+                     games_drop=args.games_drop)
+    state_path = Path(args.state)
+    state = load_state(state_path)
+
+    tennis_picks = [p for p in fetch_pending_picks(today_ro) if pending_rules(p, state)]
+    live: list[LiveMatch] = []
+    prematch: list[LiveMatch] = []
+    tennis: list[Pick] = []
+    if tennis_picks:
+        live = fetch_live_matches(now.date())
+        prematch = fetch_prematch_matches(now.date())
+        tennis = select_tennis(tennis_picks, live, prematch, deadline, state)
+
+    football = [p for p in fetch_football_picks(today_ro)
+                if p.key not in state["done"] and in_watch_window(p, now, deadline)]
+    save_state(state_path, state, today_ro)
+    if not tennis and not football:
+        logger.info("Niciun pick de urmărit în fereastra asta (%s).", today_ro)
+        return
+
+    while tennis or football:
+        if tennis:
+            check_tennis(tennis, live, prematch, state, cfg)
+        if football:
+            check_football(football, dt.datetime.now(dt.timezone.utc), state, args.fh_minute)
         save_state(state_path, state, today_ro)
 
-        if not watch or args.once or dt.datetime.now(dt.timezone.utc) + dt.timedelta(seconds=args.interval) > deadline:
+        if not (tennis or football) or args.once or \
+                dt.datetime.now(dt.timezone.utc) + dt.timedelta(seconds=args.interval) > deadline:
             break
         time.sleep(args.interval)
-        today_utc = dt.datetime.now(dt.timezone.utc).date()
-        live = fetch_live_matches(today_utc)
-        if any(not match_pick(p, live) for p in watch):
-            prematch = fetch_prematch_matches(today_utc)
+        if tennis:
+            today_utc = dt.datetime.now(dt.timezone.utc).date()
+            live = fetch_live_matches(today_utc)
+            if any(not match_pick(p, live) for p in tennis):
+                prematch = fetch_prematch_matches(today_utc)
 
 
 def main() -> None:
@@ -181,6 +232,8 @@ def main() -> None:
                         help="comp_pct minim ca jucătorul să fie considerat favorit (implicit 50)")
     parser.add_argument("--games-drop", type=float, default=float(os.environ.get("GAMES_DROP", 2)),
                         help="cu câte game-uri trebuie să scadă linia live sub cea pre-meci (implicit 2)")
+    parser.add_argument("--fh-minute", type=int, default=int(os.environ.get("FH_MINUTE", 25)),
+                        help="fotbal: alertă dacă e 0-0 în prima repriză din acest minut (implicit 25)")
     parser.add_argument("--state", default="state/alerted.json")
     parser.add_argument("--once", action="store_true", help="o singură verificare, fără buclă")
     parser.add_argument("--test-telegram", action="store_true", help="trimite un mesaj de test și ieși")
@@ -188,7 +241,7 @@ def main() -> None:
 
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     if args.test_telegram:
-        ok = telegram.send("✅ Monitorul live de tenis e conectat la Telegram.")
+        ok = telegram.send("✅ Monitorul live (tenis + fotbal) e conectat la Telegram.")
         raise SystemExit(0 if ok else 1)
     run(args)
 
