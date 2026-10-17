@@ -1,0 +1,75 @@
+name: Live tennis alerts (Telegram)
+
+# O dată pe oră: citește pick-urile pending din andrei0182/tenis
+# (stats/picks_log.csv) și urmărește meciurile lor pe Superbet live timp de
+# max. 55 de minute, cu o verificare pe minut. Ieșe imediat dacă niciun pick nu
+# e live și niciunul nu începe în ora asta.
+# Secrete necesare: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID.
+# Pragurile se pot schimba din Settings > Secrets and variables > Actions >
+# Variables: ODDS_FACTOR, MIN_ODDS, MIN_MODEL_PCT.
+
+on:
+  schedule:
+    - cron: "2 * * * *"
+  workflow_dispatch:
+    inputs:
+      test_telegram:
+        description: "Trimite doar un mesaj de test pe Telegram"
+        type: boolean
+        default: false
+
+concurrency:
+  group: live-monitor
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      ODDS_FACTOR: ${{ vars.ODDS_FACTOR || '1.5' }}
+      MIN_ODDS: ${{ vars.MIN_ODDS || '1.8' }}
+      MIN_MODEL_PCT: ${{ vars.MIN_MODEL_PCT || '50' }}
+    steps:
+      - name: Skip if Telegram secrets are missing
+        if: env.TELEGRAM_BOT_TOKEN == '' || env.TELEGRAM_CHAT_ID == ''
+        run: echo "::notice::TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID lipsesc -- adaugă-le în Settings > Secrets and variables > Actions."
+
+      - uses: actions/checkout@v4
+        if: env.TELEGRAM_BOT_TOKEN != '' && env.TELEGRAM_CHAT_ID != ''
+
+      - uses: actions/setup-python@v5
+        if: env.TELEGRAM_BOT_TOKEN != '' && env.TELEGRAM_CHAT_ID != ''
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        if: env.TELEGRAM_BOT_TOKEN != '' && env.TELEGRAM_CHAT_ID != ''
+        run: pip install -r requirements.txt
+
+      - name: Test Telegram
+        if: env.TELEGRAM_BOT_TOKEN != '' && env.TELEGRAM_CHAT_ID != '' && inputs.test_telegram
+        run: python live_monitor.py --test-telegram
+
+      # Pick-urile deja alertate trec de la o rulare la alta prin cache.
+      - name: Restore state
+        if: env.TELEGRAM_BOT_TOKEN != '' && env.TELEGRAM_CHAT_ID != '' && !inputs.test_telegram
+        uses: actions/cache/restore@v4
+        with:
+          path: state
+          key: live-state-${{ github.run_id }}
+          restore-keys: live-state-
+
+      - name: Monitor
+        if: env.TELEGRAM_BOT_TOKEN != '' && env.TELEGRAM_CHAT_ID != '' && !inputs.test_telegram
+        run: python live_monitor.py
+
+      - name: Save state
+        if: always() && env.TELEGRAM_BOT_TOKEN != '' && env.TELEGRAM_CHAT_ID != '' && !inputs.test_telegram && hashFiles('state/alerted.json') != ''
+        uses: actions/cache/save@v4
+        with:
+          path: state
+          key: live-state-${{ github.run_id }}
