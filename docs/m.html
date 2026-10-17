@@ -26,22 +26,22 @@
 <body>
 <main>
   <h1>Meci Superbet</h1>
-  <p id="msg">Se deschide aplicația Superbet…</p>
+  <p id="msg">Alege cum deschizi meciul.</p>
   <a id="match" class="btn primary" href="#">Deschide meciul în aplicație</a>
   <a id="app" class="btn" href="#">Deschide aplicația Superbet</a>
   <a id="web" class="btn" href="#">Deschide pe site</a>
 </main>
 <script>
   // Pagina primește ?e=<event_id> de la monitorul live (vezi livemon/superbet.py).
-  // Pe Android cere explicit aplicației ro.superbet.sport să deschidă pagina
-  // meciului; dacă aplicația nu o poate deschide, Chrome merge pe fallback (site).
+  // Pe Android, butonul roșu cere explicit aplicației ro.superbet.sport să
+  // deschidă pagina meciului. Fără deschidere automată și fără fallback pe acest
+  // buton: dacă aplicația refuză, pagina rămâne pe ecran pentru celelalte butoane.
   (function () {
     var PKG = "ro.superbet.sport";
     var id = (new URLSearchParams(location.search).get("e") || "").replace(/\D/g, "");
     var web = id ? "https://superbet.ro/cote/tenis/" + id : "https://superbet.ro/";
     var path = id ? "superbet.ro/cote/tenis/" + id : "superbet.ro/";
-    var matchIntent = "intent://" + path + "#Intent;scheme=https;package=" + PKG +
-      ";S.browser_fallback_url=" + encodeURIComponent(web) + ";end";
+    var matchIntent = "intent://" + path + "#Intent;scheme=https;package=" + PKG + ";end";
     var appIntent = "intent://#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package=" +
       PKG + ";S.browser_fallback_url=" + encodeURIComponent(web) + ";end";
 
@@ -54,11 +54,6 @@
     }
     document.getElementById("match").href = matchIntent;
     document.getElementById("app").href = appIntent;
-    // Încercare automată; Chrome o poate bloca fără o atingere, de aceea rămân butoanele.
-    location.href = matchIntent;
-    setTimeout(function () {
-      document.getElementById("msg").textContent = "Dacă aplicația nu s-a deschis, apasă un buton.";
-    }, 1500);
   })();
 </script>
 </body>
