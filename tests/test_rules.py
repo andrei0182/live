@@ -134,3 +134,19 @@ def test_games_rule():
     assert evaluate_games(PICK, make_match([(6, 4), (6, 3)], status="FINISHED"), 12.5, 8.5, CFG).outcome is Outcome.DONE
     underdog = Pick(**{**PICK.__dict__, "comp_pct": 40.0})
     assert evaluate_games(underdog, m, 12.5, 8.5, CFG).outcome is Outcome.DONE
+
+
+def test_parse_model90_probability_scaled_to_pct():
+    csv_text = (
+        "date,tournament,tour,player1,player2,market,recommended_player,opponent,probability,threshold,"
+        "rec_odds,games_bet,games_line,games_odds,te_match_id,result,score,checked_at,set_scores,rec_games,games_result\n"
+        "2026-10-17,,,Ondrej Hujo,Sebastian Bozemoj,castiga meciul,Ondrej Hujo,Sebastian Bozemoj,0.902,0.815,"
+        "1.12,,8.5,,1,pending,,,,,\n"
+    )
+    [pick] = parse_picks(csv_text, {"2026-10-17"}, "probability", 100.0, "Model 90%")
+    assert pick.comp_pct == 90.2 and pick.rec_odds == 1.12 and pick.source == "Model 90%"
+    # cotă 1.12 × 1.5 = 1.68 < 1.8: pragul rămâne minimul
+    m = make_match([(4, 6)], sets=(0, 1), odds=(1.9, 1.8))
+    m.home, m.away = "Ondrej Hujo", "Sebastian Bozemoj"
+    d = evaluate(pick, m, "home", CFG)
+    assert d.outcome is Outcome.ALERT and d.threshold == 1.8

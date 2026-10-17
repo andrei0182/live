@@ -1,8 +1,13 @@
-"""Pick-urile modelului, citite din `stats/picks_log.csv` din repo-ul `tenis`.
+"""Pick-urile modelelor, citite din repo-ul `pariuri` (tennis/stats/):
 
-`recommended_player` = jucătorul ales de model, `comp_pct` = probabilitatea
-modelului (%), `rec_odds` = cota Superbet pre-meci la care a fost recomandat.
-`date` e data din România la care a rulat raportul (~03:00).
+- `picks_log.csv`: raportul zilnic de tenis; probabilitatea modelului e în
+  `comp_pct` (procente, ex. 59.9);
+- `model90_log.csv`: "Model 90%"; probabilitatea e în `probability`
+  (fracție, ex. 0.902).
+
+Comune: `recommended_player` = jucătorul ales de model, `opponent`,
+`rec_odds` = cota Superbet pre-meci, `result` ("pending" până la verificare),
+`date` = data din România la care a rulat raportul (~03:00).
 """
 from __future__ import annotations
 
@@ -21,7 +26,21 @@ from .superbet import LiveMatch
 
 logger = logging.getLogger(__name__)
 
-PICKS_URL = "https://raw.githubusercontent.com/andrei0182/tenis/main/stats/picks_log.csv"
+_STATS_URL = "https://raw.githubusercontent.com/andrei0182/pariuri/main/tennis/stats"
+
+
+@dataclass(frozen=True)
+class Source:
+    name: str
+    url: str
+    pct_column: str
+    pct_scale: float  # înmulțitor până la procente
+
+
+SOURCES = (
+    Source("raport zilnic", f"{_STATS_URL}/picks_log.csv", "comp_pct", 1.0),
+    Source("Model 90%", f"{_STATS_URL}/model90_log.csv", "probability", 100.0),
+)
 
 
 @dataclass
@@ -32,6 +51,7 @@ class Pick:
     rec_odds: Optional[float]
     comp_pct: Optional[float]
     games_line: Optional[float]
+    source: str = ""
 
     @property
     def key(self) -> str:
@@ -45,7 +65,12 @@ def _float(value: str) -> Optional[float]:
         return None
 
 
-def parse_picks(text: str, dates: set[str]) -> list[Pick]:
+def _scale(value: Optional[float], factor: float) -> Optional[float]:
+    return None if value is None else round(value * factor, 1)
+
+
+def parse_picks(text: str, dates: set[str], pct_column: str = "comp_pct", pct_scale: float = 1.0,
+                source: str = "") -> list[Pick]:
     picks = []
     for row in csv.DictReader(io.StringIO(text)):
         if row.get("date") not in dates or row.get("result", "") != "pending":
@@ -55,22 +80,30 @@ def parse_picks(text: str, dates: set[str]) -> list[Pick]:
             player=row.get("recommended_player", ""),
             opponent=row.get("opponent", ""),
             rec_odds=_float(row.get("rec_odds")),
-            comp_pct=_float(row.get("comp_pct")),
+            comp_pct=_scale(_float(row.get(pct_column)), pct_scale),
             games_line=_float(row.get("games_line")),
+            source=source,
         ))
     return picks
 
 
-def fetch_pending_picks(today: dt.date, url: str = PICKS_URL, timeout: float = 15.0) -> list[Pick]:
-    """Pick-urile `pending` de azi și de ieri (un meci de seară poate trece de miezul nopții)."""
+def fetch_pending_picks(today: dt.date, sources: tuple[Source, ...] = SOURCES,
+                        timeout: float = 15.0) -> list[Pick]:
+    """Pick-urile `pending` de azi și de ieri (un meci de seară poate trece de
+    miezul nopții), din toate sursele. Un meci prezent în mai multe surse (sau
+    pe două piețe în Model 90%) se urmărește o singură dată: rămâne primul."""
     dates = {today.isoformat(), (today - dt.timedelta(days=1)).isoformat()}
-    try:
-        resp = requests.get(url, timeout=timeout)
-        resp.raise_for_status()
-    except requests.RequestException as exc:
-        logger.warning("Nu pot citi picks_log.csv: %s", exc)
-        return []
-    return parse_picks(resp.text, dates)
+    picks: dict[str, Pick] = {}
+    for src in sources:
+        try:
+            resp = requests.get(src.url, timeout=timeout)
+            resp.raise_for_status()
+        except requests.RequestException as exc:
+            logger.warning("Nu pot citi %s: %s", src.url, exc)
+            continue
+        for p in parse_picks(resp.text, dates, src.pct_column, src.pct_scale, src.name):
+            picks.setdefault(p.key, p)
+    return list(picks.values())
 
 
 def _tokens(name: str) -> set[str]:

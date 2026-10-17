@@ -1,7 +1,7 @@
 name: Live tennis alerts (Telegram)
 
-# La fiecare 20 de minute: citește pick-urile pending din andrei0182/tenis
-# (stats/picks_log.csv) și urmărește meciurile lor pe Superbet live timp de
+# La fiecare 20 de minute: citește pick-urile pending din andrei0182/pariuri
+# (tennis/stats/picks_log.csv și model90_log.csv) și urmărește meciurile lor pe Superbet live timp de
 # max. 18 minute, cu o verificare pe minut. Iese imediat dacă niciun pick nu
 # e live și niciunul nu începe în fereastra asta.
 # Secrete necesare: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID.
