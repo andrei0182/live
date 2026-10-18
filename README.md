@@ -55,6 +55,21 @@ recomandat favorit în model (`comp_pct >= MIN_MODEL_PCT`, implicit 50):
 Fiecare regulă trimite cel mult o alertă pe pick. Monitorul nu mai urmărește un
 pick după ce ambele reguli s-au închis sau meciul s-a terminat.
 
+## Postările zilnice
+
+Monitorul publică singur, la prima rulare de după ora setată, o dată pe zi:
+
+- **dimineața** (`POST_MORNING`, implicit 09:00): programul zilei (meciurile de
+  tenis cu `comp_pct >= MIN_MODEL_PCT` cu ora de start, meciurile de fotbal Peste
+  2.5) și rezultatele alertelor de ieri care nu se terminaseră seara;
+- **seara** (`POST_EVENING`, implicit 23:30): fiecare alertă a zilei cu rezultatul
+  ei (✅/❌/⏳) și rezultatele pronosticurilor zilei; duminica și bilanțul săptămânii.
+
+Rezultatul unei alerte: 🎾 set 1 = favoritul a câștigat meciul; 📉 game-uri =
+favoritul a făcut mai multe game-uri decât linia live din alertă; ⚽ = s-a marcat
+în prima repriză. Rezultatele vin din indexul `live` al Superbet, care păstrează
+și meciurile terminate. `POSTS=off` oprește postările.
+
 ## Configurare
 
 1. Creează un bot cu [@BotFather](https://t.me/BotFather) și copiază tokenul.
@@ -62,7 +77,8 @@ pick după ce ambele reguli s-au închis sau meciul s-a terminat.
    `https://api.telegram.org/bot<TOKEN>/getUpdates` și copiază `chat.id`.
 3. În repo: *Settings → Secrets and variables → Actions*:
    - secrete: `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`;
-   - opțional, variabile: `ODDS_FACTOR`, `MIN_ODDS`, `MIN_MODEL_PCT`, `GAMES_DROP`, `FH_MINUTE`.
+   - opțional, variabile: `ODDS_FACTOR`, `MIN_ODDS`, `MIN_MODEL_PCT`, `GAMES_DROP`, `FH_MINUTE`,
+     `POST_MORNING`, `POST_EVENING`, `POSTS`.
 4. *Actions → Live tennis alerts → Run workflow* cu „Trimite doar un mesaj de
    test” bifat, ca să verifici botul.
 

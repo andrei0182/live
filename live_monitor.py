@@ -6,6 +6,9 @@
 - fotbal: un meci cu pronostic Peste 2.5 e încă 0-0 în prima repriză după
   minutul --fh-minute.
 
+Tot el publică, o dată pe zi, programul de dimineață (după --post-morning) și
+bilanțul de seară (după --post-evening; duminica și bilanțul săptămânii).
+
 Rulează cel mult --max-minutes, verificând la fiecare --interval secunde, și
 se oprește mai devreme dacă niciun pick nu e live sau nu începe în fereastra
 asta. În --state se țin regulile deja tratate per pick (alertă trimisă sau
@@ -31,10 +34,12 @@ from livemon.football import (FIRST_HALF_MARKET, MATCH_TOTAL_MARKET, FootballPic
                               fetch_football_live, fetch_football_picks, first_half_over,
                               format_first_half_alert, in_watch_window, match_football)
 from livemon.picks import Pick, fetch_pending_picks, match_pick
+from livemon.posts import (Finished, evening_post, football_pick_result, morning_post, prune_alerts, record_alert,
+                           resolve_alert, tennis_pick_result)
 from livemon.rules import (Decision, Outcome, RuleConfig, evaluate, evaluate_games, format_alert,
                            format_games_alert)
 from livemon.superbet import (LiveMatch, fetch_event_markets, fetch_live_matches, fetch_prematch_matches,
-                              market_odds, player_games_main_line)
+                              market_odds, parse_live_event, player_games_main_line)
 
 logger = logging.getLogger("live_monitor")
 
@@ -59,14 +64,17 @@ def load_state(path: Path) -> dict:
         state = {}
     state.setdefault("done", {})
     state.setdefault("prematch_lines", {})
+    state.setdefault("alerts", [])
+    state.setdefault("posted", {})
     return state
 
 
 def save_state(path: Path, state: dict, today: dt.date) -> None:
     # păstrăm doar ultimele 3 zile, ca fișierul să nu crească la nesfârșit
     cutoff = (today - dt.timedelta(days=3)).isoformat()
-    for section in ("done", "prematch_lines"):
+    for section in ("done", "prematch_lines", "posted"):
         state[section] = {k: v for k, v in state[section].items() if k.split("|", 1)[0] >= cutoff}
+    prune_alerts(state, today)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(state, indent=2, ensure_ascii=False))
 
@@ -132,6 +140,10 @@ def select_tennis(picks: list[Pick], live: list[LiveMatch], prematch: list[LiveM
     return watch
 
 
+def ro_now() -> dt.datetime:
+    return dt.datetime.now(dt.timezone.utc).astimezone(RO_TZ)
+
+
 def check_tennis(watch: list[Pick], live: list[LiveMatch], prematch: list[LiveMatch], state: dict,
                  cfg: RuleConfig) -> None:
     for p in list(watch):
@@ -146,8 +158,13 @@ def check_tennis(watch: list[Pick], live: list[LiveMatch], prematch: list[LiveMa
             decision, text = check_rule(rule, p, match, side, state, cfg)
             logger.info("%s [%s] (%s) %s: %s", p.player, rule, match.score_text(),
                         decision.outcome.value, decision.reason)
-            if decision.outcome is Outcome.ALERT and not telegram.send(text):
-                continue  # încercăm din nou la iterația următoare
+            if decision.outcome is Outcome.ALERT:
+                if not telegram.send(text):
+                    continue  # încercăm din nou la iterația următoare
+                now = ro_now()
+                record_alert(state, date=now.date().isoformat(), kind=rule, event_id=match.event_id,
+                             home=match.home, away=match.away, player=p.player, side=side,
+                             value=decision.live_value, time=now.strftime("%H:%M"))
             if decision.outcome in (Outcome.ALERT, Outcome.DONE):
                 state["done"][rule_key(p, rule)] = decision.reason
         if not pending_rules(p, state):
@@ -172,9 +189,64 @@ def check_football(watch: list[FootballPick], now: dt.datetime, state: dict, min
                                            market_odds(markets, MATCH_TOTAL_MARKET, "Peste 2.5"))
             if not telegram.send(text):
                 continue  # încercăm din nou la iterația următoare
+            ro = ro_now()
+            record_alert(state, date=ro.date().isoformat(), kind="fh", event_id=match.event_id,
+                         home=match.home, away=match.away, time=ro.strftime("%H:%M"))
         if decision.outcome in (Outcome.ALERT, Outcome.DONE):
             state["done"][p.key] = decision.reason
             watch.remove(p)
+
+
+def maybe_post(state: dict, args: argparse.Namespace, now: dt.datetime) -> None:
+    """Programul de dimineață și bilanțul de seară, fiecare o singură dată pe zi,
+    la prima rulare de după ora configurată."""
+    now_ro = now.astimezone(RO_TZ)
+    today = now_ro.date()
+    hhmm = now_ro.strftime("%H:%M")
+    posted = state["posted"]
+    key_m, key_e = f"{today}|morning", f"{today}|evening"
+    need_m = hhmm >= args.post_morning and key_m not in posted
+    need_e = hhmm >= args.post_evening and key_e not in posted
+    if not (need_m or need_e):
+        return
+
+    finished = Finished.fetch(now.date())
+    tennis_today = [p for p in fetch_pending_picks(today)
+                    if p.date == today.isoformat() and (p.comp_pct or 0) >= args.min_model_pct]
+    football_today = [p for p in fetch_football_picks(today) if p.date == today.isoformat()]
+
+    if need_m:
+        yesterday = (today - dt.timedelta(days=1)).isoformat()
+        late = [a for a in state["alerts"] if a["date"] == yesterday and resolve_alert(a, finished)]
+        offer = fetch_live_matches(now.date()) + fetch_prematch_matches(now.date())
+        program = []
+        for p in tennis_today:
+            found = match_pick(p, offer)
+            program.append((p, found[0] if found else None))
+        program.sort(key=lambda x: x[1].start_time if x[1] else "")
+        text = morning_post(today, program, sorted(football_today, key=lambda p: p.kickoff_local), late,
+                            args.fh_minute)
+        if telegram.send(text):
+            posted[key_m] = hhmm
+            logger.info("Postarea de dimineață trimisă.")
+
+    if need_e:
+        alerts = [a for a in state["alerts"] if a["date"] == today.isoformat()]
+        for a in alerts:
+            resolve_alert(a, finished)
+        finished_tennis = [parse_live_event(e) for e in finished.tennis.values()]
+        tennis_results = [tennis_pick_result(p, finished_tennis, finished.tennis) for p in tennis_today]
+        football_results = [football_pick_result(p, finished.football) for p in football_today]
+        week = None
+        if today.weekday() == 6:  # duminică
+            start = (today - dt.timedelta(days=6)).isoformat()
+            week = [a for a in state["alerts"] if a["date"] >= start]
+            for a in week:
+                resolve_alert(a, finished)
+        text = evening_post(today, alerts, tennis_results, football_results, week)
+        if telegram.send(text):
+            posted[key_e] = hhmm
+            logger.info("Postarea de seară trimisă.")
 
 
 def run(args: argparse.Namespace) -> None:
@@ -185,6 +257,9 @@ def run(args: argparse.Namespace) -> None:
                      games_drop=args.games_drop)
     state_path = Path(args.state)
     state = load_state(state_path)
+    if args.posts:
+        maybe_post(state, args, now)
+        save_state(state_path, state, today_ro)
 
     tennis_picks = [p for p in fetch_pending_picks(today_ro) if pending_rules(p, state)]
     live: list[LiveMatch] = []
@@ -234,6 +309,13 @@ def main() -> None:
                         help="cu câte game-uri trebuie să scadă linia live sub cea pre-meci (implicit 2)")
     parser.add_argument("--fh-minute", type=int, default=int(os.environ.get("FH_MINUTE", 25)),
                         help="fotbal: alertă dacă e 0-0 în prima repriză din acest minut (implicit 25)")
+    parser.add_argument("--post-morning", default=os.environ.get("POST_MORNING", "09:00"),
+                        help="ora (RO, HH:MM) de la care se publică programul zilei (implicit 09:00)")
+    parser.add_argument("--post-evening", default=os.environ.get("POST_EVENING", "23:30"),
+                        help="ora (RO, HH:MM) de la care se publică bilanțul zilei (implicit 23:30)")
+    parser.add_argument("--no-posts", dest="posts", action="store_false",
+                        default=os.environ.get("POSTS", "on").lower() != "off",
+                        help="fără postările de dimineață/seară (sau POSTS=off)")
     parser.add_argument("--state", default="state/alerted.json")
     parser.add_argument("--once", action="store_true", help="o singură verificare, fără buclă")
     parser.add_argument("--test-telegram", action="store_true", help="trimite un mesaj de test și ieși")
