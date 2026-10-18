@@ -1,9 +1,9 @@
 """Pick-urile modelelor, citite din repo-ul `pariuri` (tennis/stats/):
 
-- `picks_log.csv`: raportul zilnic de tenis; probabilitatea modelului e în
-  `comp_pct` (procente, ex. 59.9);
 - `model90_log.csv`: "Model 90%"; probabilitatea e în `probability`
-  (fracție, ex. 0.902).
+  (fracție, ex. 0.902). E singura sursă urmărită.
+- `picks_log.csv`: raportul zilnic (probabilitatea în `comp_pct`, procente);
+  nu se joacă, dar `parse_picks` îl poate citi în continuare.
 
 Comune: `recommended_player` = jucătorul ales de model, `opponent`,
 `rec_odds` = cota Superbet pre-meci, `result` ("pending" până la verificare),
@@ -37,11 +37,9 @@ class Source:
     pct_scale: float  # înmulțitor până la procente
 
 
+# Se joacă doar Model 90%; raportul zilnic (picks_log.csv, coloana comp_pct) nu mai e urmărit.
 MODEL90 = Source("Model 90%", f"{_STATS_URL}/model90_log.csv", "probability", 100.0)
-SOURCES = (
-    Source("raport zilnic", f"{_STATS_URL}/picks_log.csv", "comp_pct", 1.0),
-    MODEL90,
-)
+SOURCES = (MODEL90,)
 
 
 @dataclass

@@ -3,12 +3,12 @@
 Alerte live pe Telegram pentru pronosticurile din
 [andrei0182/pariuri](https://github.com/andrei0182/pariuri):
 
-- `tennis/stats/picks_log.csv`: raportul zilnic de tenis (probabilitatea modelului în `comp_pct`);
 - `tennis/stats/model90_log.csv`: „Model 90%” (probabilitatea în `probability`, ca fracție);
 - `football/recommendations_log.csv`: recomandările de fotbal Peste 2.5 (doar cele
   `pending`, fără `excluded`).
 
-Un meci de tenis prezent în ambele surse se urmărește o singură dată.
+Raportul zilnic de tenis (`picks_log.csv`) nu se joacă, deci nu e urmărit.
+Un meci prezent pe două piețe în Model 90% se urmărește o singură dată.
 
 ## Sursa de date
 
@@ -30,8 +30,8 @@ scraperele de tenis. TennisExplorer nu e necesar.
 
 ## Regulile
 
-Pentru tenis, la fiecare pick `pending` de azi/ieri, cu jucătorul
-recomandat favorit în model (`comp_pct >= MIN_MODEL_PCT`, implicit 50):
+Pentru tenis, la fiecare pick Model 90% `pending` de azi/ieri, cu
+probabilitatea >= `MIN_MODEL_PCT` (implicit 50):
 
 1. **Set 1 pierdut**: favoritul a pierdut setul 1, e încă în urmă la seturi și
    cota lui live >= `max(rec_odds × ODDS_FACTOR, MIN_ODDS)` (implicit 1.5 și 1.8).
