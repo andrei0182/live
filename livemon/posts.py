@@ -133,7 +133,7 @@ def morning_post(today: dt.date, tennis: list[tuple[Pick, Optional[LiveMatch]]],
         lines.append("🎾 Tenis")
         for p, m in tennis:
             when = _ro_time(m.start_time) if m and m.start_time else "?"
-            lines.append(f"• {when} {p.player} vs {p.opponent} (model {p.comp_pct:.0f}% · {p.source})")
+            lines.append(f"• {when} {p.player} vs {p.opponent} (Model 90%, probabilitate {p.comp_pct:.0f}%)")
         lines.append("")
     if football:
         lines.append("⚽ Fotbal, pronostic Peste 2.5")

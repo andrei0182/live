@@ -59,9 +59,8 @@ pick după ce ambele reguli s-au închis sau meciul s-a terminat.
 
 Monitorul publică singur, la prima rulare de după ora setată, o dată pe zi:
 
-- **dimineața** (`POST_MORNING`, implicit 09:00): programul zilei (meciurile de
-  tenis cu `comp_pct >= MIN_MODEL_PCT` cu ora de start, meciurile de fotbal Peste
-  2.5) și rezultatele alertelor de ieri care nu se terminaseră seara;
+- **dimineața** (`POST_MORNING`, implicit 09:00): programul zilei (doar pronosticurile jucate:
+  tenis Model 90% cu ora de start și fotbal Peste 2.5) și rezultatele alertelor de ieri care nu se terminaseră seara;
 - **seara** (`POST_EVENING`, implicit 23:30): fiecare alertă a zilei cu rezultatul
   ei (✅/❌/⏳) și rezultatele pronosticurilor zilei; duminica și bilanțul săptămânii.
 

@@ -37,9 +37,10 @@ class Source:
     pct_scale: float  # înmulțitor până la procente
 
 
+MODEL90 = Source("Model 90%", f"{_STATS_URL}/model90_log.csv", "probability", 100.0)
 SOURCES = (
     Source("raport zilnic", f"{_STATS_URL}/picks_log.csv", "comp_pct", 1.0),
-    Source("Model 90%", f"{_STATS_URL}/model90_log.csv", "probability", 100.0),
+    MODEL90,
 )
 
 
