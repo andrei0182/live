@@ -33,7 +33,7 @@ from livemon import telegram
 from livemon.football import (FIRST_HALF_MARKET, MATCH_TOTAL_MARKET, FootballPick, evaluate_first_half,
                               fetch_football_live, fetch_football_picks, first_half_over,
                               format_first_half_alert, in_watch_window, match_football)
-from livemon.picks import MODEL90, Pick, fetch_pending_picks, match_pick
+from livemon.picks import Pick, fetch_pending_picks, match_pick
 from livemon.posts import (Finished, evening_post, football_pick_result, morning_post, prune_alerts, record_alert,
                            resolve_alert, tennis_pick_result)
 from livemon.rules import (Decision, Outcome, RuleConfig, evaluate, evaluate_games, format_alert,
@@ -211,8 +211,7 @@ def maybe_post(state: dict, args: argparse.Namespace, now: dt.datetime) -> None:
         return
 
     finished = Finished.fetch(now.date())
-    # În canal apar doar pronosticurile jucate: Model 90% la tenis și Peste 2.5 la fotbal.
-    tennis_today = [p for p in fetch_pending_picks(today, (MODEL90,)) if p.date == today.isoformat()]
+    tennis_today = [p for p in fetch_pending_picks(today) if p.date == today.isoformat()]
     football_today = [p for p in fetch_football_picks(today) if p.date == today.isoformat()]
 
     if need_m:
