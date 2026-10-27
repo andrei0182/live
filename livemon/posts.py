@@ -125,7 +125,7 @@ def _tally(alerts: list[dict]) -> str:
 
 
 def morning_post(today: dt.date, tennis: list[tuple[Pick, Optional[LiveMatch]]], football: list[FootballPick],
-                 late: list[dict], min_minute: int) -> str:
+                 late: list[dict], min_minute: int, ticket_text: str = "") -> str:
     lines = [f"📅 Programul de azi, {today.strftime('%d.%m.%Y')}", ""]
     if not tennis and not football:
         lines.append("Azi nu avem meciuri în program.")
@@ -145,12 +145,14 @@ def morning_post(today: dt.date, tennis: list[tuple[Pick, Optional[LiveMatch]]],
     if late:
         lines += ["", "Rezultatele alertelor de ieri, terminate după postarea de seară:"]
         lines += [_alert_line(a) for a in late]
+    if ticket_text:
+        lines += ["", ticket_text]
     lines += ["", "18+ · Joacă responsabil."]
     return "\n".join(lines)
 
 
 def evening_post(today: dt.date, alerts: list[dict], tennis_results: list[str], football_results: list[str],
-                 week: Optional[list[dict]] = None) -> str:
+                 week: Optional[list[dict]] = None, ticket_text: str = "") -> str:
     lines = [f"📊 Bilanțul zilei, {today.strftime('%d.%m.%Y')}", ""]
     if alerts:
         lines.append(f"Alertele de azi: {_tally(alerts)}")
@@ -160,6 +162,8 @@ def evening_post(today: dt.date, alerts: list[dict], tennis_results: list[str], 
     if tennis_results or football_results:
         lines += ["", "Pronosticurile zilei:"]
         lines += tennis_results + football_results
+    if ticket_text:
+        lines += ["", ticket_text]
     if week is not None:
         lines += ["", f"🗓 Săptămâna aceasta: {len(week)} alerte · {_tally(week)}" if week
                   else "🗓 Săptămâna aceasta n-a fost nicio alertă."]
