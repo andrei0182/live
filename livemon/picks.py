@@ -40,6 +40,7 @@ class Source:
 # Se joacă doar Model 90%; raportul zilnic (picks_log.csv, coloana comp_pct) nu mai e urmărit.
 MODEL90 = Source("Model 90%", f"{_STATS_URL}/model90_log.csv", "probability", 100.0)
 SOURCES = (MODEL90,)
+WIN_MARKET = "castiga meciul"
 
 
 @dataclass
@@ -51,6 +52,7 @@ class Pick:
     comp_pct: Optional[float]
     games_line: Optional[float]
     source: str = ""
+    market: str = ""  # Model 90%: "castiga meciul" / "adversarul sub 6.5 game-uri"
 
     @property
     def key(self) -> str:
@@ -82,6 +84,7 @@ def parse_picks(text: str, dates: set[str], pct_column: str = "comp_pct", pct_sc
             comp_pct=_scale(_float(row.get(pct_column)), pct_scale),
             games_line=_float(row.get("games_line")),
             source=source,
+            market=row.get("market", ""),
         ))
     return picks
 
@@ -90,7 +93,8 @@ def fetch_pending_picks(today: dt.date, sources: tuple[Source, ...] = SOURCES,
                         timeout: float = 15.0) -> list[Pick]:
     """Pick-urile `pending` de azi și de ieri (un meci de seară poate trece de
     miezul nopții), din toate sursele. Un meci prezent în mai multe surse (sau
-    pe două piețe în Model 90%) se urmărește o singură dată: rămâne primul."""
+    pe două piețe în Model 90%) se urmărește o singură dată: rămâne primul,
+    cu excepția că "castiga meciul" are prioritate față de cealaltă piață."""
     dates = {today.isoformat(), (today - dt.timedelta(days=1)).isoformat()}
     picks: dict[str, Pick] = {}
     for src in sources:
@@ -101,7 +105,9 @@ def fetch_pending_picks(today: dt.date, sources: tuple[Source, ...] = SOURCES,
             logger.warning("Nu pot citi %s: %s", src.url, exc)
             continue
         for p in parse_picks(resp.text, dates, src.pct_column, src.pct_scale, src.name):
-            picks.setdefault(p.key, p)
+            # la două piețe pe același meci rămâne "castiga meciul" (biletul zilei o folosește)
+            if p.key not in picks or (p.market == WIN_MARKET and picks[p.key].market != WIN_MARKET):
+                picks[p.key] = p
     return list(picks.values())
 
 

@@ -36,6 +36,7 @@ from livemon.football import (FIRST_HALF_MARKET, MATCH_TOTAL_MARKET, FootballPic
 from livemon.picks import Pick, fetch_pending_picks, match_pick
 from livemon.posts import (Finished, evening_post, football_pick_result, morning_post, prune_alerts, record_alert,
                            resolve_alert, tennis_pick_result)
+from livemon import ticket as tk
 from livemon.rules import (Decision, Outcome, RuleConfig, evaluate, evaluate_games, format_alert,
                            format_games_alert)
 from livemon.superbet import (LiveMatch, fetch_event_markets, fetch_live_matches, fetch_prematch_matches,
@@ -66,6 +67,7 @@ def load_state(path: Path) -> dict:
     state.setdefault("prematch_lines", {})
     state.setdefault("alerts", [])
     state.setdefault("posted", {})
+    state.setdefault("tickets", {})  # biletul zilei, păstrat pentru bilanț
     return state
 
 
@@ -197,6 +199,23 @@ def check_football(watch: list[FootballPick], now: dt.datetime, state: dict, min
             watch.remove(p)
 
 
+def morning_ticket(state: dict, today: dt.date, yesterday: str, picks: list[Pick], offer: list[LiveMatch],
+                   finished: Finished, now: dt.datetime) -> str:
+    """Rezultatul întârziat al biletului de ieri + biletul de azi (ales o singură dată pe zi)."""
+    parts = []
+    prev = state["tickets"].get(yesterday)
+    if prev and prev.get("legs") and tk.resolve(prev, finished.tennis):
+        parts.append("Biletul de ieri, terminat după postarea de seară:\n" + tk.result_text(prev, state["tickets"]))
+    key = today.isoformat()
+    if key not in state["tickets"]:
+        hist = tk.History.fetch(today)
+        pairs = tk.choose(tk.candidates(picks, offer, hist, now)) if hist else []
+        state["tickets"][key] = {"date": key, "legs": pairs[0] if pairs else [], "outcome": None}
+        logger.info("Biletul zilei: %s", [leg["player"] for leg in state["tickets"][key]["legs"]] or "fără bilet")
+    parts.append(tk.morning_text(state["tickets"][key]))
+    return "\n\n".join(parts)
+
+
 def maybe_post(state: dict, args: argparse.Namespace, now: dt.datetime) -> None:
     """Programul de dimineață și bilanțul de seară, fiecare o singură dată pe zi,
     la prima rulare de după ora configurată."""
@@ -223,8 +242,9 @@ def maybe_post(state: dict, args: argparse.Namespace, now: dt.datetime) -> None:
             found = match_pick(p, offer)
             program.append((p, found[0] if found else None))
         program.sort(key=lambda x: x[1].start_time if x[1] else "")
+        ticket_text = morning_ticket(state, today, yesterday, tennis_today, offer, finished, now)
         text = morning_post(today, program, sorted(football_today, key=lambda p: p.kickoff_local), late,
-                            args.fh_minute)
+                            args.fh_minute, ticket_text)
         if telegram.send(text):
             posted[key_m] = hhmm
             logger.info("Postarea de dimineață trimisă.")
@@ -242,7 +262,11 @@ def maybe_post(state: dict, args: argparse.Namespace, now: dt.datetime) -> None:
             week = [a for a in state["alerts"] if a["date"] >= start]
             for a in week:
                 resolve_alert(a, finished)
-        text = evening_post(today, alerts, tennis_results, football_results, week)
+        today_ticket = state["tickets"].get(today.isoformat())
+        if today_ticket:
+            tk.resolve(today_ticket, finished.tennis)
+        text = evening_post(today, alerts, tennis_results, football_results, week,
+                            tk.result_text(today_ticket, state["tickets"]))
         if telegram.send(text):
             posted[key_e] = hhmm
             logger.info("Postarea de seară trimisă.")

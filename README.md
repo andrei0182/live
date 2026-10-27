@@ -64,6 +64,16 @@ Monitorul publică singur, la prima rulare de după ora setată, o dată pe zi:
 - **seara** (`POST_EVENING`, implicit 23:30): fiecare alertă a zilei cu rezultatul
   ei (✅/❌/⏳) și rezultatele pronosticurilor zilei; duminica și bilanțul săptămânii.
 
+**Biletul zilei** (în postarea de dimineață): 2 pick-uri Model 90% „câștigă
+meciul” cu probabilitate >= 80%, jucători odihniți (cel mult 1 meci în ultimele 3
+zile), adversari cu cel puțin 5 meciuri în istoric (`tennis/data/results.csv.gz`),
+cotă Superbet de acum <= 3 și meciuri neîncepute; dintre perechile cu cota totală
+1.80–2.30 se alege cea cu probabilitatea combinată cea mai mare. Dacă nu există
+pereche, postarea spune „azi nu e bilet”. Seara apar rezultatul biletului și
+bilanțul tuturor biletelor (câștigate/pierdute, unități la miză 1); un bilet
+terminat după miezul nopții primește rezultatul în postarea de dimineață.
+Biletele se țin în `state["tickets"]`.
+
 Rezultatul unei alerte: 🎾 set 1 = favoritul a câștigat meciul; 📉 game-uri =
 favoritul a făcut mai multe game-uri decât linia live din alertă; ⚽ = s-a marcat
 în prima repriză. Rezultatele vin din indexul `live` al Superbet, care păstrează
