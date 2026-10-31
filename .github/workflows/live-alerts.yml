@@ -8,7 +8,8 @@ name: Live tennis alerts (Telegram)
 # Secrete necesare: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID.
 # Pragurile se pot schimba din Settings > Secrets and variables > Actions >
 # Variables: ODDS_FACTOR, MIN_ODDS, MIN_MODEL_PCT, GAMES_DROP, FH_MINUTE,
-# POST_MORNING, POST_EVENING (ore RO, HH:MM), POSTS (off = fără postările zilnice).
+# POST_MORNING, POST_EVENING (ore RO, HH:MM), POSTS (off = fără postările zilnice),
+# TENNIS_ALERTS (on = repornește alertele live de tenis, oprite implicit).
 
 on:
   schedule:
@@ -46,6 +47,7 @@ jobs:
       POST_MORNING: ${{ vars.POST_MORNING || '09:00' }}
       POST_EVENING: ${{ vars.POST_EVENING || '23:30' }}
       POSTS: ${{ vars.POSTS || 'on' }}
+      TENNIS_ALERTS: ${{ vars.TENNIS_ALERTS || 'off' }}
       MAX_MINUTES: ${{ inputs.minutes || '18' }}
     steps:
       - name: Skip if Telegram secrets are missing

@@ -92,3 +92,8 @@ def test_maybe_post_once_per_day(monkeypatch):
     night = dt.datetime(2026, 10, 18, 20, 47, tzinfo=dt.timezone.utc)  # 23:47 RO, duminică
     lm.maybe_post(state, args, night)
     assert len(sent) == 2 and sent[1].startswith("📊") and "Săptămâna aceasta" in sent[1]
+
+
+def test_morning_post_without_tennis_alerts():
+    text = morning_post(dt.date(2026, 10, 31), [], [], [], 20, tennis_alerts=False)
+    assert "Alertă live: ⚽ e încă 0-0 în minutul 20." in text and "setul 1" not in text
