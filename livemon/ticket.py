@@ -2,7 +2,9 @@
 totală 1.80–2.30, publicat dimineața în canal, cu rezultatul și bilanțul seara.
 
 Reguli (alese după testul pe istoric din oct. 2026):
-- probabilitatea modelului >= MIN_PROB;
+- probabilitatea modelului >= MIN_PROB (84%: sub prag, 79% câștigate în 14–30.10);
+- fără turneele din EXCLUDED_TOURS: ITF masculin a avut 77% câștigate și ROI
+  −16,5% pe 75 de pick-uri în 14–30.10, față de 93% la ITF feminin;
 - jucătorul ales e odihnit: cel mult 1 meci în ultimele 3 zile;
 - adversarul are cel puțin MIN_OPP_MATCHES meciuri în istoric (altfel modelul
   ghicește: Atay vs Dmitruk, Visker vs Bouquier);
@@ -34,7 +36,8 @@ from .superbet import LiveMatch, parse_live_event
 logger = logging.getLogger(__name__)
 
 HISTORY_URL = "https://raw.githubusercontent.com/andrei0182/pariuri/main/tennis/data/results.csv.gz"
-MIN_PROB = 80.0
+MIN_PROB = 84.0
+EXCLUDED_TOURS = {"itf-m"}
 MIN_OPP_MATCHES = 5
 MAX_LOAD = 1          # meciuri în ultimele 3 zile
 MAX_ODDS = 3.0
@@ -82,7 +85,7 @@ class History:
 def candidates(picks: list[Pick], offer: list[LiveMatch], hist: History, now: dt.datetime) -> list[dict]:
     out, seen = [], set()
     for p in picks:
-        if p.market not in ("", WIN_MARKET) or (p.comp_pct or 0) < MIN_PROB:
+        if p.market not in ("", WIN_MARKET) or (p.comp_pct or 0) < MIN_PROB or p.tour in EXCLUDED_TOURS:
             continue
         found = match_pick(p, offer)
         if not found:
@@ -166,7 +169,8 @@ def morning_text(ticket: Optional[dict]) -> str:
     lines = [f"🎟 Biletul zilei (cota totală ≈ {total_odds(ticket):.2f})"]
     for leg in ticket["legs"]:
         lines.append(f"• {_ro(leg['start'])} {leg['player']} câștigă vs {leg['opp']} @ {leg['odds']:.2f}")
-    lines.append("Model 90%, filtrat: jucători odihniți, adversari cu istoric. "
+    lines.append("Model 90%, filtrat: probabilitate ≥ 84%, fără ITF masculin, jucători odihniți, "
+                 "adversari cu istoric. "
                  "Realist ~55–60% șanse, nu o garanție.")
     return "\n".join(lines)
 

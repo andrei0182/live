@@ -16,9 +16,9 @@ HIST = tk.History([
 ] * 6, dt.date(2026, 10, 27))
 
 
-def pick(player, opp, pct, market="castiga meciul"):
+def pick(player, opp, pct, market="castiga meciul", tour="itf-f"):
     return Pick(date="2026-10-27", player=player, opponent=opp, rec_odds=None, comp_pct=pct,
-                games_line=None, market=market)
+                games_line=None, market=market, tour=tour)
 
 
 def match(eid, home, away, oh, oa, start="2026-10-27 11:00:00", status="NOT_STARTED"):
@@ -31,15 +31,18 @@ OFFER = [
     match(3, "Paul Tired", "Oscar Strong", 1.40, 2.9),                           # obosit
     match(4, "Anna Known", "Nobody New", 1.45, 2.6),                              # adversar fără istoric
     match(5, "Lea Early", "Tamila Gadamauri", 1.30, 3.4, "2026-10-27 06:00:00"),  # a început deja
+    match(6, "Lea Early", "Oscar Strong", 1.45, 2.6),
+    match(7, "Low Prob", "Tamila Gadamauri", 1.45, 2.6),
 ]
 PICKS = [
-    pick("Isabella Abendroth", "Tamila Gadamauri", 81.8),
-    pick("Arthur Fils", "Giovanni Mpetshi Perricard", 81.6),
+    pick("Isabella Abendroth", "Tamila Gadamauri", 85.8),
+    pick("Arthur Fils", "Giovanni Mpetshi Perricard", 85.6, tour="atp"),
     pick("Paul Tired", "Oscar Strong", 90.0),
     pick("Anna Known", "Nobody New", 90.0),
     pick("Lea Early", "Tamila Gadamauri", 90.0),
     pick("Arthur Fils", "Giovanni Mpetshi Perricard", 85.0, market="adversarul sub 6.5 game-uri"),
-    pick("Low Prob", "Gadamauri T.", 75.0),
+    pick("Low Prob", "Gadamauri T.", 83.9),                                    # sub pragul de 84%
+    pick("Lea Early", "Oscar Strong", 95.0, tour="itf-m"),                     # ITF masculin
 ]
 
 

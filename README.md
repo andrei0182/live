@@ -65,7 +65,8 @@ Monitorul publică singur, la prima rulare de după ora setată, o dată pe zi:
   ei (✅/❌/⏳) și rezultatele pronosticurilor zilei; duminica și bilanțul săptămânii.
 
 **Biletul zilei** (în postarea de dimineață): 2 pick-uri Model 90% „câștigă
-meciul” cu probabilitate >= 80%, jucători odihniți (cel mult 1 meci în ultimele 3
+meciul” cu probabilitate >= 84%, fără turneele ITF masculine (77% câștigate,
+ROI −16,5% în 14–30.10), jucători odihniți (cel mult 1 meci în ultimele 3
 zile), adversari cu cel puțin 5 meciuri în istoric (`tennis/data/results.csv.gz`),
 cotă Superbet de acum <= 3 și meciuri neîncepute; dintre perechile cu cota totală
 1.80–2.30 se alege cea cu probabilitatea combinată cea mai mare. Dacă nu există

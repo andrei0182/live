@@ -53,6 +53,7 @@ class Pick:
     games_line: Optional[float]
     source: str = ""
     market: str = ""  # Model 90%: "castiga meciul" / "adversarul sub 6.5 game-uri"
+    tour: str = ""  # Model 90%: atp, wta, challenger, itf-m, itf-f, utr-m...
 
     @property
     def key(self) -> str:
@@ -85,6 +86,7 @@ def parse_picks(text: str, dates: set[str], pct_column: str = "comp_pct", pct_sc
             games_line=_float(row.get("games_line")),
             source=source,
             market=row.get("market", ""),
+            tour=row.get("tour", ""),
         ))
     return picks
 
