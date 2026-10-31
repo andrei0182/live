@@ -244,7 +244,7 @@ def maybe_post(state: dict, args: argparse.Namespace, now: dt.datetime) -> None:
         program.sort(key=lambda x: x[1].start_time if x[1] else "")
         ticket_text = morning_ticket(state, today, yesterday, tennis_today, offer, finished, now)
         text = morning_post(today, program, sorted(football_today, key=lambda p: p.kickoff_local), late,
-                            args.fh_minute, ticket_text)
+                            args.fh_minute, ticket_text, getattr(args, "tennis_alerts", False))
         if telegram.send(text):
             posted[key_m] = hhmm
             logger.info("Postarea de dimineață trimisă.")
@@ -284,7 +284,9 @@ def run(args: argparse.Namespace) -> None:
         maybe_post(state, args, now)
         save_state(state_path, state, today_ro)
 
-    tennis_picks = [p for p in fetch_pending_picks(today_ro) if pending_rules(p, state)]
+    # alertele live de tenis sunt oprite implicit (TENNIS_ALERTS=on le repornește)
+    tennis_picks = ([p for p in fetch_pending_picks(today_ro) if pending_rules(p, state)]
+                    if args.tennis_alerts else [])
     live: list[LiveMatch] = []
     prematch: list[LiveMatch] = []
     tennis: list[Pick] = []
@@ -339,6 +341,9 @@ def main() -> None:
     parser.add_argument("--no-posts", dest="posts", action="store_false",
                         default=os.environ.get("POSTS", "on").lower() != "off",
                         help="fără postările de dimineață/seară (sau POSTS=off)")
+    parser.add_argument("--tennis-alerts", dest="tennis_alerts", action="store_true",
+                        default=os.environ.get("TENNIS_ALERTS", "off").lower() == "on",
+                        help="alertele live de tenis (set 1, game-uri); oprite implicit, TENNIS_ALERTS=on le pornește")
     parser.add_argument("--state", default="state/alerted.json")
     parser.add_argument("--once", action="store_true", help="o singură verificare, fără buclă")
     parser.add_argument("--test-telegram", action="store_true", help="trimite un mesaj de test și ieși")

@@ -30,6 +30,10 @@ scraperele de tenis. TennisExplorer nu e necesar.
 
 ## Regulile
 
+**Alertele live de tenis (regulile 1 și 2) sunt oprite implicit** din 31.10.2026;
+variabila `TENNIS_ALERTS=on` le repornește. Alerta de fotbal, postările zilnice și
+biletul zilei merg mai departe.
+
 Pentru tenis, la fiecare pick Model 90% `pending` de azi/ieri, cu
 probabilitatea >= `MIN_MODEL_PCT` (implicit 50):
 

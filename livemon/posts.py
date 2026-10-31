@@ -125,7 +125,7 @@ def _tally(alerts: list[dict]) -> str:
 
 
 def morning_post(today: dt.date, tennis: list[tuple[Pick, Optional[LiveMatch]]], football: list[FootballPick],
-                 late: list[dict], min_minute: int, ticket_text: str = "") -> str:
+                 late: list[dict], min_minute: int, ticket_text: str = "", tennis_alerts: bool = True) -> str:
     lines = [f"📅 Programul de azi, {today.strftime('%d.%m.%Y')}", ""]
     if not tennis and not football:
         lines.append("Azi nu avem meciuri în program.")
@@ -140,8 +140,11 @@ def morning_post(today: dt.date, tennis: list[tuple[Pick, Optional[LiveMatch]]],
         for p in football:
             lines.append(f"• {p.kickoff_local} {p.home} vs {p.away} ({p.league})")
         lines.append("")
-    lines.append("Alerte live: 🎾 favoritul pierde setul 1 · 📉 linia lui de game-uri scade · "
-                 f"⚽ e încă 0-0 în minutul {min_minute}.")
+    if tennis_alerts:
+        lines.append("Alerte live: 🎾 favoritul pierde setul 1 · 📉 linia lui de game-uri scade · "
+                     f"⚽ e încă 0-0 în minutul {min_minute}.")
+    else:
+        lines.append(f"Alertă live: ⚽ e încă 0-0 în minutul {min_minute}.")
     if late:
         lines += ["", "Rezultatele alertelor de ieri, terminate după postarea de seară:"]
         lines += [_alert_line(a) for a in late]
