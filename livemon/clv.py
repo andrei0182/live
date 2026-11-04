@@ -9,6 +9,9 @@ chiar înainte să se vadă în rezultate.
 Strategii:
 - "toti de acord": tennis/stats/player_history_log.csv, verdict "toti de acord",
   odds_pass True (cota >= 1.50), pariu pe câștigător;
+- "superbet vs piata": tennis/stats/market_value_log.csv, unde Superbet plătește
+  cu cel puțin MIN_VALUE_PCT peste media caselor (doar acolo a fost profit în
+  14.10–03.11: +8,8 u pe 33 de pariuri), pariu pe câștigător;
 - "peste 2.5": football/recommendations_log.csv, fără `excluded`, cota Peste 2.5
   între 1.40 și 2.00, pariu pe "Total goluri" Peste 2.5.
 """
@@ -31,6 +34,8 @@ from .superbet import FOOTBALL_SPORT_ID, fetch_event_markets, fetch_events, mark
 logger = logging.getLogger(__name__)
 
 PLAYER_HISTORY_URL = "https://raw.githubusercontent.com/andrei0182/pariuri/main/tennis/stats/player_history_log.csv"
+MARKET_VALUE_URL = "https://raw.githubusercontent.com/andrei0182/pariuri/main/tennis/stats/market_value_log.csv"
+MIN_VALUE_PCT = 10.0
 FOOTBALL_URL = "https://raw.githubusercontent.com/andrei0182/pariuri/main/football/recommendations_log.csv"
 LOG_PATH = Path("data") / "clv_log.csv"
 COLUMNS = ["date", "strategy", "selection", "match", "start_utc", "pick_odds", "close_odds", "clv_pct",
@@ -56,14 +61,23 @@ def _get(url: str) -> str:
         return ""
 
 
+def _pick(r: dict) -> Pick:
+    return Pick(date=r["date"], player=r["recommended_player"], opponent=r["opponent"],
+                rec_odds=_float(r["rec_odds"]), comp_pct=None, games_line=None)
+
+
 def tennis_picks(text: str, dates: set[str]) -> list[Pick]:
-    out = []
-    for r in csv.DictReader(io.StringIO(text)):
-        if (r.get("date") in dates and r.get("verdict") == "toti de acord" and r.get("odds_pass") == "True"
-                and r.get("result") == "pending" and _float(r.get("rec_odds"))):
-            out.append(Pick(date=r["date"], player=r["recommended_player"], opponent=r["opponent"],
-                            rec_odds=_float(r["rec_odds"]), comp_pct=None, games_line=None))
-    return out
+    """„Toți de acord” la cota >= 1.50."""
+    return [_pick(r) for r in csv.DictReader(io.StringIO(text))
+            if r.get("date") in dates and r.get("verdict") == "toti de acord" and r.get("odds_pass") == "True"
+            and r.get("result") == "pending" and _float(r.get("rec_odds"))]
+
+
+def market_value_picks(text: str, dates: set[str]) -> list[Pick]:
+    """Superbet cu >= MIN_VALUE_PCT peste media pieței (value_pct e în procente)."""
+    return [_pick(r) for r in csv.DictReader(io.StringIO(text))
+            if r.get("date") in dates and r.get("result") == "pending" and _float(r.get("rec_odds"))
+            and (_float(r.get("value_pct")) or 0) >= MIN_VALUE_PCT]
 
 
 def football_picks(text: str, dates: set[str]) -> list[FootballPick]:
@@ -93,18 +107,19 @@ def _row(date, strategy, selection, match, start, pick_odds, close_odds, now, ev
             "recorded_at": now.strftime("%Y-%m-%d %H:%M"), "event_id": event_id}
 
 
-def collect(now: dt.datetime, tennis: list[Pick], football: list[FootballPick],
+def collect(now: dt.datetime, tennis: list[tuple[str, Pick]], football: list[FootballPick],
             tennis_offer: list, football_events: list[dict], markets=fetch_event_markets) -> list[dict]:
-    """Rândurile noi: pick-urile al căror meci începe în (now, now + WINDOW]."""
+    """Rândurile noi: pick-urile al căror meci începe în (now, now + WINDOW].
+    `tennis`: (strategie, pick) – pariu pe câștigător."""
     rows = []
-    for p in tennis:
+    for strategy, p in tennis:
         found = match_pick(p, tennis_offer)
         if not found:
             continue
         m, side = found
         start, odds = _start(m.start_time), (m.odds_home if side == "home" else m.odds_away)
         if start and odds and now < start <= now + WINDOW:
-            rows.append(_row(p.date, "toti de acord", p.player, f"{m.home} vs {m.away}", start,
+            rows.append(_row(p.date, strategy, p.player, f"{m.home} vs {m.away}", start,
                              p.rec_odds, odds, now, m.event_id))
     by_id = {e.get("event_id"): e for e in football_events}
     parsed = [parse_football_event(e) for e in football_events]
@@ -123,7 +138,7 @@ def collect(now: dt.datetime, tennis: list[Pick], football: list[FootballPick],
 
 
 def _key(row: dict) -> str:
-    sel = row["selection"] if row["strategy"] == "toti de acord" else row["match"]
+    sel = row["match"] if row["strategy"] == "peste 2.5" else row["selection"]
     return f"{row['strategy']}|{row['date']}|{sel}"
 
 
@@ -131,7 +146,8 @@ def update(now: dt.datetime, tennis_offer: list, path: Path = LOG_PATH) -> int:
     """Adaugă în log cotele de închidere noi; întoarce câte rânduri a scris."""
     today = now.date()
     dates = {today.isoformat(), (today - dt.timedelta(days=1)).isoformat()}
-    tennis = tennis_picks(_get(PLAYER_HISTORY_URL), dates)
+    tennis = ([("toti de acord", p) for p in tennis_picks(_get(PLAYER_HISTORY_URL), dates)]
+              + [("superbet vs piata", p) for p in market_value_picks(_get(MARKET_VALUE_URL), dates)])
     football = football_picks(_get(FOOTBALL_URL), dates)
     if not tennis and not football:
         return 0
