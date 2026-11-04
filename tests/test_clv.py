@@ -28,15 +28,26 @@ def test_collect_records_odds_near_start():
                   "inplay_stats": {}, "inplay_stats_metadata": {"status": "NOT_STARTED"}}]
     markets = lambda eid: [{"name": "Total goluri", "odds": [
         {"price": 1.55, "status": 1, "metadata": {"name": "Peste 2.5"}}]}]
-    rows = clv.collect(NOW, clv.tennis_picks(PH, dates), clv.football_picks(FB, dates), offer, fb_events, markets)
-    tennis, football = rows
-    assert (tennis["selection"], tennis["pick_odds"], tennis["close_odds"], tennis["clv_pct"]) == \
+    tennis = [("toti de acord", p) for p in clv.tennis_picks(PH, dates)]
+    rows = clv.collect(NOW, tennis, clv.football_picks(FB, dates), offer, fb_events, markets)
+    t_row, football = rows
+    assert (t_row["selection"], t_row["pick_odds"], t_row["close_odds"], t_row["clv_pct"]) == \
         ("Ana Pop", "2.10", "1.95", "+7.7")
     assert (football["strategy"], football["close_odds"], football["clv_pct"]) == ("peste 2.5", "1.55", "+6.5")
     # prea departe de start: nu se notează încă
-    assert clv.collect(NOW - dt.timedelta(hours=2), clv.tennis_picks(PH, dates), [], offer, [], markets) == []
+    assert clv.collect(NOW - dt.timedelta(hours=2), tennis, [], offer, [], markets) == []
 
 
 def test_summary():
     rows = [{"strategy": "peste 2.5", "clv_pct": "+6.0"}, {"strategy": "peste 2.5", "clv_pct": "-2.0"}]
     assert clv.summary(rows) == {"peste 2.5": (2, 2.0, 50.0)}
+
+
+MV = ("date,tournament,tour,player1,player2,recommended_player,opponent,rec_odds,market_odds,value_pct,te_match_id,"
+      "result,score,checked_at,set_scores,rec_games,games_result\n"
+      "2026-11-05,,itf-f,A,B,Ana Pop,Maria Ionescu,2.20,1.95,12.8,1,pending,,,,,\n"
+      "2026-11-05,,itf-f,A,B,Ioana Lup,Elena Rus,1.80,1.70,5.9,2,pending,,,,,\n")
+
+
+def test_market_value_needs_ten_percent():
+    assert [p.player for p in clv.market_value_picks(MV, {"2026-11-05"})] == ["Ana Pop"]
