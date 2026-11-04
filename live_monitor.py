@@ -36,6 +36,7 @@ from livemon.football import (FIRST_HALF_MARKET, MATCH_TOTAL_MARKET, FootballPic
 from livemon.picks import Pick, fetch_pending_picks, match_pick
 from livemon.posts import (Finished, evening_post, football_pick_result, morning_post, prune_alerts, record_alert,
                            resolve_alert, tennis_pick_result)
+from livemon import clv
 from livemon import ticket as tk
 from livemon.rules import (Decision, Outcome, RuleConfig, evaluate, evaluate_games, format_alert,
                            format_games_alert)
@@ -283,6 +284,10 @@ def run(args: argparse.Namespace) -> None:
     if args.posts:
         maybe_post(state, args, now)
         save_state(state_path, state, today_ro)
+    try:  # cota de închidere a strategiilor urmărite pe hârtie (data/clv_log.csv)
+        clv.update(now, fetch_prematch_matches(now.date()))
+    except Exception:  # noqa: BLE001 - CLV-ul e doar statistică, nu oprește alertele
+        logger.exception("CLV: actualizarea a eșuat")
 
     # alertele live de tenis sunt oprite implicit (TENNIS_ALERTS=on le repornește)
     tennis_picks = ([p for p in fetch_pending_picks(today_ro) if pending_rules(p, state)]
