@@ -38,6 +38,7 @@ from livemon.posts import (Finished, evening_post, football_pick_result, morning
                            resolve_alert, tennis_pick_result)
 from livemon import clv
 from livemon import ticket as tk
+from livemon import trends
 from livemon.rules import (Decision, Outcome, RuleConfig, evaluate, evaluate_games, format_alert,
                            format_games_alert)
 from livemon.superbet import (LiveMatch, fetch_event_markets, fetch_live_matches, fetch_prematch_matches,
@@ -217,6 +218,20 @@ def morning_ticket(state: dict, today: dt.date, yesterday: str, picks: list[Pick
     return "\n\n".join(parts)
 
 
+def post_trends(posted: dict, key: str, hhmm: str, now: dt.datetime, finished: Finished) -> None:
+    """Tendințele de >= 90%: rezultatele de ieri și meciurile de azi (data/trends_log.csv)."""
+    try:
+        offer = fetch_live_matches(now.date()) + fetch_prematch_matches(now.date())
+        messages = trends.morning(now, offer, finished.tennis)
+    except Exception:  # noqa: BLE001 - tendințele nu opresc alertele
+        logger.exception("Tendințe: pregătirea a eșuat")
+        posted[key] = hhmm  # nu reîncercăm la fiecare rulare
+        return
+    if all([telegram.send(m) for m in messages]):
+        logger.info("Tendințele trimise (%d mesaje).", len(messages))
+    posted[key] = hhmm  # jurnalul e deja salvat; nu retrimitem
+
+
 def maybe_post(state: dict, args: argparse.Namespace, now: dt.datetime) -> None:
     """Programul de dimineață și bilanțul de seară, fiecare o singură dată pe zi,
     la prima rulare de după ora configurată."""
@@ -224,10 +239,11 @@ def maybe_post(state: dict, args: argparse.Namespace, now: dt.datetime) -> None:
     today = now_ro.date()
     hhmm = now_ro.strftime("%H:%M")
     posted = state["posted"]
-    key_m, key_e = f"{today}|morning", f"{today}|evening"
+    key_m, key_e, key_t = f"{today}|morning", f"{today}|evening", f"{today}|trends"
     need_m = hhmm >= args.post_morning and key_m not in posted
     need_e = hhmm >= args.post_evening and key_e not in posted
-    if not (need_m or need_e):
+    need_t = hhmm >= args.post_morning and key_t not in posted
+    if not (need_m or need_e or need_t):
         return
 
     finished = Finished.fetch(now.date())
@@ -249,6 +265,8 @@ def maybe_post(state: dict, args: argparse.Namespace, now: dt.datetime) -> None:
         if telegram.send(text):
             posted[key_m] = hhmm
             logger.info("Postarea de dimineață trimisă.")
+    if need_t:
+        post_trends(posted, key_t, hhmm, now, finished)
 
     if need_e:
         alerts = [a for a in state["alerts"] if a["date"] == today.isoformat()]
@@ -266,6 +284,10 @@ def maybe_post(state: dict, args: argparse.Namespace, now: dt.datetime) -> None:
         today_ticket = state["tickets"].get(today.isoformat())
         if today_ticket:
             tk.resolve(today_ticket, finished.tennis)
+        try:
+            trends.evening(finished.tennis)
+        except Exception:  # noqa: BLE001 - tendințele sunt doar statistică
+            logger.exception("Tendințe: rezultatele de seară au eșuat")
         text = evening_post(today, alerts, tennis_results, football_results, week,
                             tk.result_text(today_ticket, state["tickets"]))
         if telegram.send(text):

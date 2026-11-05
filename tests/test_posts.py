@@ -78,6 +78,8 @@ def test_maybe_post_once_per_day(monkeypatch):
     for name in ("fetch_pending_picks", "fetch_football_picks", "fetch_live_matches", "fetch_prematch_matches"):
         monkeypatch.setattr(lm, name, lambda *a, **k: [])
     monkeypatch.setattr(lm.tk.History, "fetch", classmethod(lambda cls, d: None))
+    monkeypatch.setattr(lm.trends, "morning", lambda *a: ["📈 tendințe"])
+    monkeypatch.setattr(lm.trends, "evening", lambda *a: None)
     args = argparse.Namespace(post_morning="09:00", post_evening="23:30", min_model_pct=55, fh_minute=20)
     state = {"done": {}, "prematch_lines": {}, "alerts": [], "posted": {}, "tickets": {}}
 
@@ -87,11 +89,11 @@ def test_maybe_post_once_per_day(monkeypatch):
     morning = dt.datetime(2026, 10, 18, 6, 7, tzinfo=dt.timezone.utc)  # 09:07 RO
     lm.maybe_post(state, args, morning)
     lm.maybe_post(state, args, morning + dt.timedelta(minutes=20))
-    assert len(sent) == 1 and sent[0].startswith("📅")
+    assert len(sent) == 2 and sent[0].startswith("📅") and sent[1] == "📈 tendințe"
     assert "azi nu e bilet" in sent[0] and state["tickets"]["2026-10-18"]["legs"] == []
     night = dt.datetime(2026, 10, 18, 20, 47, tzinfo=dt.timezone.utc)  # 23:47 RO, duminică
     lm.maybe_post(state, args, night)
-    assert len(sent) == 2 and sent[1].startswith("📊") and "Săptămâna aceasta" in sent[1]
+    assert len(sent) == 3 and sent[2].startswith("📊") and "Săptămâna aceasta" in sent[2]
 
 
 def test_morning_post_without_tennis_alerts():

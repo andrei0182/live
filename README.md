@@ -79,6 +79,16 @@ bilanțul tuturor biletelor (câștigate/pierdute, unități la miză 1); un bil
 terminat după miezul nopții primește rezultatul în postarea de dimineață.
 Biletele se țin în `state["tickets"]`.
 
+**Tendințele de ≥ 90%** (mesaj separat după programul de dimineață, `livemon/trends.py`):
+meciurile zilei pentru 10 reguli găsite pe istoric și verificate pe perioade
+separate (tenis T1–T5 din cotele Superbet și istoricul jucătorilor; fotbal F1–F5
+din istoricul BetExplorer, fără amicale și cupe), câte 6 pe regulă în mesaj, toate
+urmărite. A doua zi dimineață vin rezultatele zilei de ieri și totalul de la
+început. Selecțiile și rezultatele sunt în `data/trends_log.csv`, iar istoricul de
+fotbal (rezultate cu scor la pauză, ~400 de zile) în `data/football_history.csv`;
+workflow-ul le comite, ca să nu se piardă. E urmărire pe hârtie: la 90–96% cotele
+sunt ~1,02–1,10.
+
 Rezultatul unei alerte: 🎾 set 1 = favoritul a câștigat meciul; 📉 game-uri =
 favoritul a făcut mai multe game-uri decât linia live din alertă; ⚽ = s-a marcat
 în prima repriză. Rezultatele vin din indexul `live` al Superbet, care păstrează
