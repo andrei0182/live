@@ -31,7 +31,7 @@ concurrency:
   cancel-in-progress: false
 
 permissions:
-  contents: write  # comite data/clv_log.csv (cotele de închidere)
+  contents: write  # comite data/ (cotele de închidere, tendințele de >= 90%, istoricul de fotbal)
 
 jobs:
   monitor:
@@ -94,14 +94,14 @@ jobs:
           path: state
           key: live-state-${{ github.run_id }}
 
-      - name: Commit closing odds log
-        if: always() && env.TELEGRAM_BOT_TOKEN != '' && env.TELEGRAM_CHAT_ID != '' && !inputs.test_telegram && hashFiles('data/clv_log.csv') != ''
+      - name: Commit data logs
+        if: always() && env.TELEGRAM_BOT_TOKEN != '' && env.TELEGRAM_CHAT_ID != '' && !inputs.test_telegram
         run: |
-          git add data/clv_log.csv
+          git add data/
           if git diff --cached --quiet; then exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Update closing odds log ($(TZ=Europe/Bucharest date +%F))"
+          git commit -m "Update data logs ($(TZ=Europe/Bucharest date +%F))"
           for i in 1 2 3; do
             git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && exit 0
             sleep 5
