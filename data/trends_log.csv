@@ -132,7 +132,7 @@ date,rule,ref,start_utc,home,away,info,result,score
 2026-11-05,T4,15791041,2026-11-05 08:08,Veljko Krstic,D.Nicolae Madaras,fav=away;p=0.761;Veljko Krstic ≥5 game-uri (media 9.8 când pierde);3.75/1.18,won,3-6 3-6
 2026-11-05,T2,15791043,2026-11-05 08:04,Stefan Adrian Andreescu,Nicolo Toffanin,"fav=home;p=0.881;Stefan Adrian Andreescu −1,5 game-uri;1.01/7.50",won,7-6 6-4
 2026-11-05,T3,15791043,2026-11-05 08:04,Stefan Adrian Andreescu,Nicolo Toffanin,fav=home;p=0.881;Stefan Adrian Andreescu câștigă;1.01/7.50,won,7-6 6-4
-2026-11-05,T1,15791046,2026-11-05 10:00,Samuele Pieri,Marcel Zielinski,fav=home;p=0.680;Marcel Zielinski ≥4 game-uri;1.33/2.82,,
+2026-11-05,T1,15791046,2026-11-05 10:00,Samuele Pieri,Marcel Zielinski,fav=home;p=0.680;Marcel Zielinski ≥4 game-uri;1.33/2.82,won,6-4 7-6
 2026-11-05,T1,15791048,2026-11-05 08:08,Selina Atay,Theresa Stabauer,fav=away;p=0.501;Selina Atay ≥4 game-uri;1.83/1.82,won,0-6 6-3 6-4
 2026-11-05,T1,15791051,2026-11-05 08:08,Anais Gabriel,Ayse Bal,fav=away;p=0.601;Anais Gabriel ≥4 game-uri;2.27/1.51,won,6-3 6-3
 2026-11-05,T1,15791054,2026-11-05 08:08,Ada Kumru,Anastasia Lepskaya,fav=home;p=0.663;Anastasia Lepskaya ≥4 game-uri;1.36/2.67,won,7-6 6-3
@@ -155,12 +155,12 @@ date,rule,ref,start_utc,home,away,info,result,score
 2026-11-05,T1,15791641,2026-11-05 09:00,Lorenzo Rottoli,Maxence Bertimon,fav=home;p=0.640;Maxence Bertimon ≥4 game-uri;1.42/2.52,won,4-6 5-7
 2026-11-05,T4,15791641,2026-11-05 09:00,Lorenzo Rottoli,Maxence Bertimon,fav=home;p=0.640;Maxence Bertimon ≥5 game-uri (media 9.1 când pierde);1.42/2.52,won,4-6 5-7
 2026-11-05,T1,15791643,2026-11-05 10:00,Daniele Rapagnetta,Michele Mecarelli,fav=home;p=0.625;Michele Mecarelli ≥4 game-uri;1.45/2.42,void,4-6 0-2
-2026-11-05,T2,15791790,2026-11-05 10:00,Svyatoslav Gulin,Enrique Carrascosa Diaz,"fav=home;p=0.870;Svyatoslav Gulin −1,5 game-uri;1.03/6.90",,
-2026-11-05,T3,15791790,2026-11-05 10:00,Svyatoslav Gulin,Enrique Carrascosa Diaz,fav=home;p=0.870;Svyatoslav Gulin câștigă;1.03/6.90,,
+2026-11-05,T2,15791790,2026-11-05 10:00,Svyatoslav Gulin,Enrique Carrascosa Diaz,"fav=home;p=0.870;Svyatoslav Gulin −1,5 game-uri;1.03/6.90",won,6-1 6-3
+2026-11-05,T3,15791790,2026-11-05 10:00,Svyatoslav Gulin,Enrique Carrascosa Diaz,fav=home;p=0.870;Svyatoslav Gulin câștigă;1.03/6.90,won,6-1 6-3
 2026-11-05,T1,15791791,2026-11-05 09:00,Luka Talan Lopatic,Miguel Damas,fav=away;p=0.699;Luka Talan Lopatic ≥4 game-uri;3.00/1.29,won,3-6 7-6 6-4
 2026-11-05,T1,15791792,2026-11-05 09:00,Yshai Oliel,Ignacio Parisca,fav=away;p=0.649;Yshai Oliel ≥4 game-uri;2.57/1.39,won,5-7 4-6
-2026-11-05,T3,15791793,2026-11-05 10:00,Leonid Sheyngezikht,Sergi Perez Contri,fav=away;p=0.802;Sergi Perez Contri câștigă;4.55/1.12,,
-2026-11-05,T1,15791794,2026-11-05 10:00,Julio Cesar Porras,Ivan Gakhov,fav=away;p=0.649;Julio Cesar Porras ≥4 game-uri;2.57/1.39,,
+2026-11-05,T3,15791793,2026-11-05 10:00,Leonid Sheyngezikht,Sergi Perez Contri,fav=away;p=0.802;Sergi Perez Contri câștigă;4.55/1.12,won,1-6 1-6
+2026-11-05,T1,15791794,2026-11-05 10:00,Julio Cesar Porras,Ivan Gakhov,fav=away;p=0.649;Julio Cesar Porras ≥4 game-uri;2.57/1.39,won,3-6 4-6
 2026-11-05,T1,15791833,2026-11-05 12:00,Matylda Burylo,Romane Longueville,fav=away;p=0.641;Matylda Burylo ≥4 game-uri;2.52/1.41,won,6-4 6-0
 2026-11-05,T3,15791834,2026-11-05 10:30,Katarina Kuzmova,Melinda Biro,fav=home;p=0.828;Katarina Kuzmova câștigă;1.08/5.20,void,1-2
 2026-11-05,T1,15791835,2026-11-05 10:30,Sofia Barhacova,Greta Fenyves,fav=home;p=0.680;Greta Fenyves ≥4 game-uri;1.33/2.82,won,6-2 6-2
@@ -297,154 +297,154 @@ date,rule,ref,start_utc,home,away,info,result,score
 2026-11-05,F4,vqA4fZ7t,2026-11-05 13:00,Mutondo Stars,Mufulira,Zambia: Super League;sub 4.5 (liga 93% sub 4.5),won,1-1 (pauză 0-1)
 2026-11-05,F4,hCDcdR2m,2026-11-05 13:00,NAPSA Stars,Power Dynamos,Zambia: Super League;sub 4.5 (liga 93% sub 4.5),won,0-1 (pauză 0-1)
 2026-11-05,F4,WrUWcvvh,2026-11-05 13:00,Nchanga Rangers,Makeni All Stars,Zambia: Super League;sub 4.5 (liga 93% sub 4.5),won,3-1 (pauză 1-0)
-2026-11-06,T3,15710419,2026-11-06 09:10,Silvia Njiric,Adela Polakovicova,fav=home;p=0.821;Silvia Njiric câștigă;1.09/5.00,,
-2026-11-06,T3,15710424,2026-11-06 10:30,Denise Hrdinkova,Vanesa Sulcova,fav=home;p=0.843;Denise Hrdinkova câștigă;1.06/5.70,,
-2026-11-06,T3,15710500,2026-11-06 09:10,Simona Wirglerova,Vanda Vargova,fav=away;p=0.831;Vanda Vargova câștigă;5.30/1.08,,
-2026-11-06,T3,15715093,2026-11-06 17:30,Chloe Zigliara,Jana Stojanova,fav=away;p=0.801;Jana Stojanova câștigă;4.50/1.12,,
-2026-11-06,T3,15715101,2026-11-06 19:00,Scarlett Nicholson,Ishika Ashar,fav=home;p=0.827;Scarlett Nicholson câștigă;1.08/5.15,,
+2026-11-06,T3,15710419,2026-11-06 09:10,Silvia Njiric,Adela Polakovicova,fav=home;p=0.821;Silvia Njiric câștigă;1.09/5.00,won,7-5 4-6 6-3
+2026-11-06,T3,15710424,2026-11-06 10:30,Denise Hrdinkova,Vanesa Sulcova,fav=home;p=0.843;Denise Hrdinkova câștigă;1.06/5.70,won,6-4 6-3
+2026-11-06,T3,15710500,2026-11-06 09:10,Simona Wirglerova,Vanda Vargova,fav=away;p=0.831;Vanda Vargova câștigă;5.30/1.08,won,6-2 0-6 3-6
+2026-11-06,T3,15715093,2026-11-06 17:30,Chloe Zigliara,Jana Stojanova,fav=away;p=0.801;Jana Stojanova câștigă;4.50/1.12,won,1-6 3-6
+2026-11-06,T3,15715101,2026-11-06 19:00,Scarlett Nicholson,Ishika Ashar,fav=home;p=0.827;Scarlett Nicholson câștigă;1.08/5.15,won,6-1 6-4
 2026-11-06,T1,15715985,2026-11-06 18:40,Mohammad Alkotop,Lukas Palovic,fav=away;p=0.533;Mohammad Alkotop ≥4 game-uri;1.95/1.71,,
 2026-11-06,T4,15715985,2026-11-06 18:40,Mohammad Alkotop,Lukas Palovic,fav=away;p=0.533;Mohammad Alkotop ≥5 game-uri (media 9.9 când pierde);1.95/1.71,,
-2026-11-06,T1,15715991,2026-11-06 18:40,Wesley Cotton,Gabriel Elicha Navas,fav=away;p=0.674;Wesley Cotton ≥4 game-uri;2.77/1.34,,
-2026-11-06,T2,15715992,2026-11-06 17:30,Leonard Tramolay,Mathis Bondaz,"fav=away;p=0.876;Mathis Bondaz −1,5 game-uri;7.20/1.02",,
-2026-11-06,T3,15715992,2026-11-06 17:30,Leonard Tramolay,Mathis Bondaz,fav=away;p=0.876;Mathis Bondaz câștigă;7.20/1.02,,
-2026-11-06,T4,15716005,2026-11-06 18:40,Kai-Luca Ampaw,Brendan Boland,fav=away;p=0.746;Kai-Luca Ampaw ≥5 game-uri (media 9.0 când pierde);3.55/1.21,,
+2026-11-06,T1,15715991,2026-11-06 18:40,Wesley Cotton,Gabriel Elicha Navas,fav=away;p=0.674;Wesley Cotton ≥4 game-uri;2.77/1.34,won,2-6 5-7
+2026-11-06,T2,15715992,2026-11-06 17:30,Leonard Tramolay,Mathis Bondaz,"fav=away;p=0.876;Mathis Bondaz −1,5 game-uri;7.20/1.02",won,5-7 2-6
+2026-11-06,T3,15715992,2026-11-06 17:30,Leonard Tramolay,Mathis Bondaz,fav=away;p=0.876;Mathis Bondaz câștigă;7.20/1.02,won,5-7 2-6
+2026-11-06,T4,15716005,2026-11-06 18:40,Kai-Luca Ampaw,Brendan Boland,fav=away;p=0.746;Kai-Luca Ampaw ≥5 game-uri (media 9.0 când pierde);3.55/1.21,won,4-6 5-7
 2026-11-06,T1,15716013,2026-11-06 18:40,Haylee Conway,Sofia Jane Thorne,fav=away;p=0.699;Haylee Conway ≥4 game-uri;3.00/1.29,,
-2026-11-06,T1,15716021,2026-11-06 16:00,Olga Bienzobas Fernandez,Alexandra Panagiotidou,fav=away;p=0.531;Olga Bienzobas Fernandez ≥4 game-uri;1.95/1.72,,
-2026-11-06,T1,15716048,2026-11-06 16:00,Jimena Gomez,Ela Plosnik,fav=home;p=0.625;Ela Plosnik ≥4 game-uri;1.45/2.42,,
-2026-11-06,T1,15716051,2026-11-06 17:30,Lauren Nolan,Anjali Kirana Junarto,fav=home;p=0.689;Anjali Kirana Junarto ≥4 game-uri;1.31/2.90,,
-2026-11-06,T1,15717244,2026-11-06 19:00,Rahul Sachdev,Henry Dornbusch,fav=away;p=0.630;Rahul Sachdev ≥4 game-uri;2.45/1.44,,
-2026-11-06,T1,15717271,2026-11-06 19:00,George Hakopian,Alexander Edmonston,fav=home;p=0.641;Alexander Edmonston ≥4 game-uri;1.41/2.52,,
+2026-11-06,T1,15716021,2026-11-06 16:00,Olga Bienzobas Fernandez,Alexandra Panagiotidou,fav=away;p=0.531;Olga Bienzobas Fernandez ≥4 game-uri;1.95/1.72,won,6-0 6-2
+2026-11-06,T1,15716048,2026-11-06 16:00,Jimena Gomez,Ela Plosnik,fav=home;p=0.625;Ela Plosnik ≥4 game-uri;1.45/2.42,won,5-7 6-3 6-3
+2026-11-06,T1,15716051,2026-11-06 17:30,Lauren Nolan,Anjali Kirana Junarto,fav=home;p=0.689;Anjali Kirana Junarto ≥4 game-uri;1.31/2.90,void,3-6 1-4
+2026-11-06,T1,15717244,2026-11-06 19:00,Rahul Sachdev,Henry Dornbusch,fav=away;p=0.630;Rahul Sachdev ≥4 game-uri;2.45/1.44,won,3-6 3-6
+2026-11-06,T1,15717271,2026-11-06 19:00,George Hakopian,Alexander Edmonston,fav=home;p=0.641;Alexander Edmonston ≥4 game-uri;1.41/2.52,won,6-4 6-4
 2026-11-06,T1,15728795,2026-11-06 17:30,Umit Ege Cankus,Brett Gloria,fav=home;p=0.537;Brett Gloria ≥4 game-uri;1.70/1.97,,
 2026-11-06,T3,15743528,2026-11-06 18:40,Eldar Greinert,Louis Hull,fav=away;p=0.821;Louis Hull câștigă;5.00/1.09,,
-2026-11-06,T1,15764824,2026-11-06 16:00,Katarina Pavlechova,Anastasija Adeikyte,fav=away;p=0.647;Katarina Pavlechova ≥4 game-uri;2.57/1.40,,
+2026-11-06,T1,15764824,2026-11-06 16:00,Katarina Pavlechova,Anastasija Adeikyte,fav=away;p=0.647;Katarina Pavlechova ≥4 game-uri;2.57/1.40,won,6-7 5-7
 2026-11-06,T2,15766523,2026-11-06 19:00,Alessandro-Damiano Ventre,Karl Kazuma Lee,"fav=away;p=0.892;Karl Kazuma Lee −1,5 game-uri;8.30/1.01",,
 2026-11-06,T3,15766523,2026-11-06 19:00,Alessandro-Damiano Ventre,Karl Kazuma Lee,fav=away;p=0.892;Karl Kazuma Lee câștigă;8.30/1.01,,
-2026-11-06,T2,15780994,2026-11-06 16:00,Andjelija Markovic,Natalie Oliver,"fav=away;p=0.881;Natalie Oliver −1,5 game-uri;7.50/1.01",,
-2026-11-06,T3,15780994,2026-11-06 16:00,Andjelija Markovic,Natalie Oliver,fav=away;p=0.881;Natalie Oliver câștigă;7.50/1.01,,
-2026-11-06,T1,15789153,2026-11-06 10:30,Aliaksandra Sasnovich,Maria Sakkari,fav=away;p=0.584;Aliaksandra Sasnovich ≥4 game-uri;2.25/1.60,,
-2026-11-06,T1,15789154,2026-11-06 10:30,Sofya Lansere,Martyna Kubka,fav=away;p=0.622;Sofya Lansere ≥4 game-uri;2.45/1.49,,
-2026-11-06,T2,15789896,2026-11-06 11:00,Matej Sabanov,Karol Filar,"fav=away;p=0.923;Karol Filar −1,5 game-uri;12.00/1.00",,
-2026-11-06,T3,15789896,2026-11-06 11:00,Matej Sabanov,Karol Filar,fav=away;p=0.923;Karol Filar câștigă;12.00/1.00,,
-2026-11-06,T5,15789896,2026-11-06 11:00,Matej Sabanov,Karol Filar,"fav=away;p=0.923;Karol Filar câștigă și sub 26,5;12.00/1.00",,
-2026-11-06,T1,15790492,2026-11-06 09:30,Janice Tjen,Polina Kudermetova,fav=home;p=0.640;Polina Kudermetova ≥4 game-uri;1.46/2.60,,
-2026-11-06,T3,15791793,2026-11-06 08:30,Leonid Sheyngezikht,Sergi Perez Contri,fav=away;p=0.812;Sergi Perez Contri câștigă;4.75/1.10,,
-2026-11-06,T3,15791884,2026-11-06 10:40,Robin Montgomery,Maaya Rajeshwaran Revathi,fav=home;p=0.807;Robin Montgomery câștigă;1.15/4.80,,
-2026-11-06,T1,15793074,2026-11-06 17:30,Stefan Kozlov,Braden Shick,fav=home;p=0.611;Braden Shick ≥4 game-uri;1.51/2.37,,
-2026-11-06,T1,15793761,2026-11-06 14:00,Oriol Roca Batalla,Nicolas Kicker,fav=home;p=0.622;Nicolas Kicker ≥4 game-uri;1.49/2.45,,
-2026-11-06,T1,15794103,2026-11-06 13:20,Nishesh Basavareddy,Jerome Kym,fav=away;p=0.523;Nishesh Basavareddy ≥4 game-uri;1.95/1.78,,
-2026-11-06,T1,15794993,2026-11-06 19:30,Gonzalo Bueno,Lautaro Midon,fav=away;p=0.641;Gonzalo Bueno ≥4 game-uri;2.57/1.44,,
-2026-11-06,T1,15796797,2026-11-06 18:00,Juan Carlos Prado Angelo,Camilo Ugo Carabelli,fav=away;p=0.609;Juan Carlos Prado Angelo ≥4 game-uri;2.37/1.52,,
-2026-11-06,T1,15796910,2026-11-06 15:10,Juan Manuel La Serna,Carlos Maria Zarate,fav=home;p=0.606;Carlos Maria Zarate ≥4 game-uri;1.53/2.35,,
-2026-11-06,T1,15802472,2026-11-06 11:00,Ksenia Zaytseva,Gina Feistel,fav=home;p=0.535;Gina Feistel ≥4 game-uri;1.74/2.00,,
+2026-11-06,T2,15780994,2026-11-06 16:00,Andjelija Markovic,Natalie Oliver,"fav=away;p=0.881;Natalie Oliver −1,5 game-uri;7.50/1.01",won,3-6 1-6
+2026-11-06,T3,15780994,2026-11-06 16:00,Andjelija Markovic,Natalie Oliver,fav=away;p=0.881;Natalie Oliver câștigă;7.50/1.01,won,3-6 1-6
+2026-11-06,T1,15789153,2026-11-06 10:30,Aliaksandra Sasnovich,Maria Sakkari,fav=away;p=0.584;Aliaksandra Sasnovich ≥4 game-uri;2.25/1.60,won,2-6 3-6
+2026-11-06,T1,15789154,2026-11-06 10:30,Sofya Lansere,Martyna Kubka,fav=away;p=0.622;Sofya Lansere ≥4 game-uri;2.45/1.49,won,7-6 7-5
+2026-11-06,T2,15789896,2026-11-06 11:00,Matej Sabanov,Karol Filar,"fav=away;p=0.923;Karol Filar −1,5 game-uri;12.00/1.00",won,3-6 2-6
+2026-11-06,T3,15789896,2026-11-06 11:00,Matej Sabanov,Karol Filar,fav=away;p=0.923;Karol Filar câștigă;12.00/1.00,won,3-6 2-6
+2026-11-06,T5,15789896,2026-11-06 11:00,Matej Sabanov,Karol Filar,"fav=away;p=0.923;Karol Filar câștigă și sub 26,5;12.00/1.00",won,3-6 2-6
+2026-11-06,T1,15790492,2026-11-06 09:30,Janice Tjen,Polina Kudermetova,fav=home;p=0.640;Polina Kudermetova ≥4 game-uri;1.46/2.60,won,5-7 6-4 6-2
+2026-11-06,T3,15791793,2026-11-06 08:30,Leonid Sheyngezikht,Sergi Perez Contri,fav=away;p=0.812;Sergi Perez Contri câștigă;4.75/1.10,won,1-6 1-6
+2026-11-06,T3,15791884,2026-11-06 10:40,Robin Montgomery,Maaya Rajeshwaran Revathi,fav=home;p=0.807;Robin Montgomery câștigă;1.15/4.80,won,6-3 6-3
+2026-11-06,T1,15793074,2026-11-06 17:30,Stefan Kozlov,Braden Shick,fav=home;p=0.611;Braden Shick ≥4 game-uri;1.51/2.37,won,6-4 6-1
+2026-11-06,T1,15793761,2026-11-06 14:00,Oriol Roca Batalla,Nicolas Kicker,fav=home;p=0.622;Nicolas Kicker ≥4 game-uri;1.49/2.45,won,3-6 1-6
+2026-11-06,T1,15794103,2026-11-06 13:20,Nishesh Basavareddy,Jerome Kym,fav=away;p=0.523;Nishesh Basavareddy ≥4 game-uri;1.95/1.78,won,4-6 4-6
+2026-11-06,T1,15794993,2026-11-06 19:30,Gonzalo Bueno,Lautaro Midon,fav=away;p=0.641;Gonzalo Bueno ≥4 game-uri;2.57/1.44,won,6-1 6-2
+2026-11-06,T1,15796797,2026-11-06 18:00,Juan Carlos Prado Angelo,Camilo Ugo Carabelli,fav=away;p=0.609;Juan Carlos Prado Angelo ≥4 game-uri;2.37/1.52,won,2-6 3-6
+2026-11-06,T1,15796910,2026-11-06 15:10,Juan Manuel La Serna,Carlos Maria Zarate,fav=home;p=0.606;Carlos Maria Zarate ≥4 game-uri;1.53/2.35,won,6-3 6-4
+2026-11-06,T1,15802472,2026-11-06 11:00,Ksenia Zaytseva,Gina Feistel,fav=home;p=0.535;Gina Feistel ≥4 game-uri;1.74/2.00,won,1-6 5-7
 2026-11-06,T2,15802716,2026-11-06 15:30,Anna Blinkova,Yasmine Kabbaj,"fav=home;p=0.855;Anna Blinkova −1,5 game-uri;1.07/6.30",,
 2026-11-06,T3,15802716,2026-11-06 15:30,Anna Blinkova,Yasmine Kabbaj,fav=home;p=0.855;Anna Blinkova câștigă;1.07/6.30,,
-2026-11-06,T1,15803079,2026-11-06 10:40,Felix Gill,Jay Clarke,fav=away;p=0.503;Felix Gill ≥4 game-uri;1.87/1.85,,
-2026-11-06,T4,15803079,2026-11-06 10:40,Felix Gill,Jay Clarke,fav=away;p=0.503;Felix Gill ≥5 game-uri (media 9.3 când pierde);1.87/1.85,,
-2026-11-06,T1,15803952,2026-11-06 08:30,Duje Ajdukovic,Cesar Bouchelaghem,fav=home;p=0.659;Cesar Bouchelaghem ≥4 game-uri;1.37/2.65,,
-2026-11-06,T3,15804056,2026-11-06 07:20,Chak Lam Coleman Wong,Kasidit Samrej,fav=home;p=0.813;Chak Lam Coleman Wong câștigă;1.13/4.90,,
-2026-11-06,T1,15804086,2026-11-06 09:50,Maxim Khorozov,Rafael KIS Balazs,fav=away;p=0.587;Maxim Khorozov ≥4 game-uri;2.20/1.55,,
-2026-11-06,T1,15804170,2026-11-06 11:50,Mai Hontama,Magda Linette,fav=away;p=0.681;Mai Hontama ≥4 game-uri;2.92/1.37,,
-2026-11-06,T1,15804240,2026-11-06 08:00,Andrej Nedic,Ioannis Xilas,fav=home;p=0.556;Ioannis Xilas ≥4 game-uri;1.64/2.05,,
-2026-11-06,T4,15804240,2026-11-06 08:00,Andrej Nedic,Ioannis Xilas,fav=home;p=0.556;Ioannis Xilas ≥5 game-uri (media 9.3 când pierde);1.64/2.05,,
-2026-11-06,T2,15804550,2026-11-06 08:40,Niels Lootsma,Lautaro A.Corthey,"fav=home;p=0.923;Niels Lootsma −1,5 game-uri;1.00/12.00",,
-2026-11-06,T3,15804550,2026-11-06 08:40,Niels Lootsma,Lautaro A.Corthey,fav=home;p=0.923;Niels Lootsma câștigă;1.00/12.00,,
-2026-11-06,T5,15804550,2026-11-06 08:40,Niels Lootsma,Lautaro A.Corthey,"fav=home;p=0.923;Niels Lootsma câștigă și sub 26,5;1.00/12.00",,
-2026-11-06,T1,15804560,2026-11-06 07:30,Bartosz Wojnar,Ivan Sabanov,fav=away;p=0.633;Bartosz Wojnar ≥4 game-uri;2.47/1.43,,
-2026-11-06,T4,15804560,2026-11-06 07:30,Bartosz Wojnar,Ivan Sabanov,fav=away;p=0.633;Bartosz Wojnar ≥5 game-uri (media 9.6 când pierde);2.47/1.43,,
-2026-11-06,T1,15804561,2026-11-06 07:08,Stefan Adrian Andreescu,Andrey Chepelev,fav=away;p=0.605;Stefan Adrian Andreescu ≥4 game-uri;2.30/1.50,,
-2026-11-06,T2,15804566,2026-11-06 07:08,Selina Atay,Valeriia Iushchenko,"fav=away;p=0.887;Valeriia Iushchenko −1,5 game-uri;7.90/1.01",,
-2026-11-06,T3,15804566,2026-11-06 07:08,Selina Atay,Valeriia Iushchenko,fav=away;p=0.887;Valeriia Iushchenko câștigă;7.90/1.01,,
-2026-11-06,T1,15804567,2026-11-06 08:08,Ksenia Laskutova,Anais Gabriel,fav=home;p=0.617;Anais Gabriel ≥4 game-uri;1.47/2.37,,
-2026-11-06,T1,15804597,2026-11-06 09:30,Maxim Mrva,Matteo Martineau,fav=home;p=0.559;Matteo Martineau ≥4 game-uri;1.66/2.10,,
-2026-11-06,T4,15804597,2026-11-06 09:30,Maxim Mrva,Matteo Martineau,fav=home;p=0.559;Matteo Martineau ≥5 game-uri (media 11.6 când pierde);1.66/2.10,,
-2026-11-06,T1,15804729,2026-11-06 13:00,Ben Shelton,Tommy Paul,fav=away;p=0.554;Ben Shelton ≥4 game-uri;2.10/1.69,,
-2026-11-06,T4,15804729,2026-11-06 13:00,Ben Shelton,Tommy Paul,fav=away;p=0.554;Ben Shelton ≥5 game-uri (media 13.9 când pierde);2.10/1.69,,
-2026-11-06,T1,15804767,2026-11-06 11:50,Kilian Feldbausch,Sumit Nagal,fav=home;p=0.574;Sumit Nagal ≥4 game-uri;1.61/2.17,,
-2026-11-06,T1,15804798,2026-11-06 08:08,Ada Kumru,Jana Bojovic,fav=away;p=0.501;Ada Kumru ≥4 game-uri;1.83/1.82,,
-2026-11-06,T1,15804865,2026-11-06 08:00,John Bothma,Aleksandre Bakshi,fav=away;p=0.661;John Bothma ≥4 game-uri;2.67/1.37,,
-2026-11-06,T1,15804866,2026-11-06 08:00,Hollie Smart,Irem Kurt,fav=away;p=0.507;Hollie Smart ≥4 game-uri;1.85/1.80,,
-2026-11-06,T1,15804867,2026-11-06 08:00,Nicolas Ifi,Louis van Herck,fav=home;p=0.573;Louis van Herck ≥4 game-uri;1.58/2.12,,
-2026-11-06,T4,15804867,2026-11-06 08:00,Nicolas Ifi,Louis van Herck,fav=home;p=0.573;Louis van Herck ≥5 game-uri (media 9.0 când pierde);1.58/2.12,,
-2026-11-06,T1,15804869,2026-11-06 12:10,Matej Dodig,Laslo Djere,fav=home;p=0.536;Laslo Djere ≥4 game-uri;1.73/2.00,,
-2026-11-06,T4,15804869,2026-11-06 12:10,Matej Dodig,Laslo Djere,fav=home;p=0.536;Laslo Djere ≥5 game-uri (media 10.1 când pierde);1.73/2.00,,
-2026-11-06,T1,15805109,2026-11-06 13:00,Anastasia Zakharova,Lucrezia Stefanini,fav=away;p=0.501;Anastasia Zakharova ≥4 game-uri;1.88/1.87,,
-2026-11-06,T1,15805558,2026-11-06 08:30,Wissam Abderrahman,Toufik Sahtali,fav=away;p=0.578;Wissam Abderrahman ≥4 game-uri;2.15/1.57,,
-2026-11-06,T2,15805559,2026-11-06 09:30,Mohamed Nazim Makhlouf,Aziz Dougaz,"fav=away;p=0.883;Aziz Dougaz −1,5 game-uri;7.60/1.01",,
-2026-11-06,T3,15805559,2026-11-06 09:30,Mohamed Nazim Makhlouf,Aziz Dougaz,fav=away;p=0.883;Aziz Dougaz câștigă;7.60/1.01,,
-2026-11-06,T1,15805560,2026-11-06 09:30,Alejandro Moro Canas,John Echeverria,fav=home;p=0.694;John Echeverria ≥4 game-uri;1.30/2.95,,
-2026-11-06,T1,15805562,2026-11-06 08:30,Oceane Babel,Marta Soriano Santiago,fav=home;p=0.538;Marta Soriano Santiago ≥4 game-uri;1.69/1.97,,
-2026-11-06,T1,15805563,2026-11-06 08:30,Mia Horvit,Astrid Cirotte,fav=home;p=0.556;Astrid Cirotte ≥4 game-uri;1.64/2.05,,
-2026-11-06,T3,15805564,2026-11-06 08:30,Anastasia Lizunova,Sophie Ehrenbergerova,fav=home;p=0.814;Anastasia Lizunova câștigă;1.10/4.80,,
-2026-11-06,T3,15805698,2026-11-06 09:30,Alexandre Aubriot,Robin Bertrand,fav=away;p=0.825;Robin Bertrand câștigă;5.15/1.09,,
-2026-11-06,T4,15805698,2026-11-06 09:30,Alexandre Aubriot,Robin Bertrand,fav=away;p=0.825;Alexandre Aubriot ≥5 game-uri (media 9.3 când pierde);5.15/1.09,,
-2026-11-06,T1,15805756,2026-11-06 09:00,Luca Kalman,Ann Akasha Ceuca,fav=away;p=0.601;Luca Kalman ≥4 game-uri;2.27/1.51,,
-2026-11-06,T1,15805809,2026-11-06 08:00,Gilles Arnaud Bailly,Miles Jones,fav=home;p=0.633;Miles Jones ≥4 game-uri;1.43/2.47,,
-2026-11-06,T1,15805811,2026-11-06 10:00,Lenka Munzarova,Julia Stusek,fav=away;p=0.694;Lenka Munzarova ≥4 game-uri;2.95/1.30,,
-2026-11-06,T1,15806258,2026-11-06 10:30,Alexandra Biot,Emese Serkedi,fav=away;p=0.580;Alexandra Biot ≥4 game-uri;2.17/1.57,,
-2026-11-06,T1,15806259,2026-11-06 09:00,Sofia Barhacova,Kitti Molnar,fav=home;p=0.527;Kitti Molnar ≥4 game-uri;1.72/1.92,,
-2026-11-06,T1,15806260,2026-11-06 09:00,Melinda Biro,Matylda Burylo,fav=home;p=0.627;Matylda Burylo ≥4 game-uri;1.44/2.42,,
-2026-11-06,T1,15806337,2026-11-06 10:00,Tessa Johanna Brockmann,Lola Radivojevic,fav=away;p=0.545;Tessa Johanna Brockmann ≥4 game-uri;2.00/1.67,,
-2026-11-06,T1,15806447,2026-11-06 08:00,Artur Kukasian,Omar Kandil,fav=home;p=0.678;Omar Kandil ≥4 game-uri;1.33/2.80,,
-2026-11-06,T4,15806447,2026-11-06 08:00,Artur Kukasian,Omar Kandil,fav=home;p=0.678;Omar Kandil ≥5 game-uri (media 9.5 când pierde);1.33/2.80,,
-2026-11-06,T1,15806520,2026-11-06 10:00,Weronika Ewald,Denisa Zoldakova,fav=away;p=0.652;Weronika Ewald ≥4 game-uri;2.60/1.39,,
-2026-11-06,T2,15806521,2026-11-06 11:00,Oriana Gniewkowska,Lea Boskovic,"fav=away;p=0.860;Lea Boskovic −1,5 game-uri;6.40/1.04",,
-2026-11-06,T3,15806521,2026-11-06 11:00,Oriana Gniewkowska,Lea Boskovic,fav=away;p=0.860;Lea Boskovic câștigă;6.40/1.04,,
-2026-11-06,T1,15806908,2026-11-06 08:00,Anna Snigireva,Hania Abouelsaad,fav=home;p=0.582;Hania Abouelsaad ≥4 game-uri;1.56/2.17,,
-2026-11-06,T1,15806931,2026-11-06 09:00,Andrea de Marchi,Gabriele Crivellaro,fav=home;p=0.633;Gabriele Crivellaro ≥4 game-uri;1.43/2.47,,
-2026-11-06,T1,15806932,2026-11-06 10:00,John Sperle,Stepan Baum,fav=home;p=0.590;Stepan Baum ≥4 game-uri;1.54/2.22,,
-2026-11-06,T1,15806934,2026-11-06 10:00,Gianmarco Ferrari,Maxence Bertimon,fav=home;p=0.658;Maxence Bertimon ≥4 game-uri;1.38/2.65,,
-2026-11-06,T4,15806934,2026-11-06 10:00,Gianmarco Ferrari,Maxence Bertimon,fav=home;p=0.658;Maxence Bertimon ≥5 game-uri (media 9.1 când pierde);1.38/2.65,,
-2026-11-06,T1,15807119,2026-11-06 14:10,Luca Van Assche,Rinky Hijikata,fav=home;p=0.605;Rinky Hijikata ≥4 game-uri;1.55/2.37,,
-2026-11-06,T1,15807577,2026-11-06 11:00,Valentina Ryser,Elena Milovanovic,fav=home;p=0.622;Elena Milovanovic ≥4 game-uri;1.46/2.40,,
-2026-11-06,T1,15807728,2026-11-06 08:00,Jennifer Ruggeri,Nuria Brancaccio,fav=away;p=0.538;Jennifer Ruggeri ≥4 game-uri;1.97/1.69,,
-2026-11-06,T1,15807729,2026-11-06 08:00,Lucie Nguyen Tan,Martha Matoula,fav=away;p=0.652;Lucie Nguyen Tan ≥4 game-uri;2.60/1.39,,
-2026-11-06,T1,15807784,2026-11-06 13:00,Francesco Maestrelli,Carlo Alberto Caniato,fav=home;p=0.562;Carlo Alberto Caniato ≥4 game-uri;1.65/2.12,,
-2026-11-06,T1,15807898,2026-11-06 16:00,Dalibor Svrcina,Zsombor Piros,fav=home;p=0.536;Zsombor Piros ≥4 game-uri;1.73/2.00,,
-2026-11-06,T3,15808143,2026-11-06 15:00,Juliana Singeorzan,Aya EL Aouni,fav=away;p=0.842;Aya EL Aouni câștigă;5.65/1.06,,
-2026-11-06,T1,15808144,2026-11-06 09:30,Raluca Georgiana Serban,Caijsa Wilda Hennemann,fav=away;p=0.617;Raluca Georgiana Serban ≥4 game-uri;2.37/1.47,,
-2026-11-06,T3,15808145,2026-11-06 08:00,Angela Fita Boluda,Alisa Oktiabreva,fav=away;p=0.806;Alisa Oktiabreva câștigă;4.60/1.11,,
-2026-11-06,T1,15808146,2026-11-06 15:00,Jantje Tilbuerger,Scarlett Fagan,fav=away;p=0.516;Jantje Tilbuerger ≥4 game-uri;1.88/1.76,,
-2026-11-06,T1,15808188,2026-11-06 09:45,Alberto Barroso Campos,Luka Talan Lopatic,fav=away;p=0.587;Alberto Barroso Campos ≥4 game-uri;2.20/1.55,,
-2026-11-06,T4,15808188,2026-11-06 09:45,Alberto Barroso Campos,Luka Talan Lopatic,fav=away;p=0.587;Alberto Barroso Campos ≥5 game-uri (media 9.7 când pierde);2.20/1.55,,
-2026-11-06,T1,15808208,2026-11-06 16:20,Juan Bautista Torres,Genaro Alberto Olivieri,fav=away;p=0.507;Juan Bautista Torres ≥4 game-uri;1.88/1.83,,
-2026-11-06,T1,15808219,2026-11-06 09:45,Iliyan Radulov,Ignacio Parisca,fav=home;p=0.571;Ignacio Parisca ≥4 game-uri;1.59/2.12,,
+2026-11-06,T1,15803079,2026-11-06 10:40,Felix Gill,Jay Clarke,fav=away;p=0.503;Felix Gill ≥4 game-uri;1.87/1.85,won,6-4 4-6 6-2
+2026-11-06,T4,15803079,2026-11-06 10:40,Felix Gill,Jay Clarke,fav=away;p=0.503;Felix Gill ≥5 game-uri (media 9.3 când pierde);1.87/1.85,won,6-4 4-6 6-2
+2026-11-06,T1,15803952,2026-11-06 08:30,Duje Ajdukovic,Cesar Bouchelaghem,fav=home;p=0.659;Cesar Bouchelaghem ≥4 game-uri;1.37/2.65,won,6-4 3-6 6-1
+2026-11-06,T3,15804056,2026-11-06 07:20,Chak Lam Coleman Wong,Kasidit Samrej,fav=home;p=0.813;Chak Lam Coleman Wong câștigă;1.13/4.90,won,7-5 6-2
+2026-11-06,T1,15804086,2026-11-06 09:50,Maxim Khorozov,Rafael KIS Balazs,fav=away;p=0.587;Maxim Khorozov ≥4 game-uri;2.20/1.55,won,7-6 6-3
+2026-11-06,T1,15804170,2026-11-06 11:50,Mai Hontama,Magda Linette,fav=away;p=0.681;Mai Hontama ≥4 game-uri;2.92/1.37,won,6-4 5-7 4-6
+2026-11-06,T1,15804240,2026-11-06 08:00,Andrej Nedic,Ioannis Xilas,fav=home;p=0.556;Ioannis Xilas ≥4 game-uri;1.64/2.05,won,1-6 2-6
+2026-11-06,T4,15804240,2026-11-06 08:00,Andrej Nedic,Ioannis Xilas,fav=home;p=0.556;Ioannis Xilas ≥5 game-uri (media 9.3 când pierde);1.64/2.05,won,1-6 2-6
+2026-11-06,T2,15804550,2026-11-06 08:40,Niels Lootsma,Lautaro A.Corthey,"fav=home;p=0.923;Niels Lootsma −1,5 game-uri;1.00/12.00",won,6-2 6-3
+2026-11-06,T3,15804550,2026-11-06 08:40,Niels Lootsma,Lautaro A.Corthey,fav=home;p=0.923;Niels Lootsma câștigă;1.00/12.00,won,6-2 6-3
+2026-11-06,T5,15804550,2026-11-06 08:40,Niels Lootsma,Lautaro A.Corthey,"fav=home;p=0.923;Niels Lootsma câștigă și sub 26,5;1.00/12.00",won,6-2 6-3
+2026-11-06,T1,15804560,2026-11-06 07:30,Bartosz Wojnar,Ivan Sabanov,fav=away;p=0.633;Bartosz Wojnar ≥4 game-uri;2.47/1.43,void,7-5 6-7 0-3
+2026-11-06,T4,15804560,2026-11-06 07:30,Bartosz Wojnar,Ivan Sabanov,fav=away;p=0.633;Bartosz Wojnar ≥5 game-uri (media 9.6 când pierde);2.47/1.43,void,7-5 6-7 0-3
+2026-11-06,T1,15804561,2026-11-06 07:08,Stefan Adrian Andreescu,Andrey Chepelev,fav=away;p=0.605;Stefan Adrian Andreescu ≥4 game-uri;2.30/1.50,won,6-3 6-4
+2026-11-06,T2,15804566,2026-11-06 07:08,Selina Atay,Valeriia Iushchenko,"fav=away;p=0.887;Valeriia Iushchenko −1,5 game-uri;7.90/1.01",won,1-6 2-6
+2026-11-06,T3,15804566,2026-11-06 07:08,Selina Atay,Valeriia Iushchenko,fav=away;p=0.887;Valeriia Iushchenko câștigă;7.90/1.01,won,1-6 2-6
+2026-11-06,T1,15804567,2026-11-06 08:08,Ksenia Laskutova,Anais Gabriel,fav=home;p=0.617;Anais Gabriel ≥4 game-uri;1.47/2.37,won,0-6 3-6
+2026-11-06,T1,15804597,2026-11-06 09:30,Maxim Mrva,Matteo Martineau,fav=home;p=0.559;Matteo Martineau ≥4 game-uri;1.66/2.10,won,5-7 7-5 4-6
+2026-11-06,T4,15804597,2026-11-06 09:30,Maxim Mrva,Matteo Martineau,fav=home;p=0.559;Matteo Martineau ≥5 game-uri (media 11.6 când pierde);1.66/2.10,won,5-7 7-5 4-6
+2026-11-06,T1,15804729,2026-11-06 13:00,Ben Shelton,Tommy Paul,fav=away;p=0.554;Ben Shelton ≥4 game-uri;2.10/1.69,won,6-4 4-6 6-3
+2026-11-06,T4,15804729,2026-11-06 13:00,Ben Shelton,Tommy Paul,fav=away;p=0.554;Ben Shelton ≥5 game-uri (media 13.9 când pierde);2.10/1.69,won,6-4 4-6 6-3
+2026-11-06,T1,15804767,2026-11-06 11:50,Kilian Feldbausch,Sumit Nagal,fav=home;p=0.574;Sumit Nagal ≥4 game-uri;1.61/2.17,won,6-3 5-7 7-6
+2026-11-06,T1,15804798,2026-11-06 08:08,Ada Kumru,Jana Bojovic,fav=away;p=0.501;Ada Kumru ≥4 game-uri;1.83/1.82,won,2-6 7-5 3-6
+2026-11-06,T1,15804865,2026-11-06 08:00,John Bothma,Aleksandre Bakshi,fav=away;p=0.661;John Bothma ≥4 game-uri;2.67/1.37,won,5-7 5-7
+2026-11-06,T1,15804866,2026-11-06 08:00,Hollie Smart,Irem Kurt,fav=away;p=0.507;Hollie Smart ≥4 game-uri;1.85/1.80,won,1-6 7-5 6-4
+2026-11-06,T1,15804867,2026-11-06 08:00,Nicolas Ifi,Louis van Herck,fav=home;p=0.573;Louis van Herck ≥4 game-uri;1.58/2.12,won,7-6 6-1
+2026-11-06,T4,15804867,2026-11-06 08:00,Nicolas Ifi,Louis van Herck,fav=home;p=0.573;Louis van Herck ≥5 game-uri (media 9.0 când pierde);1.58/2.12,won,7-6 6-1
+2026-11-06,T1,15804869,2026-11-06 12:10,Matej Dodig,Laslo Djere,fav=home;p=0.536;Laslo Djere ≥4 game-uri;1.73/2.00,won,6-4 6-4
+2026-11-06,T4,15804869,2026-11-06 12:10,Matej Dodig,Laslo Djere,fav=home;p=0.536;Laslo Djere ≥5 game-uri (media 10.1 când pierde);1.73/2.00,won,6-4 6-4
+2026-11-06,T1,15805109,2026-11-06 13:00,Anastasia Zakharova,Lucrezia Stefanini,fav=away;p=0.501;Anastasia Zakharova ≥4 game-uri;1.88/1.87,void,6-2 5-2
+2026-11-06,T1,15805558,2026-11-06 08:30,Wissam Abderrahman,Toufik Sahtali,fav=away;p=0.578;Wissam Abderrahman ≥4 game-uri;2.15/1.57,won,6-0 6-4
+2026-11-06,T2,15805559,2026-11-06 09:30,Mohamed Nazim Makhlouf,Aziz Dougaz,"fav=away;p=0.883;Aziz Dougaz −1,5 game-uri;7.60/1.01",won,2-6 6-4 1-6
+2026-11-06,T3,15805559,2026-11-06 09:30,Mohamed Nazim Makhlouf,Aziz Dougaz,fav=away;p=0.883;Aziz Dougaz câștigă;7.60/1.01,won,2-6 6-4 1-6
+2026-11-06,T1,15805560,2026-11-06 09:30,Alejandro Moro Canas,John Echeverria,fav=home;p=0.694;John Echeverria ≥4 game-uri;1.30/2.95,won,4-6 6-3 6-4
+2026-11-06,T1,15805562,2026-11-06 08:30,Oceane Babel,Marta Soriano Santiago,fav=home;p=0.538;Marta Soriano Santiago ≥4 game-uri;1.69/1.97,won,6-2 6-2
+2026-11-06,T1,15805563,2026-11-06 08:30,Mia Horvit,Astrid Cirotte,fav=home;p=0.556;Astrid Cirotte ≥4 game-uri;1.64/2.05,won,6-3 6-7 6-7
+2026-11-06,T3,15805564,2026-11-06 08:30,Anastasia Lizunova,Sophie Ehrenbergerova,fav=home;p=0.814;Anastasia Lizunova câștigă;1.10/4.80,won,6-1 4-6 6-0
+2026-11-06,T3,15805698,2026-11-06 09:30,Alexandre Aubriot,Robin Bertrand,fav=away;p=0.825;Robin Bertrand câștigă;5.15/1.09,won,4-6 2-6
+2026-11-06,T4,15805698,2026-11-06 09:30,Alexandre Aubriot,Robin Bertrand,fav=away;p=0.825;Alexandre Aubriot ≥5 game-uri (media 9.3 când pierde);5.15/1.09,won,4-6 2-6
+2026-11-06,T1,15805756,2026-11-06 09:00,Luca Kalman,Ann Akasha Ceuca,fav=away;p=0.601;Luca Kalman ≥4 game-uri;2.27/1.51,won,6-1 6-3
+2026-11-06,T1,15805809,2026-11-06 08:00,Gilles Arnaud Bailly,Miles Jones,fav=home;p=0.633;Miles Jones ≥4 game-uri;1.43/2.47,won,4-6 6-3 6-3
+2026-11-06,T1,15805811,2026-11-06 10:00,Lenka Munzarova,Julia Stusek,fav=away;p=0.694;Lenka Munzarova ≥4 game-uri;2.95/1.30,won,5-7 3-6
+2026-11-06,T1,15806258,2026-11-06 10:30,Alexandra Biot,Emese Serkedi,fav=away;p=0.580;Alexandra Biot ≥4 game-uri;2.17/1.57,won,2-6 5-7
+2026-11-06,T1,15806259,2026-11-06 09:00,Sofia Barhacova,Kitti Molnar,fav=home;p=0.527;Kitti Molnar ≥4 game-uri;1.72/1.92,won,6-2 6-2
+2026-11-06,T1,15806260,2026-11-06 09:00,Melinda Biro,Matylda Burylo,fav=home;p=0.627;Matylda Burylo ≥4 game-uri;1.44/2.42,won,7-5 4-6 6-4
+2026-11-06,T1,15806337,2026-11-06 10:00,Tessa Johanna Brockmann,Lola Radivojevic,fav=away;p=0.545;Tessa Johanna Brockmann ≥4 game-uri;2.00/1.67,won,6-3 6-4
+2026-11-06,T1,15806447,2026-11-06 08:00,Artur Kukasian,Omar Kandil,fav=home;p=0.678;Omar Kandil ≥4 game-uri;1.33/2.80,won,5-7 4-6
+2026-11-06,T4,15806447,2026-11-06 08:00,Artur Kukasian,Omar Kandil,fav=home;p=0.678;Omar Kandil ≥5 game-uri (media 9.5 când pierde);1.33/2.80,won,5-7 4-6
+2026-11-06,T1,15806520,2026-11-06 10:00,Weronika Ewald,Denisa Zoldakova,fav=away;p=0.652;Weronika Ewald ≥4 game-uri;2.60/1.39,won,7-6 6-4
+2026-11-06,T2,15806521,2026-11-06 11:00,Oriana Gniewkowska,Lea Boskovic,"fav=away;p=0.860;Lea Boskovic −1,5 game-uri;6.40/1.04",won,2-6 1-6
+2026-11-06,T3,15806521,2026-11-06 11:00,Oriana Gniewkowska,Lea Boskovic,fav=away;p=0.860;Lea Boskovic câștigă;6.40/1.04,won,2-6 1-6
+2026-11-06,T1,15806908,2026-11-06 08:00,Anna Snigireva,Hania Abouelsaad,fav=home;p=0.582;Hania Abouelsaad ≥4 game-uri;1.56/2.17,won,6-2 5-7 6-0
+2026-11-06,T1,15806931,2026-11-06 09:00,Andrea de Marchi,Gabriele Crivellaro,fav=home;p=0.633;Gabriele Crivellaro ≥4 game-uri;1.43/2.47,won,6-3 6-7 7-6
+2026-11-06,T1,15806932,2026-11-06 10:00,John Sperle,Stepan Baum,fav=home;p=0.590;Stepan Baum ≥4 game-uri;1.54/2.22,won,4-6 2-6
+2026-11-06,T1,15806934,2026-11-06 10:00,Gianmarco Ferrari,Maxence Bertimon,fav=home;p=0.658;Maxence Bertimon ≥4 game-uri;1.38/2.65,won,6-3 6-3
+2026-11-06,T4,15806934,2026-11-06 10:00,Gianmarco Ferrari,Maxence Bertimon,fav=home;p=0.658;Maxence Bertimon ≥5 game-uri (media 9.1 când pierde);1.38/2.65,won,6-3 6-3
+2026-11-06,T1,15807119,2026-11-06 14:10,Luca Van Assche,Rinky Hijikata,fav=home;p=0.605;Rinky Hijikata ≥4 game-uri;1.55/2.37,won,6-4 6-7 7-5
+2026-11-06,T1,15807577,2026-11-06 11:00,Valentina Ryser,Elena Milovanovic,fav=home;p=0.622;Elena Milovanovic ≥4 game-uri;1.46/2.40,won,6-2 1-6 6-3
+2026-11-06,T1,15807728,2026-11-06 08:00,Jennifer Ruggeri,Nuria Brancaccio,fav=away;p=0.538;Jennifer Ruggeri ≥4 game-uri;1.97/1.69,won,3-6 4-6
+2026-11-06,T1,15807729,2026-11-06 08:00,Lucie Nguyen Tan,Martha Matoula,fav=away;p=0.652;Lucie Nguyen Tan ≥4 game-uri;2.60/1.39,won,6-7 7-6 4-6
+2026-11-06,T1,15807784,2026-11-06 13:00,Francesco Maestrelli,Carlo Alberto Caniato,fav=home;p=0.562;Carlo Alberto Caniato ≥4 game-uri;1.65/2.12,won,6-7 4-6
+2026-11-06,T1,15807898,2026-11-06 16:00,Dalibor Svrcina,Zsombor Piros,fav=home;p=0.536;Zsombor Piros ≥4 game-uri;1.73/2.00,won,4-6 6-0 6-4
+2026-11-06,T3,15808143,2026-11-06 15:00,Juliana Singeorzan,Aya EL Aouni,fav=away;p=0.842;Aya EL Aouni câștigă;5.65/1.06,won,1-6 0-6
+2026-11-06,T1,15808144,2026-11-06 09:30,Raluca Georgiana Serban,Caijsa Wilda Hennemann,fav=away;p=0.617;Raluca Georgiana Serban ≥4 game-uri;2.37/1.47,won,6-3 6-0
+2026-11-06,T3,15808145,2026-11-06 08:00,Angela Fita Boluda,Alisa Oktiabreva,fav=away;p=0.806;Alisa Oktiabreva câștigă;4.60/1.11,won,1-6 6-4 5-7
+2026-11-06,T1,15808146,2026-11-06 15:00,Jantje Tilbuerger,Scarlett Fagan,fav=away;p=0.516;Jantje Tilbuerger ≥4 game-uri;1.88/1.76,won,7-5 6-1
+2026-11-06,T1,15808188,2026-11-06 09:45,Alberto Barroso Campos,Luka Talan Lopatic,fav=away;p=0.587;Alberto Barroso Campos ≥4 game-uri;2.20/1.55,won,3-6 4-6
+2026-11-06,T4,15808188,2026-11-06 09:45,Alberto Barroso Campos,Luka Talan Lopatic,fav=away;p=0.587;Alberto Barroso Campos ≥5 game-uri (media 9.7 când pierde);2.20/1.55,won,3-6 4-6
+2026-11-06,T1,15808208,2026-11-06 16:20,Juan Bautista Torres,Genaro Alberto Olivieri,fav=away;p=0.507;Juan Bautista Torres ≥4 game-uri;1.88/1.83,won,4-6 2-6
+2026-11-06,T1,15808219,2026-11-06 09:45,Iliyan Radulov,Ignacio Parisca,fav=home;p=0.571;Ignacio Parisca ≥4 game-uri;1.59/2.12,won,3-6 6-3 2-6
 2026-11-06,T1,15808316,2026-11-06 18:00,Taylor Fritz,Carlos Alcaraz,fav=away;p=0.700;Taylor Fritz ≥4 game-uri;3.10/1.33,,
 2026-11-06,T4,15808316,2026-11-06 18:00,Taylor Fritz,Carlos Alcaraz,fav=away;p=0.700;Taylor Fritz ≥5 game-uri (media 10.9 când pierde);3.10/1.33,,
-2026-11-06,T2,15808491,2026-11-06 13:00,Victoria Bosio,Camila Romero,"fav=home;p=0.884;Victoria Bosio −1,5 game-uri;1.01/7.70",,
-2026-11-06,T3,15808491,2026-11-06 13:00,Victoria Bosio,Camila Romero,fav=home;p=0.884;Victoria Bosio câștigă;1.01/7.70,,
-2026-11-06,T2,15808492,2026-11-06 14:00,Gray Voelzke,Keshav Chopra,"fav=away;p=0.879;Keshav Chopra −1,5 game-uri;7.40/1.02",,
-2026-11-06,T3,15808492,2026-11-06 14:00,Gray Voelzke,Keshav Chopra,fav=away;p=0.879;Keshav Chopra câștigă;7.40/1.02,,
-2026-11-06,T3,15808687,2026-11-06 14:00,Blaise Bicknell,Alexander Bernard,fav=home;p=0.801;Blaise Bicknell câștigă;1.12/4.50,,
-2026-11-06,T1,15808840,2026-11-06 16:30,Amandine Hesse,Anna Siskova,fav=away;p=0.671;Amandine Hesse ≥4 game-uri;2.75/1.35,,
-2026-11-06,T3,15808924,2026-11-06 14:00,Nathan Cox,Rohan Sachdev,fav=home;p=0.832;Nathan Cox câștigă;1.08/5.35,,
-2026-11-06,T1,15808956,2026-11-06 16:00,Max Hans Rehberg,Aidan Mayo,fav=away;p=0.584;Max Hans Rehberg ≥4 game-uri;2.22/1.58,,
-2026-11-06,T1,15808957,2026-11-06 17:00,Leyre Romero Gormaz,Julia Riera,fav=home;p=0.552;Julia Riera ≥4 game-uri;1.68/2.07,,
-2026-11-06,T1,15809063,2026-11-06 17:30,Greet Minnen,Oceane Dodin,fav=home;p=0.641;Oceane Dodin ≥4 game-uri;1.41/2.52,,
-2026-11-06,T1,15809120,2026-11-06 15:00,Ryan Colby,Gavin Goode,fav=home;p=0.533;Gavin Goode ≥4 game-uri;1.71/1.95,,
+2026-11-06,T2,15808491,2026-11-06 13:00,Victoria Bosio,Camila Romero,"fav=home;p=0.884;Victoria Bosio −1,5 game-uri;1.01/7.70",won,6-3 6-1
+2026-11-06,T3,15808491,2026-11-06 13:00,Victoria Bosio,Camila Romero,fav=home;p=0.884;Victoria Bosio câștigă;1.01/7.70,won,6-3 6-1
+2026-11-06,T2,15808492,2026-11-06 14:00,Gray Voelzke,Keshav Chopra,"fav=away;p=0.879;Keshav Chopra −1,5 game-uri;7.40/1.02",won,3-6 2-6
+2026-11-06,T3,15808492,2026-11-06 14:00,Gray Voelzke,Keshav Chopra,fav=away;p=0.879;Keshav Chopra câștigă;7.40/1.02,won,3-6 2-6
+2026-11-06,T3,15808687,2026-11-06 14:00,Blaise Bicknell,Alexander Bernard,fav=home;p=0.801;Blaise Bicknell câștigă;1.12/4.50,won,6-1 6-1
+2026-11-06,T1,15808840,2026-11-06 16:30,Amandine Hesse,Anna Siskova,fav=away;p=0.671;Amandine Hesse ≥4 game-uri;2.75/1.35,lost,0-6 2-6
+2026-11-06,T3,15808924,2026-11-06 14:00,Nathan Cox,Rohan Sachdev,fav=home;p=0.832;Nathan Cox câștigă;1.08/5.35,won,6-3 6-2
+2026-11-06,T1,15808956,2026-11-06 16:00,Max Hans Rehberg,Aidan Mayo,fav=away;p=0.584;Max Hans Rehberg ≥4 game-uri;2.22/1.58,won,6-7 3-6
+2026-11-06,T1,15808957,2026-11-06 17:00,Leyre Romero Gormaz,Julia Riera,fav=home;p=0.552;Julia Riera ≥4 game-uri;1.68/2.07,won,3-6 7-5 6-4
+2026-11-06,T1,15809063,2026-11-06 17:30,Greet Minnen,Oceane Dodin,fav=home;p=0.641;Oceane Dodin ≥4 game-uri;1.41/2.52,won,6-0 3-6 7-5
+2026-11-06,T1,15809120,2026-11-06 15:00,Ryan Colby,Gavin Goode,fav=home;p=0.533;Gavin Goode ≥4 game-uri;1.71/1.95,won,5-7 2-6
 2026-11-06,T1,15809236,2026-11-06 19:30,Casper Ruud,Nuno Borges,fav=home;p=0.648;Nuno Borges ≥4 game-uri;1.44/2.65,,
 2026-11-06,T4,15809236,2026-11-06 19:30,Casper Ruud,Nuno Borges,fav=home;p=0.648;Nuno Borges ≥5 game-uri (media 10.1 când pierde);1.44/2.65,,
-2026-11-06,T1,15809268,2026-11-06 18:00,Oscar Jose Gutierrez,Joao Vitor Goncalves Ceolin,fav=home;p=0.661;Joao Vitor Goncalves Ceolin ≥4 game-uri;1.37/2.67,,
-2026-11-06,T1,15809269,2026-11-06 18:00,Agustin Eduardo Cuellar Lorberg,Giovanni Branchetti,fav=away;p=0.588;Agustin Eduardo Cuellar Lorberg ≥4 game-uri;2.20/1.54,,
-2026-11-06,T1,15809357,2026-11-06 17:10,Kimmer Coppejans,Jurij Rodionov,fav=away;p=0.688;Kimmer Coppejans ≥4 game-uri;2.95/1.34,,
-2026-11-06,T1,15809469,2026-11-06 20:00,Juan Pablo Ficovich,Federico Coria,fav=away;p=0.524;Juan Pablo Ficovich ≥4 game-uri;1.95/1.77,,
-2026-11-06,T1,15809851,2026-11-06 14:00,Antonia Vergara Rivera,Josefina Estevez,fav=home;p=0.545;Josefina Estevez ≥4 game-uri;1.67/2.00,,
-2026-11-06,T1,15809853,2026-11-06 13:00,Luciana Moyano,Justina Maria Gonzalez Daniele,fav=away;p=0.617;Luciana Moyano ≥4 game-uri;2.37/1.47,,
-2026-11-06,T1,15809949,2026-11-06 15:00,Kallista Liu,Emery Combs,fav=away;p=0.661;Kallista Liu ≥4 game-uri;2.67/1.37,,
-2026-11-06,T1,15809950,2026-11-06 15:00,Lani Chang,Ashley Lahey,fav=away;p=0.674;Lani Chang ≥4 game-uri;2.77/1.34,,
-2026-11-06,T1,15810132,2026-11-06 17:00,Keaton Hance,Aidan McHugh,fav=away;p=0.550;Keaton Hance ≥4 game-uri;2.02/1.65,,
-2026-11-06,T1,15810133,2026-11-06 16:00,Johan Oscar Lien,Daniel de Jonge,fav=away;p=0.609;Johan Oscar Lien ≥4 game-uri;2.32/1.49,,
-2026-11-06,T1,15810134,2026-11-06 15:00,Theodore Dean,Eric David Verdes,fav=home;p=0.578;Eric David Verdes ≥4 game-uri;1.57/2.15,,
-2026-11-06,T1,15810136,2026-11-06 16:00,Oskar Brostrom Poulsen,Mikael Arseneault,fav=away;p=0.550;Oskar Brostrom Poulsen ≥4 game-uri;2.02/1.65,,
-2026-11-06,T1,15810141,2026-11-06 16:30,Zuzanna Pawlikowska,Victoria Rodriguez,fav=home;p=0.641;Victoria Rodriguez ≥4 game-uri;1.41/2.52,,
+2026-11-06,T1,15809268,2026-11-06 18:00,Oscar Jose Gutierrez,Joao Vitor Goncalves Ceolin,fav=home;p=0.661;Joao Vitor Goncalves Ceolin ≥4 game-uri;1.37/2.67,won,6-2 7-6
+2026-11-06,T1,15809269,2026-11-06 18:00,Agustin Eduardo Cuellar Lorberg,Giovanni Branchetti,fav=away;p=0.588;Agustin Eduardo Cuellar Lorberg ≥4 game-uri;2.20/1.54,won,6-4 6-4
+2026-11-06,T1,15809357,2026-11-06 17:10,Kimmer Coppejans,Jurij Rodionov,fav=away;p=0.688;Kimmer Coppejans ≥4 game-uri;2.95/1.34,won,1-6 7-6 3-6
+2026-11-06,T1,15809469,2026-11-06 20:00,Juan Pablo Ficovich,Federico Coria,fav=away;p=0.524;Juan Pablo Ficovich ≥4 game-uri;1.95/1.77,lost,2-6 1-6
+2026-11-06,T1,15809851,2026-11-06 14:00,Antonia Vergara Rivera,Josefina Estevez,fav=home;p=0.545;Josefina Estevez ≥4 game-uri;1.67/2.00,won,7-5 6-4
+2026-11-06,T1,15809853,2026-11-06 13:00,Luciana Moyano,Justina Maria Gonzalez Daniele,fav=away;p=0.617;Luciana Moyano ≥4 game-uri;2.37/1.47,won,4-6 2-6
+2026-11-06,T1,15809949,2026-11-06 15:00,Kallista Liu,Emery Combs,fav=away;p=0.661;Kallista Liu ≥4 game-uri;2.67/1.37,won,6-4 6-7 0-6
+2026-11-06,T1,15809950,2026-11-06 15:00,Lani Chang,Ashley Lahey,fav=away;p=0.674;Lani Chang ≥4 game-uri;2.77/1.34,won,3-6 6-7
+2026-11-06,T1,15810132,2026-11-06 17:00,Keaton Hance,Aidan McHugh,fav=away;p=0.550;Keaton Hance ≥4 game-uri;2.02/1.65,won,6-2 7-5
+2026-11-06,T1,15810133,2026-11-06 16:00,Johan Oscar Lien,Daniel de Jonge,fav=away;p=0.609;Johan Oscar Lien ≥4 game-uri;2.32/1.49,won,6-3 6-4
+2026-11-06,T1,15810134,2026-11-06 15:00,Theodore Dean,Eric David Verdes,fav=home;p=0.578;Eric David Verdes ≥4 game-uri;1.57/2.15,won,3-6 1-6
+2026-11-06,T1,15810136,2026-11-06 16:00,Oskar Brostrom Poulsen,Mikael Arseneault,fav=away;p=0.550;Oskar Brostrom Poulsen ≥4 game-uri;2.02/1.65,won,3-6 4-6
+2026-11-06,T1,15810141,2026-11-06 16:30,Zuzanna Pawlikowska,Victoria Rodriguez,fav=home;p=0.641;Victoria Rodriguez ≥4 game-uri;1.41/2.52,won,5-7 2-6
 2026-11-06,T1,15810142,2026-11-06 17:30,Valeriya Strakhova,Cadence Brace,fav=away;p=0.689;Valeriya Strakhova ≥4 game-uri;2.90/1.31,,
-2026-11-06,T1,15810143,2026-11-06 16:30,Sofia Johnson,Malaika Rapolu,fav=away;p=0.665;Sofia Johnson ≥4 game-uri;2.70/1.36,,
-2026-11-06,T1,15810215,2026-11-06 16:00,Bryce Nakashima,Kaylan Bigun,fav=home;p=0.515;Kaylan Bigun ≥4 game-uri;1.77/1.88,,
-2026-11-06,T4,15810215,2026-11-06 16:00,Bryce Nakashima,Kaylan Bigun,fav=home;p=0.515;Kaylan Bigun ≥5 game-uri (media 10.7 când pierde);1.77/1.88,,
-2026-11-06,T4,15810399,2026-11-06 19:30,Facundo Diaz Acosta,Marco Cecchinato,fav=home;p=0.703;Marco Cecchinato ≥5 game-uri (media 10.0 când pierde);1.31/3.10,,
-2026-11-06,T1,15810430,2026-11-06 16:00,Felix Corwin,Max Sheldon,fav=home;p=0.582;Max Sheldon ≥4 game-uri;1.56/2.17,,
-2026-11-06,T3,15810431,2026-11-06 16:00,Anuj Watane,Dragos Nicolae Cazacu,fav=away;p=0.831;Dragos Nicolae Cazacu câștigă;5.30/1.08,,
-2026-11-06,T1,15810543,2026-11-06 15:00,William Mirarchi,Julian Alonso,fav=away;p=0.638;William Mirarchi ≥4 game-uri;2.50/1.42,,
-2026-11-06,T1,15810710,2026-11-06 18:00,Hunter Heck,Bor Artnak,fav=away;p=0.561;Hunter Heck ≥4 game-uri;2.07/1.62,,
+2026-11-06,T1,15810143,2026-11-06 16:30,Sofia Johnson,Malaika Rapolu,fav=away;p=0.665;Sofia Johnson ≥4 game-uri;2.70/1.36,won,5-7 6-3 3-6
+2026-11-06,T1,15810215,2026-11-06 16:00,Bryce Nakashima,Kaylan Bigun,fav=home;p=0.515;Kaylan Bigun ≥4 game-uri;1.77/1.88,won,3-6 5-7
+2026-11-06,T4,15810215,2026-11-06 16:00,Bryce Nakashima,Kaylan Bigun,fav=home;p=0.515;Kaylan Bigun ≥5 game-uri (media 10.7 când pierde);1.77/1.88,won,3-6 5-7
+2026-11-06,T4,15810399,2026-11-06 19:30,Facundo Diaz Acosta,Marco Cecchinato,fav=home;p=0.703;Marco Cecchinato ≥5 game-uri (media 10.0 când pierde);1.31/3.10,won,6-4 6-4
+2026-11-06,T1,15810430,2026-11-06 16:00,Felix Corwin,Max Sheldon,fav=home;p=0.582;Max Sheldon ≥4 game-uri;1.56/2.17,won,3-6 3-6
+2026-11-06,T3,15810431,2026-11-06 16:00,Anuj Watane,Dragos Nicolae Cazacu,fav=away;p=0.831;Dragos Nicolae Cazacu câștigă;5.30/1.08,won,3-6 3-6
+2026-11-06,T1,15810543,2026-11-06 15:00,William Mirarchi,Julian Alonso,fav=away;p=0.638;William Mirarchi ≥4 game-uri;2.50/1.42,won,6-2 6-2
+2026-11-06,T1,15810710,2026-11-06 18:00,Hunter Heck,Bor Artnak,fav=away;p=0.561;Hunter Heck ≥4 game-uri;2.07/1.62,won,2-6 5-7
 2026-11-06,T1,15811092,2026-11-06 18:40,Maks Kasnikowski,Andres Andrade,fav=home;p=0.577;Andres Andrade ≥4 game-uri;1.61/2.20,,
 2026-11-06,F4,tjxZZ14M,2026-11-06 18:00,Barracas Central,Racing Club,Argentina: Liga Profesional;sub 4.5 (liga 92% sub 4.5),,
 2026-11-06,F1,KQ731NQG,2026-11-06 18:00,Belgrano W,Newells Old Boys W,Argentina: Primera A Women;gazda marchează (golaveraj +1.8),,
