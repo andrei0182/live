@@ -42,7 +42,7 @@ from zoneinfo import ZoneInfo
 
 import requests
 
-from .superbet import LiveMatch, parse_live_event
+from .superbet import LiveMatch, fetch_event_markets, parse_live_event
 from .ticket import HISTORY_URL, short_name
 
 logger = logging.getLogger(__name__)
@@ -53,7 +53,12 @@ HISTORY_PATH = Path("data") / "football_history.csv"
 HISTORY_DAYS = 400  # ligile au nevoie de ultimele 150 de meciuri, echipele de ultimele 40 din ligă
 SHOW = 6  # câte meciuri afișăm pe regulă (le urmărim pe toate)
 WON, LOST, VOID = "won", "lost", "void"
-LOG_COLUMNS = ["date", "rule", "ref", "start_utc", "home", "away", "info", "result", "score"]
+LOG_COLUMNS = ["date", "rule", "ref", "start_utc", "home", "away", "info", "result", "score", "odds"]
+# T4: cota Superbet la handicap pentru cel mai slab (+X game-uri). Superbet nu are
+# „peste 4.5 game-uri” pe jucător, dar pe istoric jucătorii T4 acoperă +4.5/+5.5
+# cu 4–12 puncte mai des decât ceilalți la aceeași cotă a favoritului.
+HCP_MARKET = "Handicap game-uri"
+HCP_LINES = (3.5, 4.5, 5.5)
 
 RULES = {
     "T1": ("🎾", "Meci echilibrat → cel mai slab face ≥4 game-uri", 94.5),
@@ -445,6 +450,77 @@ def save_log(rows: list[dict], path: Path = LOG_PATH) -> None:
         w.writerows({k: r.get(k, "") for k in LOG_COLUMNS} for r in rows)
 
 
+def handicap_odds(markets: list[dict], player: str) -> dict[float, float]:
+    """Cotele active "<player> (+X)" din piața "Handicap game-uri", pentru X din HCP_LINES."""
+    out = {}
+    for market in markets:
+        if market.get("name") != HCP_MARKET:
+            continue
+        for odd in market.get("odds") or []:
+            name = (odd.get("metadata") or {}).get("name", "")
+            if odd.get("status", 1) != 1 or not odd.get("price") or not name.startswith(player + " ("):
+                continue
+            try:
+                line = float(name[len(player) + 2:].rstrip(")"))
+            except ValueError:
+                continue
+            if line in HCP_LINES:
+                out[line] = float(odd["price"])
+    return out
+
+
+def _dog(row: dict) -> str:
+    return row["away"] if _info(row).get("fav") == "home" else row["home"]
+
+
+def add_t4_odds(rows: list[dict], day: str, markets=fetch_event_markets) -> int:
+    """Notează cotele de handicap ale celui mai slab la meciurile T4 din `day` fără cote."""
+    n = 0
+    for r in rows:
+        if r["rule"] != "T4" or r["date"] != day or r.get("odds"):
+            continue
+        odds = handicap_odds(markets(int(r["ref"])) or [], _dog(r))
+        if odds:
+            r["odds"] = ";".join(f"{k:g}:{v:.2f}" for k, v in sorted(odds.items()))
+            n += 1
+    return n
+
+
+def _parse_odds(text: str) -> dict[float, float]:
+    out = {}
+    for part in (text or "").split(";"):
+        k, _, v = part.partition(":")
+        try:
+            out[float(k)] = float(v)
+        except ValueError:
+            continue
+    return out
+
+
+def t4_handicap_text(rows: list[dict]) -> str:
+    """Profitul pe hârtie (miză 1) la handicapul Superbet pentru cel mai slab, pe linie."""
+    stats = {k: [0, 0, 0.0] for k in HCP_LINES}  # pariuri, câștigate, unități
+    for r in rows:
+        if r["rule"] != "T4" or r["result"] not in (WON, LOST) or not r.get("odds"):
+            continue
+        g = match_games(_parse_sets(r["score"]))
+        if g is None:
+            continue
+        _, gh, ga = g
+        fav_home = _info(r).get("fav") == "home"
+        diff = (gh - ga) if fav_home else (ga - gh)  # game-uri favorit − cel mai slab
+        for line, price in _parse_odds(r["odds"]).items():
+            st = stats[line]
+            st[0] += 1
+            if diff < line:
+                st[1] += 1
+                st[2] += price - 1
+            else:
+                st[2] -= 1
+    parts = [f"+{k:g}: {w}/{n}, {u:+.2f} u" for k, (n, w, u) in stats.items() if n]
+    return "   💰 handicap Superbet pt. cel mai slab (total): " + "; ".join(parts) if parts else ""
+
+
 def resolve_tennis(rows: list[dict], finished_tennis: dict[int, dict]) -> int:
     n = 0
     for r in rows:
@@ -502,6 +578,8 @@ def results_text(rows: list[dict], day: str) -> str:
         lines.append(f"{icon} {rule} {name}: {k}/{len(done)} {_pct(k, len(done))}"
                      + (f", ⏳ {wait} fără rezultat" if wait else "")
                      + f" (total {ka}/{len(allr)} {_pct(ka, len(allr))}, așteptat ~{exp:.0f}%){flag}")
+        if rule == "T4" and (hcp := t4_handicap_text(rows)):
+            lines.append(hcp)
         lost = [r for r in done if r["result"] == LOST]
         for r in lost[:3]:
             lines.append(f"   ❌ {r['home']} – {r['away']}: {r['score']}")
@@ -523,7 +601,9 @@ def today_text(rows: list[dict], day: dt.date) -> str:
             if rule.startswith("T"):
                 info = _info(r)
                 odds = r["info"].rsplit(";", 1)[-1]
-                lines.append(f"  {_ro(r['start_utc'])} {r['home']} – {r['away']} ({odds}) → {info['text']}")
+                hcp = _parse_odds(r.get("odds", ""))
+                extra = (" | handicap " + ", ".join(f"+{k:g} @{v:.2f}" for k, v in sorted(hcp.items()))) if hcp else ""
+                lines.append(f"  {_ro(r['start_utc'])} {r['home']} – {r['away']} ({odds}) → {info['text']}{extra}")
             else:
                 league, _, what = r["info"].partition(";")
                 lines.append(f"  {_ro(r['start_utc'])} {r['home']} – {r['away']} ({league}) → {what}")
@@ -589,6 +669,10 @@ def morning(now: dt.datetime, offer: list[LiveMatch], finished_tennis: dict[int,
         stats = tennis_stats(fetch_tennis_rows())
         rows += tennis_selections(offer, stats, today, now)
         rows += football_selections(day_fixtures(today, pages), hist, today, now)
+    try:
+        add_t4_odds(rows, today.isoformat())
+    except Exception:  # noqa: BLE001 - cotele sunt doar informație
+        logger.exception("Tendințe: cotele de handicap T4 au eșuat")
     save_history(hist, today)
     save_log(rows)
     msgs = []
