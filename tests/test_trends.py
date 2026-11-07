@@ -125,6 +125,28 @@ def test_texts_and_split():
 def test_log_roundtrip(tmp_path):
     path = tmp_path / "log.csv"
     rows = [{"date": "2026-11-05", "rule": "T1", "ref": "1", "start_utc": "x", "home": "a", "away": "b",
-             "info": "fav=home;p=0.6;b ≥4;1.8/2.0", "result": "", "score": ""}]
+             "info": "fav=home;p=0.6;b ≥4;1.8/2.0", "result": "", "score": "", "odds": ""}]
     T.save_log(rows, path)
     assert T.load_log(path) == rows
+
+
+def _hcp_markets(player):
+    return [{"name": "Handicap game-uri", "odds": [
+        {"price": 1.48, "status": 1, "metadata": {"name": f"{player} (3.5)"}},
+        {"price": 1.35, "status": 1, "metadata": {"name": f"{player} (4.5)"}},
+        {"price": 2.45, "status": 1, "metadata": {"name": f"Other Guy (-3.5)"}},
+        {"price": 1.20, "status": 2, "metadata": {"name": f"{player} (5.5)"}}]}]
+
+
+def test_handicap_odds_and_t4_profit():
+    assert T.handicap_odds(_hcp_markets("Niels Visker"), "Niels Visker") == {3.5: 1.48, 4.5: 1.35}
+    stats = {"visker n.": T.PlayerStats(20, True, 9.5)}
+    rows = [r for r in T.tennis_selections([_m(2, "Big Fav", "Niels Visker", 1.30, 3.6)], stats, TODAY, NOW)
+            if r["rule"] == "T4"]
+    assert T.add_t4_odds(rows, TODAY.isoformat(), markets=lambda eid: _hcp_markets("Niels Visker")) == 1
+    assert rows[0]["odds"] == "3.5:1.48;4.5:1.35"
+    assert "+3.5 @1.48" in T.today_text(rows, TODAY)
+    won = dict(rows[0], result=T.WON, score="6-3 6-4")   # diferență 5: +3.5 ❌, +4.5 ❌
+    close = dict(rows[0], result=T.WON, score="7-5 6-4")  # diferență 4: +4.5 ✅
+    text = T.t4_handicap_text([won, close])
+    assert "+3.5: 0/2, -2.00 u" in text and "+4.5: 1/2, -0.65 u" in text
