@@ -150,3 +150,37 @@ def test_handicap_odds_and_t4_profit():
     close = dict(rows[0], result=T.WON, score="7-5 6-4")  # diferență 4: +4.5 ✅
     text = T.t4_handicap_text([won, close])
     assert "+3.5: 0/2, -2.00 u" in text and "+4.5: 1/2, -0.65 u" in text
+
+
+class _Resp:
+    def __init__(self, status, text="", headers=None):
+        self.status_code, self.text, self.headers = status, text, headers or {}
+
+
+def test_fetch_day_retries_then_blocks(monkeypatch):
+    calls, sleeps = [], []
+    seq = [_Resp(429), _Resp(429), _Resp(200, "<html></html>")]
+    monkeypatch.setattr(T._session, "get", lambda url, timeout: calls.append(url) or seq.pop(0))
+    monkeypatch.setattr(T, "_throttle", {"last": 0.0, "blocked": False})
+    assert T.fetch_day(TODAY, sleep=sleeps.append) == []
+    assert len(calls) == 3 and T.RETRY_WAITS[0] in sleeps and T.RETRY_WAITS[1] in sleeps
+    # toate încercările refuzate: renunță și nu mai cere nimic în rularea asta
+    monkeypatch.setattr(T._session, "get", lambda url, timeout: calls.append(url) or _Resp(429))
+    calls.clear()
+    assert T.fetch_day(TODAY, sleep=lambda s: None) is None
+    assert len(calls) == len(T.RETRY_WAITS) + 1
+    calls.clear()
+    assert T.fetch_day(TODAY, sleep=lambda s: None) is None and calls == []
+
+
+def test_football_retry(monkeypatch, tmp_path):
+    monkeypatch.chdir(tmp_path)
+    page = [T.Fixture("t", dt.datetime(2026, 11, 5, 18, tzinfo=UTC), "ruritania", "Ruritania: Liga 1", "Strong", "Weak")]
+    T.save_history({fx.match_id: fx for fx in _history()}, TODAY)
+    monkeypatch.setattr(T, "fetch_day", lambda d: None)
+    assert T.football_retry(NOW) is None
+    monkeypatch.setattr(T, "fetch_day", lambda d: page if d == TODAY else [])
+    msgs = T.football_retry(NOW)
+    assert msgs and "F1" in msgs[-1] and "T1" not in msgs[-1]
+    assert T.football_retry(NOW) == []   # deja făcut azi
+    assert "F1" in {r["rule"] for r in T.load_log()}

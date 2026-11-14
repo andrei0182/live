@@ -78,7 +78,7 @@ def test_maybe_post_once_per_day(monkeypatch):
     for name in ("fetch_pending_picks", "fetch_football_picks", "fetch_live_matches", "fetch_prematch_matches"):
         monkeypatch.setattr(lm, name, lambda *a, **k: [])
     monkeypatch.setattr(lm.tk.History, "fetch", classmethod(lambda cls, d: None))
-    monkeypatch.setattr(lm.trends, "morning", lambda *a: ["📈 tendințe"])
+    monkeypatch.setattr(lm.trends, "morning", lambda *a: (["📈 tendințe"], True))
     monkeypatch.setattr(lm.trends, "evening", lambda *a: None)
     args = argparse.Namespace(post_morning="09:00", post_evening="23:30", min_model_pct=55, fh_minute=20)
     state = {"done": {}, "prematch_lines": {}, "alerts": [], "posted": {}, "tickets": {}}
@@ -99,3 +99,20 @@ def test_maybe_post_once_per_day(monkeypatch):
 def test_morning_post_without_tennis_alerts():
     text = morning_post(dt.date(2026, 10, 31), [], [], [], 20, tennis_alerts=False)
     assert "Alertă live: ⚽ e încă 0-0 în minutul 20." in text and "setul 1" not in text
+
+
+def test_football_trends_retry_hourly(monkeypatch):
+    sent, tries = [], []
+    monkeypatch.setattr(lm.telegram, "send", lambda t: sent.append(t) or True)
+    results = [None, ["⚽ fotbal azi"]]
+    monkeypatch.setattr(lm.trends, "football_retry", lambda now: tries.append(now) or results.pop(0))
+    posted = {"2026-11-14|trends": "09:07", "2026-11-14|trends_fb_try": "09:07"}
+    t = dt.datetime(2026, 11, 14, 7, 27, tzinfo=dt.timezone.utc)  # 09:27 RO: prea devreme
+    lm.retry_football_trends(posted, "2026-11-14|trends", "09:27", t)
+    assert tries == []
+    lm.retry_football_trends(posted, "2026-11-14|trends", "10:07", t)   # BetExplorer tot refuză
+    assert len(tries) == 1 and sent == [] and "2026-11-14|trends_fb" not in posted
+    lm.retry_football_trends(posted, "2026-11-14|trends", "10:27", t)   # sub o oră: nu încearcă
+    assert len(tries) == 1
+    lm.retry_football_trends(posted, "2026-11-14|trends", "11:07", t)
+    assert sent == ["⚽ fotbal azi"] and posted["2026-11-14|trends_fb"] == "11:07"

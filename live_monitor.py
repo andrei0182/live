@@ -218,11 +218,20 @@ def morning_ticket(state: dict, today: dt.date, yesterday: str, picks: list[Pick
     return "\n\n".join(parts)
 
 
+FOOTBALL_RETRY_MINUTES = 55   # cât așteptăm între două încercări BetExplorer în aceeași zi
+FOOTBALL_RETRY_UNTIL = "21:00"
+
+
+def _minutes(hhmm: str) -> int:
+    h, m = hhmm.split(":")
+    return int(h) * 60 + int(m)
+
+
 def post_trends(posted: dict, key: str, hhmm: str, now: dt.datetime, finished: Finished) -> None:
     """Tendințele de >= 90%: rezultatele de ieri și meciurile de azi (data/trends_log.csv)."""
     try:
         offer = fetch_live_matches(now.date()) + fetch_prematch_matches(now.date())
-        messages = trends.morning(now, offer, finished.tennis)
+        messages, football_ok = trends.morning(now, offer, finished.tennis)
     except Exception:  # noqa: BLE001 - tendințele nu opresc alertele
         logger.exception("Tendințe: pregătirea a eșuat")
         posted[key] = hhmm  # nu reîncercăm la fiecare rulare
@@ -230,6 +239,29 @@ def post_trends(posted: dict, key: str, hhmm: str, now: dt.datetime, finished: F
     if all([telegram.send(m) for m in messages]):
         logger.info("Tendințele trimise (%d mesaje).", len(messages))
     posted[key] = hhmm  # jurnalul e deja salvat; nu retrimitem
+    posted[f"{key}_fb_try"] = hhmm
+    if football_ok:
+        posted[f"{key}_fb"] = hhmm
+
+
+def retry_football_trends(posted: dict, key: str, hhmm: str, now: dt.datetime) -> None:
+    """Fotbalul tendințelor, dacă dimineață BetExplorer n-a răspuns: cel mult o
+    încercare pe oră, până la FOOTBALL_RETRY_UNTIL."""
+    last = posted.get(f"{key}_fb_try")
+    if last and _minutes(hhmm) - _minutes(last) < FOOTBALL_RETRY_MINUTES:
+        return
+    posted[f"{key}_fb_try"] = hhmm
+    try:
+        messages = trends.football_retry(now)
+    except Exception:  # noqa: BLE001
+        logger.exception("Tendințe: reîncercarea de fotbal a eșuat")
+        return
+    if messages is None:
+        logger.info("Tendințe: BetExplorer tot nu răspunde; reîncerc mai târziu.")
+        return
+    if messages and all([telegram.send(m) for m in messages]):
+        logger.info("Fotbalul tendințelor trimis la reîncercare (%d mesaje).", len(messages))
+    posted[f"{key}_fb"] = hhmm
 
 
 def maybe_post(state: dict, args: argparse.Namespace, now: dt.datetime) -> None:
@@ -243,6 +275,9 @@ def maybe_post(state: dict, args: argparse.Namespace, now: dt.datetime) -> None:
     need_m = hhmm >= args.post_morning and key_m not in posted
     need_e = hhmm >= args.post_evening and key_e not in posted
     need_t = hhmm >= args.post_morning and key_t not in posted
+    need_fb = key_t in posted and f"{key_t}_fb" not in posted and hhmm < FOOTBALL_RETRY_UNTIL
+    if need_fb:
+        retry_football_trends(posted, key_t, hhmm, now)
     if not (need_m or need_e or need_t):
         return
 
