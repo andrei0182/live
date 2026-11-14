@@ -33,6 +33,7 @@ import html
 import io
 import logging
 import re
+import time
 from collections import defaultdict, deque
 from dataclasses import dataclass
 from email.utils import parsedate_to_datetime
@@ -305,14 +306,48 @@ def parse_day_page(page: str, offset: dt.timedelta) -> list[Fixture]:
     return out
 
 
-def fetch_day(day: dt.date, timeout: float = 40.0) -> Optional[list[Fixture]]:
-    try:
-        resp = _session.get(BE_DAY_URL.format(y=day.year, m=day.month, d=day.day), timeout=timeout)
-        resp.raise_for_status()
-    except requests.RequestException as exc:
-        logger.warning("Tendințe: nu pot citi BetExplorer %s: %s", day, exc)
+# BetExplorer răspunde cu 429 (prea multe cereri) dacă citim paginile una după alta.
+MIN_GAP = 5.0                 # secunde între două cereri
+RETRY_WAITS = (15, 45, 90)    # așteptări înainte de reîncercare, la 429 / 5xx
+_RETRY_STATUS = {429, 500, 502, 503, 504}
+_throttle = {"last": 0.0, "blocked": False}
+
+
+def fetch_day(day: dt.date, timeout: float = 40.0, sleep=time.sleep) -> Optional[list[Fixture]]:
+    """Pagina zilei de pe BetExplorer, cu pauză între cereri și reîncercări cu
+    așteptare tot mai lungă. După ce o pagină eșuează de tot, rularea asta nu mai
+    cere altele (ar prelungi blocarea); rulările următoare reîncearcă."""
+    if _throttle["blocked"]:
         return None
-    return parse_day_page(resp.text, _offset(resp.text, resp.headers.get("Date")))
+    url = BE_DAY_URL.format(y=day.year, m=day.month, d=day.day)
+    problem = ""
+    for attempt in range(len(RETRY_WAITS) + 1):
+        gap = MIN_GAP - (time.monotonic() - _throttle["last"])
+        if gap > 0:
+            sleep(gap)
+        _throttle["last"] = time.monotonic()
+        retry_after = 0
+        try:
+            resp = _session.get(url, timeout=timeout)
+        except requests.RequestException as exc:
+            problem = type(exc).__name__
+        else:
+            if resp.status_code == 200:
+                return parse_day_page(resp.text, _offset(resp.text, resp.headers.get("Date")))
+            problem = f"HTTP {resp.status_code}"
+            if resp.status_code not in _RETRY_STATUS:
+                break
+            try:
+                retry_after = min(int(resp.headers.get("Retry-After", 0)), 120)
+            except ValueError:
+                retry_after = 0
+        if attempt < len(RETRY_WAITS):
+            wait = max(RETRY_WAITS[attempt], retry_after)
+            logger.info("Tendințe: BetExplorer %s: %s, reîncerc peste %ss", day, problem, wait)
+            sleep(wait)
+    logger.warning("Tendințe: nu pot citi BetExplorer %s: %s (renunț în rularea asta)", day, problem)
+    _throttle["blocked"] = True
+    return None
 
 
 HIST_COLUMNS = ["match_id", "kickoff_utc", "country", "league", "home", "away", "ht_home", "ht_away", "ft_home",
@@ -562,10 +597,13 @@ def _sort_key(r: dict):
     return (p if r["rule"] == "T1" else -p, r["start_utc"])
 
 
-def results_text(rows: list[dict], day: str) -> str:
-    """Rezultatele zilei `day` + totalul de la început, pe regulă."""
+def results_text(rows: list[dict], day: str, prefix: str = "") -> str:
+    """Rezultatele zilei `day` + totalul de la început, pe regulă (doar regulile
+    care încep cu `prefix`, de ex. "F")."""
     lines = [f"📊 Rezultatele tendințelor din {day[8:]}.{day[5:7]} (total de la început între paranteze)"]
     for rule, (icon, name, exp) in RULES.items():
+        if not rule.startswith(prefix):
+            continue
         mine = [r for r in rows if r["rule"] == rule and r["date"] == day]
         if not mine:
             continue
@@ -588,10 +626,15 @@ def results_text(rows: list[dict], day: str) -> str:
     return "\n".join(lines) if len(lines) > 1 else ""
 
 
-def today_text(rows: list[dict], day: dt.date) -> str:
+FOOTBALL_PENDING = "\n⚽ Fotbal: BetExplorer nu răspunde acum; reîncerc în cursul zilei și trimit meciurile separat."
+
+
+def today_text(rows: list[dict], day: dt.date, prefix: str = "", football_ok: bool = True) -> str:
     key = day.isoformat()
     lines = [f"📈 Tendințe de ≥90% – meciurile de azi, {day:%d.%m} (urmărire pe hârtie)"]
     for rule, (icon, name, exp) in RULES.items():
+        if not rule.startswith(prefix) or (rule.startswith("F") and not football_ok):
+            continue
         mine = sorted([r for r in rows if r["rule"] == rule and r["date"] == key], key=_sort_key)
         if not mine:
             lines.append(f"\n{icon} {rule} {name} (~{exp:.0f}%): azi niciun meci")
@@ -609,6 +652,8 @@ def today_text(rows: list[dict], day: dt.date) -> str:
                 lines.append(f"  {_ro(r['start_utc'])} {r['home']} – {r['away']} ({league}) → {what}")
         if len(mine) > SHOW:
             lines.append(f"  … și încă {len(mine) - SHOW} (le urmăresc pe toate)")
+    if not football_ok:
+        lines.append(FOOTBALL_PENDING)
     lines.append("\nRezultatele vin mâine dimineață. La 90–96% cotele sunt ~1,02–1,10: e un test de "
                  "cât de des se repetă, nu un pont de pariat.")
     return "\n".join(lines)
@@ -651,35 +696,68 @@ def update_football_history(hist: dict[str, Fixture], today: dt.date, pages: dic
         day += dt.timedelta(days=1)
 
 
-def morning(now: dt.datetime, offer: list[LiveMatch], finished_tennis: dict[int, dict]) -> list[str]:
-    """Rezolvă ziua de ieri, alege meciurile de azi, salvează jurnalul și
-    istoricul de fotbal; întoarce mesajele de trimis."""
-    today = now.astimezone(RO_TZ).date()
-    yesterday = today - dt.timedelta(days=1)
-    rows = load_log()
-    resolve_tennis(rows, finished_tennis)
-    pages: dict[dt.date, Optional[list[Fixture]]] = {}
+def _football_update(rows: list[dict], today: dt.date, now: dt.datetime, pages: dict, select: bool) -> bool:
+    """Rezultatele de fotbal încă deschise (ultimele 4 zile), istoricul și, cu
+    `select`, meciurile de azi. Întoarce False dacă paginile de azi n-au putut fi citite."""
     for day in sorted({r["date"] for r in rows if r["rule"].startswith("F") and not r["result"]}):
         d = dt.date.fromisoformat(day)
         if today - dt.timedelta(days=4) <= d < today:
             resolve_football(rows, {fx.match_id: fx for fx in day_fixtures(d, pages)})
     hist = load_history()
     update_football_history(hist, today, pages)
-    if not any(r["date"] == today.isoformat() for r in rows):
+    ok = True
+    if select:
+        fixtures = day_fixtures(today, pages)
+        ok = pages.get(today) is not None and pages.get(today + dt.timedelta(days=1)) is not None
+        if ok:
+            rows += football_selections(fixtures, hist, today, now)
+    save_history(hist, today)
+    return ok
+
+
+def morning(now: dt.datetime, offer: list[LiveMatch], finished_tennis: dict[int, dict]) -> tuple[list[str], bool]:
+    """Rezolvă ziua de ieri, alege meciurile de azi, salvează jurnalul și
+    istoricul de fotbal; întoarce mesajele de trimis și dacă fotbalul a mers
+    (altfel `football_retry` reîncearcă la rulările următoare)."""
+    today = now.astimezone(RO_TZ).date()
+    yesterday = today - dt.timedelta(days=1)
+    rows = load_log()
+    resolve_tennis(rows, finished_tennis)
+    first = not any(r["date"] == today.isoformat() for r in rows)
+    if first:
         stats = tennis_stats(fetch_tennis_rows())
         rows += tennis_selections(offer, stats, today, now)
-        rows += football_selections(day_fixtures(today, pages), hist, today, now)
     try:
         add_t4_odds(rows, today.isoformat())
     except Exception:  # noqa: BLE001 - cotele sunt doar informație
         logger.exception("Tendințe: cotele de handicap T4 au eșuat")
-    save_history(hist, today)
+    need_fb = not any(r["date"] == today.isoformat() and r["rule"].startswith("F") for r in rows)
+    football_ok = _football_update(rows, today, now, {}, select=need_fb)
     save_log(rows)
     msgs = []
     res = results_text(rows, yesterday.isoformat())
     if res:
         msgs.append(res)
-    msgs.append(today_text(rows, today))
+    msgs.append(today_text(rows, today, football_ok=football_ok))
+    return [part for m in msgs for part in split_message(m)], football_ok
+
+
+def football_retry(now: dt.datetime) -> Optional[list[str]]:
+    """Reîncearcă fotbalul zilei după o dimineață în care BetExplorer n-a răspuns.
+    None = tot nu merge; altfel mesajele (meciurile de azi + rezultatele de fotbal de ieri)."""
+    today = now.astimezone(RO_TZ).date()
+    rows = load_log()
+    if any(r["date"] == today.isoformat() and r["rule"].startswith("F") for r in rows):
+        return []
+    ok = _football_update(rows, today, now, {}, select=True)
+    save_log(rows)
+    if not ok:
+        return None
+    msgs = []
+    res = results_text(rows, (today - dt.timedelta(days=1)).isoformat(), prefix="F")
+    if res:
+        msgs.append(res)
+    msgs.append(today_text(rows, today, prefix="F"))
     return [part for m in msgs for part in split_message(m)]
 
 
