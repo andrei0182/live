@@ -137943,6 +137943,7 @@ YP5BAg5t,2026-11-13T19:00:00+00:00,north-central-america,North & Central America
 YgVPH4e3,2026-11-13T19:00:00+00:00,austria,Austria: Niederosterreich,Admira (Am),Langenrohr,3,2,3,2
 Yw5QOIjJ,2026-11-13T19:00:00+00:00,france,France: Coupe de France,Dijon,Orleans,0,2,1,2
 bVNyZJy1,2026-11-13T19:00:00+00:00,venezuela,Venezuela: Liga FUTVE 2,Lara,Zamora 2,1,0,2,1
+hhkRcYNi,2026-11-13T19:00:00+00:00,switzerland,Switzerland: 1.Liga Classic Group 1,Portalban,Echallens,0,1,2,1
 lCfGqndB,2026-11-13T19:00:00+00:00,europe,Europe: Elite League U20,Poland U20,Germany U20,1,0,1,2
 rB9jSIWr,2026-11-13T19:00:00+00:00,north-central-america,North & Central America: CONCACAF Nations League,Grenada,Saint Kitts and Nevis,1,1,3,2
 xCkUxUWs,2026-11-13T19:00:00+00:00,england,England: Premier League Cup,Millwall U21,Sheffield Utd U21,0,2,1,2
@@ -137954,6 +137955,7 @@ EJux0c7F,2026-11-13T19:30:00+00:00,belgium,Belgium: Pro League U21,Sp. Hasselt U
 Isu3IKt0,2026-11-13T19:30:00+00:00,spain,Spain: LaLiga2,Leganes,Burgos CF,3,0,3,1
 MmL7tgBO,2026-11-13T19:30:00+00:00,spain,Spain: Tercera RFEF - Group 15,AD San Juan,Gazte Berriak,2,2,4,4
 tEa4dCBi,2026-11-13T19:30:00+00:00,wales,Wales: Cymru North,Denbigh,Gresford,3,0,7,1
+thrPzxnC,2026-11-13T19:30:00+00:00,belgium,Belgium: 1st National Women,Leuven II W,Genk II W,1,0,4,0
 z7V23WD7,2026-11-13T19:30:00+00:00,belgium,Belgium: Pro League U21,Francs Borains U21,RAAL La Louviere U21,2,1,4,2
 zywiTFJG,2026-11-13T19:30:00+00:00,wales,Wales: Cymru South,Pure Swansea,Treowen,1,1,2,3
 04LowRUP,2026-11-13T19:45:00+00:00,northern-ireland,Northern Ireland: NIFL Premiership,Carrick Rangers,Crusaders,0,1,1,1
@@ -137972,6 +137974,7 @@ M5YF5bX9,2026-11-13T19:45:00+00:00,northern-ireland,Northern Ireland: NIFL Champ
 MgzhHq86,2026-11-13T19:45:00+00:00,northern-ireland,Northern Ireland: NIFL Premiership,Ballymena,Linfield,0,3,0,3
 MorMqHAj,2026-11-13T19:45:00+00:00,northern-ireland,Northern Ireland: NIFL Championship,Ards,Moyola,1,0,1,0
 Q1NgbGPq,2026-11-13T19:45:00+00:00,northern-ireland,Northern Ireland: NIFL Championship,Newry City,Strabane Athletic,1,0,3,0
+QZSnKcn3,2026-11-13T19:45:00+00:00,northern-ireland,Northern Ireland: NIFL Championship,Rathfriland,H&W Welders,0,0,2,0
 SSGHgYxI,2026-11-13T19:45:00+00:00,wales,Wales: FAW Welsh Cup,Penybont,Cardiff Draconians,3,0,6,0
 U1tqhL1D,2026-11-13T19:45:00+00:00,wales,Wales: FAW Welsh Cup,TNS,Briton Ferry,3,0,5,0
 UVyO3x2M,2026-11-13T19:45:00+00:00,northern-ireland,Northern Ireland: NIFL Championship,Newington,Warrenpoint,1,1,1,1
@@ -138032,11 +138035,15 @@ tfFqBHVp,2026-11-14T06:00:00+00:00,china,China: Super League Women,Guangdong Mei
 YqhpsdVH,2026-11-14T07:00:00+00:00,hong-kong,Hong Kong: League Cup,North District,Hong Kong FC,0,0,4,3
 vNhimEkJ,2026-11-14T07:00:00+00:00,hong-kong,Hong Kong: League Cup,Kowloon City,Kitchee,0,2,1,5
 AP3y2nof,2026-11-14T08:00:00+00:00,south-africa,South Africa: Diski Challenge,Marumo Gallants U23,TS Galaxy U23,1,0,1,0
+AaOcFgN5,2026-11-14T08:00:00+00:00,asia,Asia: AFC Asian Cup U17,Yemen U17,Northern Mariana Islands U17,6,0,13,0
 r3WAMDMM,2026-11-14T08:00:00+00:00,europe,Europe: Euro U17,France U17,Luxembourg U17,2,0,3,0
+rT0plHO6,2026-11-14T08:00:00+00:00,asia,Asia: AFC Asian Cup U17,Iraq U17,Chinese Taipei U17,0,0,3,2
 xC5T38Gs,2026-11-14T08:00:00+00:00,south-africa,South Africa: Diski Challenge,Polokwane U23,Chippa Utd. U23,2,0,4,1
 2NlJ8FE4,2026-11-14T08:30:00+00:00,indonesia,Indonesia: Liga Nusantara,Donggala United,Pasuruan United,1,2,1,4
+2ZKkHFhg,2026-11-14T08:30:00+00:00,asia,Asia: AFC Asian Cup U17,Indonesia U17,Cambodia U17,2,0,2,0
 4YgfxKzA,2026-11-14T08:30:00+00:00,australia,Australia: Australian Championship,Bayswater,Sydney Olympic,2,1,2,1
 AmhR6gqH,2026-11-14T08:30:00+00:00,indonesia,Indonesia: Liga Nusantara,Persekabpas P.,Persinab Nabire,2,0,3,0
+GtahnegJ,2026-11-14T08:30:00+00:00,asia,Asia: AFC Asian Cup U17,Myanmar U17,Philippines U17,1,0,3,1
 IDeZ4XDT,2026-11-14T08:30:00+00:00,indonesia,Indonesia: Liga Nusantara,Persipani Paniai,Ngada,0,1,2,2
 Ov0Hi8LM,2026-11-14T08:30:00+00:00,indonesia,Indonesia: Liga Nusantara,Putra Sang Fajar,Purbalingga,0,0,2,0
 2ypViaPs,2026-11-14T09:00:00+00:00,asia,Asia: AFC Asian Cup U17,Iran U17,Sri Lanka U17,8,0,11,0
@@ -138266,6 +138273,7 @@ pUG5nFEL,2026-11-14T12:00:00+00:00,bosnia-and-herzegovina,Bosnia and Herzegovina
 pW51awUI,2026-11-14T12:00:00+00:00,poland,Poland: III Liga - Group I,Mlawa,Suwalki,0,2,1,2
 ptgwGAr4,2026-11-14T12:00:00+00:00,germany,Germany: Oberliga Bremen,Werder Bremen III,Eiche Horn,2,0,3,1
 r9xMvUmT,2026-11-14T12:00:00+00:00,slovakia,Slovakia: 3. Liga - West,Castkovce,Gabcikovo,1,1,4,1
+rDM5DXiI,2026-11-14T12:00:00+00:00,asia,Asia: AFC Asian Cup U17,Laos U17,Pakistan U17,0,3,0,3
 rR7P44o4,2026-11-14T12:00:00+00:00,poland,Poland: III Liga - Group IV,Kolbuszowa Dolna,Busko-Zdroj,2,0,4,0
 rmTGuzif,2026-11-14T12:00:00+00:00,czech-republic,Czech Republic: 4. liga - Group F,Stonava,Pusta Polom,0,1,3,2
 rys7DIYR,2026-11-14T12:00:00+00:00,romania,Romania: Liga 3 - Seria 5,Omega Sport,Oxigen Bucuresti,1,4,1,4
@@ -138285,6 +138293,7 @@ zmtZ0ikT,2026-11-14T12:00:00+00:00,sweden,Sweden: Elitettan Women,Linkoping W,Ga
 zqZDtjJG,2026-11-14T12:00:00+00:00,slovakia,Slovakia: 3. Liga - West,D. Luzna,Puchov,0,0,0,0
 zua5YF40,2026-11-14T12:00:00+00:00,hungary,Hungary: NB I Women,Pecsi MFC W,Videoton W,1,0,2,0
 ShMsmo1l,2026-11-14T12:05:00+00:00,saudi-arabia,Saudi Arabia: Division 2,Al Shoalah,Qilwah,0,0,2,0
+zJPkoPV0,2026-11-14T12:05:00+00:00,saudi-arabia,Saudi Arabia: Division 2,Al Sharq,Al Rawdah,0,0,2,0
 8WNcq30D,2026-11-14T12:15:00+00:00,saudi-arabia,Saudi Arabia: Division 2,Al Arabi,Al Hada,0,1,0,2
 06j1qaCb,2026-11-14T12:30:00+00:00,slovakia,Slovakia: 4. liga - West,Blava Jaslovske Bohunice,Stankovce,3,2,5,2
 0vn2RQg2,2026-11-14T12:30:00+00:00,bulgaria,Bulgaria: Third League - South-East,Lok. Plovdiv II,Rozova Dolina,1,1,3,1
@@ -138333,6 +138342,7 @@ KSxHlbxg,2026-11-14T12:40:00+00:00,saudi-arabia,Saudi Arabia: Division 2,Al Ente
 0O3ePK0n,2026-11-14T12:45:00+00:00,greece,Greece: Super League 2,Panserraikos,Karditsa,1,0,2,0
 xlafx4S9,2026-11-14T12:45:00+00:00,england,England: WSL,Manchester Utd W,Crystal Palace W,1,0,2,0
 IJ4Roete,2026-11-14T12:50:00+00:00,united-arab-emirates,United Arab Emirates: League Cup,Al Dhafra,Ajman,0,0,1,0
+06nYbYxP,2026-11-14T13:00:00+00:00,asia,Asia: AFC Asian Cup U17,Malaysia U17,Singapore U17,1,1,2,1
 0CBwKCTN,2026-11-14T13:00:00+00:00,germany,Germany: Bundesliga Women,Werder Bremen W,Union Berlin W,2,0,2,0
 0helk42e,2026-11-14T13:00:00+00:00,slovenia,Slovenia: 3. SNL - West,Zidgrad Idrija,Ljubljana Svoboda,2,0,5,0
 0pRju9Ni,2026-11-14T13:00:00+00:00,austria,Austria: Wien,First Vienna (Am),Lac Inter,0,0,1,1
@@ -138438,6 +138448,7 @@ h2v20apA,2026-11-14T13:00:00+00:00,germany,Germany: Oberliga Rheinland-Pfalz/Saa
 hCgta6Ts,2026-11-14T13:00:00+00:00,germany,Germany: Regionalliga North,SC Weiche-08,Werder Bremen II,1,1,3,1
 hMxCzvxi,2026-11-14T13:00:00+00:00,brazil,Brazil: Carioca U20,Fluminense U20,Botafogo U20,1,1,1,2
 hSitiQXr,2026-11-14T13:00:00+00:00,slovenia,Slovenia: 3. SNL - West,Sobec Lesce,Rudar T.,0,0,1,1
+htqQ0f8C,2026-11-14T13:00:00+00:00,asia,Asia: AFC Asian Cup U17,Oman U17,Brunei U17,5,0,10,0
 jDWOwEL6,2026-11-14T13:00:00+00:00,czech-republic,Czech Republic: 4. liga - Group F,Bilovec,Frydlant n. O.,0,0,3,0
 jFTmvi8N,2026-11-14T13:00:00+00:00,czech-republic,Czech Republic: 4. liga - Group C,Vysoke Myto,Kolin,3,1,5,1
 jPQtOQX2,2026-11-14T13:00:00+00:00,austria,Austria: Tirol,FC Volders,Stubai,0,0,2,0
@@ -138527,6 +138538,7 @@ Iulc1PvR,2026-11-14T14:00:00+00:00,wales,Wales: FAW Welsh Cup,Colwyn Bay,Aberyst
 K0QUAFa6,2026-11-14T14:00:00+00:00,austria,Austria: Burgenland,Neudorf/Parndorf,Pinkafeld,1,0,2,0
 KdMxrmeS,2026-11-14T14:00:00+00:00,slovenia,Slovenia: 3. SNL - West,IB 1975 Ljubljana,Sencur,0,1,2,1
 KvogTwsC,2026-11-14T14:00:00+00:00,france,France: Coupe de France,Rhone-Crussol,Frejus Saint Raphael,0,1,0,3
+MaesJ3Gc,2026-11-14T14:00:00+00:00,switzerland,Switzerland: Promotion League,Kreuzlingen,Bavois,1,1,2,3
 MywyfsX0,2026-11-14T14:00:00+00:00,wales,Wales: FAW Welsh Cup,Haverfordwest,Ammanford,2,1,3,1
 O6tOD8vI,2026-11-14T14:00:00+00:00,switzerland,Switzerland: Promotion League,Paradiso,Amical Saint-Prex,2,0,5,0
 OGk0YCNh,2026-11-14T14:00:00+00:00,switzerland,Switzerland: 1.Liga Classic Group 2,Bassecourt,Zug,0,2,2,3
@@ -138596,6 +138608,7 @@ MVXzGCFF,2026-11-14T14:45:00+00:00,spain,Spain: Tercera RFEF - Group 8,Mirandes 
 4SEmOMHj,2026-11-14T15:00:00+00:00,scotland,Scotland: League One,Airdrieonians,Queen of South,1,0,2,0
 4WGsinjK,2026-11-14T15:00:00+00:00,england,England: Women’s FA Cup,Dulwich Hamlet W,Portishead Town W,1,1,4,1
 4zkWzFye,2026-11-14T15:00:00+00:00,ghana,Ghana: Division One League,New Edubiase,Sefwi All Stars,0,0,2,0
+6eJK3EV7,2026-11-14T15:00:00+00:00,switzerland,Switzerland: 1.Liga Classic Group 3,Locarno,Freienbach,0,0,0,1
 6gjDRUJN,2026-11-14T15:00:00+00:00,england,England: Isthmian League Premier Division,Lewes,Stanway,0,0,0,0
 6grM3kQp,2026-11-14T15:00:00+00:00,europe,Europe: Euro U19,Finland U19,Iceland U19,0,0,1,0
 6qm1M2GP,2026-11-14T15:00:00+00:00,england,England: FA Trophy,Hebburn Town,Guiseley,1,0,2,0
@@ -138645,6 +138658,7 @@ K8KCWzP7,2026-11-14T15:00:00+00:00,scotland,Scotland: Championship,Partick Thist
 KMgHXxlI,2026-11-14T15:00:00+00:00,scotland,Scotland: League Two,Dumbarton,Annan,0,3,0,5
 KWj4b8xq,2026-11-14T15:00:00+00:00,spain,Spain: Tercera RFEF - Group 10,Cadiz CF B,Sevilla FC C,1,1,1,1
 Kf3bTk8j,2026-11-14T15:00:00+00:00,england,England: National League,Hartlepool,Wealdstone,0,0,1,1
+KxpscI53,2026-11-14T15:00:00+00:00,ghana,Ghana: Division One League,True Democracy,Nukunu,0,1,1,1
 MJs1qKSH,2026-11-14T15:00:00+00:00,portugal,Portugal: Taça de Portugal Women,Rio Tinto W,Porto W,0,2,0,4
 MLnzB84U,2026-11-14T15:00:00+00:00,scotland,Scotland: Highland League,Clachnacuddin,Brora Rangers,1,1,3,3
 Mc2V2nUp,2026-11-14T15:00:00+00:00,england,England: League Two,Port Vale,Accrington,2,0,4,2
@@ -138701,6 +138715,7 @@ fqdqnbSh,2026-11-14T15:00:00+00:00,spain,Spain: Tercera RFEF - Group 3,Escobedo,
 hEOx9gUI,2026-11-14T15:00:00+00:00,austria,Austria: Burgenland,Margarethen,SV Eberau,0,2,0,2
 hUQdqaw0,2026-11-14T15:00:00+00:00,england,England: Southern League Premier South,Evesham,Gosport,4,2,5,3
 hhDBmIIk,2026-11-14T15:00:00+00:00,europe,Europe: Euro U19,Belgium U19,Kazakhstan U19,0,0,2,0
+hlJYUadK,2026-11-14T15:00:00+00:00,spain,Spain: Tercera RFEF - Group 4,Alaves C,UD Aretxabaleta,4,0,5,2
 hzhPVGIU,2026-11-14T15:00:00+00:00,scotland,Scotland: League Two,Edinburgh City,Clyde,2,2,2,6
 j33krr9M,2026-11-14T15:00:00+00:00,scotland,Scotland: League One,East Kilbride,Alloa,2,0,4,1
 j3ihzZht,2026-11-14T15:00:00+00:00,switzerland,Switzerland: 1.Liga Classic Group 2,Muttenz,Solothurn,1,0,1,1
@@ -138728,6 +138743,7 @@ pvnvtTid,2026-11-14T15:00:00+00:00,england,England: National League,Sutton,Solih
 r16KLeJ6,2026-11-14T15:00:00+00:00,spain,Spain: Tercera RFEF - Group 4,Eibar C,Derio,0,0,2,0
 r92pm5Kr,2026-11-14T15:00:00+00:00,england,England: FA Trophy,Chorley,Buxton,0,1,1,2
 r9W92VcC,2026-11-14T15:00:00+00:00,switzerland,Switzerland: Super League Women,Basel W,Aarau W,2,1,2,1
+raD1sDwB,2026-11-14T15:00:00+00:00,switzerland,Switzerland: 1.Liga Classic Group 1,Lausanne II,Prishtina Bern,0,0,1,1
 raXYkK3n,2026-11-14T15:00:00+00:00,scotland,Scotland: League Two,Forfar Athletic,Spartans,1,0,2,1
 ruFTj4iI,2026-11-14T15:00:00+00:00,england,England: League One,Stockport County,Reading,2,1,3,1
 rw0sp4vA,2026-11-14T15:00:00+00:00,scotland,Scotland: League One,East Fife,Peterhead,1,0,1,0
@@ -138740,6 +138756,7 @@ vo3JZzV8,2026-11-14T15:00:00+00:00,england,England: Southern League Premier Cent
 x4J6aZ95,2026-11-14T15:00:00+00:00,england,England: FA Trophy,Eastbourne Boro,Chertsey,1,0,2,1
 xErWskNq,2026-11-14T15:00:00+00:00,england,England: National League,Southend,Aldershot,0,1,2,1
 xOByECxn,2026-11-14T15:00:00+00:00,england,England: League Two,Bristol Rovers,Chesterfield,0,1,0,2
+xWy0JCAt,2026-11-14T15:00:00+00:00,switzerland,Switzerland: Promotion League,Zurich II,Young Boys II,0,0,1,1
 xYMqVBkn,2026-11-14T15:00:00+00:00,scotland,Scotland: Highland League,Forres Mechanics,Rothes,1,1,2,2
 xnf1sh9j,2026-11-14T15:00:00+00:00,spain,Spain: Tercera RFEF - Group 8,Unionistas B,Arandina,0,0,1,0
 xrtdRazb,2026-11-14T15:00:00+00:00,ghana,Ghana: Premier League,Heart of Lions,Dreams,1,2,1,2
@@ -138753,6 +138770,7 @@ GEIPIlht,2026-11-14T15:15:00+00:00,spain,Spain: LaLiga2,Real Sociedad B,Gijon,0,
 IJAEiJJP,2026-11-14T15:15:00+00:00,spain,Spain: Tercera RFEF - Group 15,Txantrea,Mutilvera,1,0,1,1
 bXdWdFtB,2026-11-14T15:15:00+00:00,spain,Spain: Tercera RFEF - Group 3,Selaya,Velarde,0,0,0,0
 xdwTS2pJ,2026-11-14T15:15:00+00:00,niger,Niger: Super Ligue,ASFAN,Nigelec,0,0,0,0
+C2sA4x9m,2026-11-14T15:20:00+00:00,asia,Asia: AFC Asian Cup U17,Bangladesh U17,Bhutan U17,3,0,4,0
 6wCezpdS,2026-11-14T15:30:00+00:00,czech-republic,Czech Republic: 4. liga - Group B,Tempo Prague,Karlovy Vary,0,1,0,2
 8dJ0FgvI,2026-11-14T15:30:00+00:00,spain,Spain: Tercera RFEF - Group 13,Santa Cruz,UCAM Murcia B,1,0,1,0
 GWoAkXYp,2026-11-14T15:30:00+00:00,spain,Spain: Tercera RFEF - Group 3,Atletico Mineros,Bezana,1,1,2,1
@@ -138792,6 +138810,7 @@ OWuBb7KN,2026-11-14T16:00:00+00:00,france,France: Coupe de France,IC Croix,Thaon
 QsRn7d4D,2026-11-14T16:00:00+00:00,spain,Spain: Tercera RFEF - Group 4,Sodupe,Santurtzi,1,0,1,0
 S86ooevn,2026-11-14T16:00:00+00:00,switzerland,Switzerland: 1.Liga Classic Group 1,Chenois,Monthey,2,2,2,3
 UaZAJHOM,2026-11-14T16:00:00+00:00,spain,Spain: Segunda RFEF - Group 2,Osasuna B,SD Logrones,1,0,2,0
+WMvWkfuh,2026-11-14T16:00:00+00:00,france,France: National 1 - Group C,Andrezieux,Chateauroux,0,1,1,2
 WbjwptPP,2026-11-14T16:00:00+00:00,belgium,Belgium: 1st National Women,KFC Damme W,Schoonbeek-Beverst W,0,1,1,2
 YRvHxbHa,2026-11-14T16:00:00+00:00,belgium,Belgium: 1st National Women,Waregem 2 W,St. Liege II W,2,0,2,0
 YVlBRfOc,2026-11-14T16:00:00+00:00,spain,Spain: Tercera RFEF - Group 18,Marchamalo,Villarrubia,1,1,1,3
@@ -138852,6 +138871,7 @@ MNB7TRJc,2026-11-14T17:00:00+00:00,france,France: Coupe de France,Vitre,Milizac,
 O8uQswd5,2026-11-14T17:00:00+00:00,france,France: Coupe de France,St Ouen,Boulogne,1,0,1,0
 QoNpERRk,2026-11-14T17:00:00+00:00,spain,Spain: Segunda RFEF - Group 4,Sanluqueno,Betis B,0,0,0,1
 SYw37rNa,2026-11-14T17:00:00+00:00,europe,Europe: UEFA Nations League,Norway,Wales,0,0,3,1
+WAIV7doT,2026-11-14T17:00:00+00:00,spain,Spain: Tercera RFEF - Group 12,Los Llanos,Anaza,1,0,3,0
 WWJqUDSb,2026-11-14T17:00:00+00:00,france,France: Coupe de France,ASPTT Dijon,Selongey,0,0,0,2
 Wxq0t1BM,2026-11-14T17:00:00+00:00,europe,Europe: Euro U19,France U19,Ireland U19,2,1,2,2
 YuU5a2N7,2026-11-14T17:00:00+00:00,france,France: Coupe de France,Grau-du-Roi,Riviera,2,2,2,4
@@ -138930,6 +138950,7 @@ CW2ObQof,2026-11-14T19:00:00+00:00,africa,Africa: Africa Cup of Nations,Angola,S
 Ee9y7c9C,2026-11-14T19:00:00+00:00,canada,Canada: NSL Women,Montreal Roses W,AFC Toronto W,0,1,0,1
 EmD3H96t,2026-11-14T19:00:00+00:00,belgium,Belgium: Second Amateur Division Group VFV A,Petegem,Oostkamp,0,1,0,2
 EwS3jzM6,2026-11-14T19:00:00+00:00,brazil,Brazil: Copa Paraiba,Serra Branca,Nacional de Patos,0,1,0,1
+KpGBFmyg,2026-11-14T19:00:00+00:00,belgium,Belgium: Second Amateur Division Group VFV A,KRC Gent,Londerzeel,0,1,0,2
 MJJLrYbk,2026-11-14T19:00:00+00:00,france,France: Coupe de France,OM Cambrai,Amiens,0,2,0,3
 OOXgc6LO,2026-11-14T19:00:00+00:00,belgium,Belgium: Second Amateur Division Group VFV A,Diksmuide Oostende,Ninove,3,1,5,3
 QFbYThgB,2026-11-14T19:00:00+00:00,spain,Spain: Tercera RFEF - Group 13,Aguilas FC B,Santomera,2,0,3,0
@@ -138937,6 +138958,7 @@ Qq4R6PdS,2026-11-14T19:00:00+00:00,belgium,Belgium: Second Amateur Division Grou
 b7gbyiU1,2026-11-14T19:00:00+00:00,belgium,Belgium: National Division 1 - VV,Lyra-Lierse,Dessel,0,2,1,2
 bozsSEV7,2026-11-14T19:00:00+00:00,netherlands,Netherlands: Eerste Divisie,Dordrecht,Heracles,0,1,1,2
 bqDHQ2cL,2026-11-14T19:00:00+00:00,argentina,Argentina: Primera Nacional,Temperley,Ciudad Bolivar,1,1,1,2
+dSfc13Kk,2026-11-14T19:00:00+00:00,belgium,Belgium: Second Amateur Division Group VFV B,Bocholter,Eendr. Termien,0,0,3,0
 dp25R7dR,2026-11-14T19:00:00+00:00,belgium,Belgium: National Division 1 - ACFF,Union Rochefortoise,Tubize-Braine,1,2,2,3
 hAjRDMTp,2026-11-14T19:00:00+00:00,costa-rica,Costa Rica: Liga de Ascenso,Santa Ana,AD Sarchi,0,0,1,1
 hGmyMoKl,2026-11-14T19:00:00+00:00,belgium,Belgium: National Division 1 - ACFF,RWDM Brussels,Habay La Neuve,0,1,1,1
@@ -138949,9 +138971,12 @@ r9bicYjL,2026-11-14T19:00:00+00:00,belgium,Belgium: National Division 1 - VV,Hei
 reTQVdWr,2026-11-14T19:00:00+00:00,netherlands,Netherlands: Eerste Divisie,Almere City,Helmond,3,0,6,1
 rem8Vmx0,2026-11-14T19:00:00+00:00,netherlands,Netherlands: Eerste Divisie,Venlo,Eindhoven FC,0,1,1,2
 tnZVmCGG,2026-11-14T19:00:00+00:00,north-central-america,North & Central America: CONCACAF Nations League,Sint Maarten,French Guiana,1,2,1,5
+vT5J8oSF,2026-11-14T19:00:00+00:00,belgium,Belgium: Second Amateur Division Group VFV B,Wellen,De Kempen,1,0,1,0
 vXoqKPl1,2026-11-14T19:00:00+00:00,belgium,Belgium: National Division 1 - ACFF,Flenu,Renaissance Mons,0,0,0,2
 vgOJOrng,2026-11-14T19:00:00+00:00,europe,Europe: Euro U17,Montenegro U17,Ukraine U17,0,0,1,0
 zVq0X97m,2026-11-14T19:00:00+00:00,netherlands,Netherlands: Eerste Divisie,Roda,FC Volendam,1,1,3,1
+Uug5ask2,2026-11-14T19:15:00+00:00,belgium,Belgium: Second Amateur Division Group VFV B,Cappellen,Nijlen,0,0,0,1
+dnoiNps9,2026-11-14T19:15:00+00:00,belgium,Belgium: Second Amateur Division Group VFV B,Rotselaar,St. Truiden 2,0,0,0,2
 0nnu62oK,2026-11-14T19:30:00+00:00,brazil,Brazil: Serie B,America MG,Avai,0,0,0,2
 KYFjDJhm,2026-11-14T19:30:00+00:00,brazil,Brazil: Serie B,CRB,Ceara,0,1,1,1
 OCXYfxwJ,2026-11-14T19:30:00+00:00,brazil,Brazil: Serie B,Criciuma,Novorizontino,0,0,0,1
@@ -138997,3 +139022,837 @@ pjvSrgBc,2026-11-14T21:30:00+00:00,mexico,Mexico: Primera Premier,Zacatepec,Mont
 riHkm68s,2026-11-14T21:30:00+00:00,chile,Chile: Copa de la Liga,Coquimbo,O'Higgins,2,0,3,0
 tbZlPvmg,2026-11-14T21:30:00+00:00,north-central-america,North & Central America: CONCACAF Nations League,Haiti,USA,0,1,0,6
 v9YyLeNG,2026-11-14T21:30:00+00:00,brazil,Brazil: Serie A,Mirassol,Atletico-MG,0,0,0,0
+0855P1Yq,2026-11-14T22:00:00+00:00,chile,Chile: Segunda Division,Colchagua,Dep. Linares,0,0,2,0
+0Kk0GWXA,2026-11-14T22:00:00+00:00,argentina,Argentina: Copa Argentina,Banfield,Boca Juniors,0,1,0,3
+Emc2SXQG,2026-11-14T22:00:00+00:00,mexico,Mexico: Primera Premier,Tritones Vallarta,Tapachula,1,1,2,1
+KMuSIFxJ,2026-11-14T22:00:00+00:00,mexico,Mexico: Liga Premier Serie A,Real Refineros,Saltillo,1,1,4,1
+SKhhjViU,2026-11-14T22:00:00+00:00,mexico,Mexico: Liga Premier Serie B,Gorilas,Internacional Laguna,3,0,5,0
+n9sKKy86,2026-11-14T22:00:00+00:00,mexico,Mexico: Liga Premier Serie A,Artesanos Metepec,Correcaminos 2,0,0,1,1
+ncwGcJJc,2026-11-14T22:00:00+00:00,argentina,Argentina: Primera B,Real Pilar,Talleres (R.E),0,1,2,1
+rmNLsyXg,2026-11-14T22:30:00+00:00,uruguay,Uruguay: Segunda Division,Paysandu FC,Uruguay Montevideo,1,0,1,2
+0G7JH5iK,2026-11-14T23:00:00+00:00,usa,USA: USL Championship,Charleston,Louisville City,0,1,0,2
+0pg3d9Br,2026-11-14T23:00:00+00:00,mexico,Mexico: Liga MX Women,Tigres UANL W,UNAM Pumas W,0,1,0,5
+406RaDLU,2026-11-14T23:00:00+00:00,mexico,Mexico: Liga MX,Queretaro,Monterrey,0,0,0,1
+ANd3xyU1,2026-11-14T23:00:00+00:00,guatemala,Guatemala: Liga Nacional,Comunicaciones,Coban Imperial,1,0,2,0
+GbS4cBK6,2026-11-14T23:00:00+00:00,uruguay,Uruguay: Liga AUF Uruguaya,Nacional,Albion,1,0,1,1
+QLoMBRbT,2026-11-14T23:00:00+00:00,antigua-barbuda,Antigua & Barbuda: ABFA Premier League,Old Road,Greenbay Hoppers,1,0,1,2
+StCfJKke,2026-11-14T23:00:00+00:00,argentina,Argentina: Primera Nacional,Gimnasia Jujuy,Almirante Brown,0,0,2,0
+dAwg7vdB,2026-11-14T23:00:00+00:00,suriname,Suriname: SML,PVV,Robinhood,0,2,0,6
+l6DhNpjS,2026-11-14T23:00:00+00:00,new-zealand,New Zealand: National League Women,Wellington Phoenix 2 W,Southern United W,1,0,3,1
+ARJ356Ua,2026-11-14T23:30:00+00:00,brazil,Brazil: Serie A,Chapecoense-SC,Vasco,0,1,0,2
+EsQgYzum,2026-11-14T23:30:00+00:00,new-zealand,New Zealand: National League,Cashmere Technical,Wellington Olympic,0,0,3,0
+GrOqychm,2026-11-15T00:00:00+00:00,mexico,Mexico: Liga Premier Serie A,Dragones de Oaxaca,Guerreros de Autlan,2,2,4,2
+IBvOwcHP,2026-11-15T00:00:00+00:00,new-zealand,New Zealand: National League,Napier City,Ferrymead Bays,1,1,2,2
+OtyA8C7b,2026-11-15T00:00:00+00:00,mexico,Mexico: Liga Premier Serie B,Ayense,Irapuato II,0,2,1,2
+Stz60NEb,2026-11-15T00:00:00+00:00,el-salvador,El Salvador: Primera Division,Inter Santa Tecla,Cacahuatique,2,0,2,0
+WYjjyZWA,2026-11-15T00:00:00+00:00,north-central-america,North & Central America: CONCACAF Nations League,Saint Vincent and the Grenadines,Belize,1,0,1,0
+nTXDtJUP,2026-11-15T00:00:00+00:00,mexico,Mexico: Liga Premier Serie A,Halcones Negros,ACF Zapotlanejo,0,1,4,2
+KhCq5yvP,2026-11-15T00:30:00+00:00,usa,USA: USL League One,Charlotte Independ.,Boise,0,1,4,2
+2cgevcak,2026-11-15T01:00:00+00:00,guatemala,Guatemala: Liga Nacional,Malacateco,Municipal,0,1,0,1
+Kl4OHODk,2026-11-15T01:00:00+00:00,new-zealand,New Zealand: National League Women,West Coast Rangers W,Wellington United W,1,1,2,1
+U5tbAS06,2026-11-15T01:00:00+00:00,australia,Australia: A-League Women,Wellington Phoenix W,Sydney W,2,0,3,1
+bLpOQiOc,2026-11-15T01:00:00+00:00,north-central-america,North & Central America: CONCACAF Nations League,Jamaica,Mexico,1,0,3,2
+h22zWLkT,2026-11-15T01:00:00+00:00,costa-rica,Costa Rica: Liga de Ascenso,Grecia,Cariari Pococi,1,0,2,1
+vXuruBAM,2026-11-15T01:00:00+00:00,mexico,Mexico: Primera Premier,Lobos ULMX,Deportiva Venados,1,1,1,3
+ImUBdNaK,2026-11-15T01:30:00+00:00,japan,Japan: Empress's Cup Women,Ehime W,Sapporo Univ W,2,0,5,0
+fBWdmJM6,2026-11-15T01:30:00+00:00,japan,Japan: Empress's Cup Women,SEISA OSA Rheia W,Diavorosso Hiroshima W,0,2,1,2
+nmhUPOOr,2026-11-15T01:30:00+00:00,japan,Japan: Empress's Cup Women,AICJ High School W,Toyo University W,0,1,0,3
+M7T1WE9a,2026-11-15T02:00:00+00:00,new-zealand,New Zealand: National League,Auckland United,Miramar,0,2,1,3
+fTyb2qpn,2026-11-15T02:00:00+00:00,el-salvador,El Salvador: Primera Division,Metapan,Luis Angel Firpo,2,1,3,1
+z7wEb1qB,2026-11-15T02:00:00+00:00,el-salvador,El Salvador: Primera Division,Alianza FC,FAS,0,1,1,1
+EFo9UhvC,2026-11-15T03:00:00+00:00,new-zealand,New Zealand: National League,Birkenhead,Eastern Suburbs,1,1,1,2
+h22WF2r2,2026-11-15T03:00:00+00:00,new-zealand,New Zealand: National League Women,Eastern Suburbs W,Canterbury United W,5,0,8,0
+pbxa7RKh,2026-11-15T03:00:00+00:00,mexico,Mexico: Liga de Expansion MX,Atletico La Paz,Piratas,0,1,1,1
+z3RDZlYq,2026-11-15T03:00:00+00:00,mexico,Mexico: Primera Premier,Los Cabos,Chapulineros,0,0,2,0
+fRfJhRA7,2026-11-15T03:06:00+00:00,mexico,Mexico: Liga MX Women,Guadalajara Chivas W,Juarez W,1,1,1,1
+0SVRIYS8,2026-11-15T04:00:00+00:00,japan,Japan: J2 League,Hokkaido Consadole Sapporo,Sagan Tosu,1,0,1,2
+61rYUyTq,2026-11-15T04:00:00+00:00,australia,Australia: Australian Championship,Sutherland Sharks,Canberra Croatia,1,0,3,0
+8W3HrDsh,2026-11-15T04:00:00+00:00,france,France: Coupe de France,Tefana,Thionville,0,3,0,4
+8hZZGCcL,2026-11-15T04:00:00+00:00,japan,Japan: J2 League,Vanraure,Iwaki,1,1,2,2
+A3zAx28l,2026-11-15T04:00:00+00:00,japan,Japan: Empress's Cup Women,Urawa 2 W,Inac Kobe Leonesa U18 W,2,0,2,1
+AVd2zb5M,2026-11-15T04:00:00+00:00,australia,Australia: Australian Championship,Broadmeadow,Avondale FC,0,1,2,1
+MDb586VI,2026-11-15T04:00:00+00:00,australia,Australia: A-League Women,Canberra W,Brisbane Roar W,1,0,1,0
+WQtPllV7,2026-11-15T04:00:00+00:00,japan,Japan: J3 League,Kagoshima Utd,Gainare Tottori,0,0,0,3
+Y3jxO2ge,2026-11-15T04:00:00+00:00,japan,Japan: Empress's Cup Women,Nittaidai W,Yamanashi Gakuin W,2,0,2,3
+dvc4ypOa,2026-11-15T04:00:00+00:00,japan,Japan: WE League Women,Omiya Ardija W,Mynavi Sendai W,0,0,1,0
+noTlkuhf,2026-11-15T04:00:00+00:00,japan,Japan: Empress's Cup Women,Setagaya Sfida FC W,Nankatsu W,2,0,2,1
+4OK5BjLr,2026-11-15T04:05:00+00:00,japan,Japan: J2 League,Vegalta Sendai,Blaublitz,2,0,4,0
+tUgpMtO7,2026-11-15T04:30:00+00:00,japan,Japan: Empress's Cup Women,Okayama Yunogo W,Fujieda Junshin High School W,1,0,3,1
+Cdp9hWVr,2026-11-15T05:00:00+00:00,japan,Japan: J3 League,Kamatamare,Renofa Yamaguchi,0,1,1,1
+EVometlS,2026-11-15T05:00:00+00:00,russia,Russia: FNL,SKA Khabarovsk,Leningradets,1,0,1,0
+UcY3duXG,2026-11-15T05:00:00+00:00,japan,Japan: J3 League,Tochigi SC,Nara Club,0,0,1,0
+bPCFTksR,2026-11-15T05:00:00+00:00,japan,Japan: J2 League,Toyama,Tokushima,0,2,2,3
+jeoX3RCN,2026-11-15T05:00:00+00:00,japan,Japan: J.League Cup,Machida,Vissel Kobe,0,0,1,1
+n3GhM7Z0,2026-11-15T05:00:00+00:00,japan,Japan: J2 League,Imabari,Iwata,0,2,0,2
+rJ5iuypA,2026-11-15T05:00:00+00:00,south-korea,South Korea: WK League Women,Gyeongju W,Suwon FC W,0,0,0,0
+tf3qxBo2,2026-11-15T05:00:00+00:00,japan,Japan: J3 League,Kanazawa,Kumamoto,2,0,3,2
+zc0yvXGk,2026-11-15T05:00:00+00:00,japan,Japan: J3 League,Nagano,Ehime,1,0,1,0
+4d08dcaf,2026-11-15T06:00:00+00:00,china,China: Super League Women,Wuhan Jiangda W,Shanghai RCB W,2,2,3,2
+AHqH79Db,2026-11-15T06:00:00+00:00,japan,Japan: J.League Cup,Cerezo Osaka,Urawa Reds,0,0,1,1
+CM3GfyU6,2026-11-15T06:00:00+00:00,china,China: Super League Women,Zhejiang W,Jiangsu Suning W,0,1,1,1
+Ee1akScU,2026-11-15T06:00:00+00:00,japan,Japan: J.League Cup,Kashima Antlers,Yokohama F. Marinos,1,0,3,2
+Kn7OhFbJ,2026-11-15T06:00:00+00:00,china,China: Super League Women,Liaoning W,Beijing Beikong W,0,0,1,1
+bXYACiNE,2026-11-15T07:00:00+00:00,japan,Japan: J3 League,Ryukyu,Kochi United,1,0,1,0
+hrKEZ6AL,2026-11-15T07:00:00+00:00,china,China: League One,Guizhou Guiyang,Dingnan Ganlian,3,1,3,1
+vTVAZ5qm,2026-11-15T07:00:00+00:00,hong-kong,Hong Kong: League Cup,Eastern District,Eastern AA,1,0,1,0
+0jlTiKX7,2026-11-15T08:00:00+00:00,laos,Laos: Lao League,Lao Army FC,BIS,0,0,0,0
+270hrcqL,2026-11-15T08:00:00+00:00,ghana,Ghana: Division One League,Rospak,Pac Academy,0,1,2,1
+6XYTi58t,2026-11-15T08:00:00+00:00,japan,Japan: WE League Women,Inac Kobe Leonesa W,C-Osaka W,1,0,1,1
+SdtFFNPE,2026-11-15T08:00:00+00:00,laos,Laos: Lao League,Savannakhet,Champasak Avenir,0,1,1,2
+WAGgegv0,2026-11-15T08:00:00+00:00,laos,Laos: Lao League,Chanthabouly,Ezra,1,1,1,5
+bq3ncF9m,2026-11-15T08:00:00+00:00,laos,Laos: Lao League,Namtha United,Salavan United,0,0,0,3
+jHKjb4pJ,2026-11-15T08:00:00+00:00,south-africa,South Africa: Diski Challenge,Sekhukhune U23,Stellenbosch U23,1,0,1,2
+tr3iilTH,2026-11-15T08:00:00+00:00,japan,Japan: J.League Cup,Kashiwa Reysol,Kawasaki Frontale,1,3,5,4
+vyK1gX8C,2026-11-15T08:00:00+00:00,laos,Laos: Lao League,Oudomxay Entremets,GB FC,0,1,0,3
+2oJSEMfk,2026-11-15T09:00:00+00:00,austria,Austria: Tirol,FC Natters,SC Mils 05,2,0,2,2
+4tElHC4T,2026-11-15T09:00:00+00:00,serbia,Serbia: Srpska Liga - Vojvodina,Kabel Novi Sad,Mladost Apatin,0,0,2,1
+UmTC8UVj,2026-11-15T09:00:00+00:00,romania,Romania: Superliga Women,Vasas Odorhei W,Univ. Craiova W,1,0,1,1
+baod759M,2026-11-15T09:00:00+00:00,ukraine,Ukraine: Persha Liga,SC Poltava,Ahrobiznes Volochysk,1,2,1,4
+tEgwbh8L,2026-11-15T09:00:00+00:00,japan,Japan: J3 League,Reilac Shiga,Osaka,1,1,1,1
+xYMESkNM,2026-11-15T09:00:00+00:00,romania,Romania: Superliga Women,FC Rapid Bucuresti W,Gloria Bistrita W,0,2,0,5
+Ao1Ont7L,2026-11-15T09:15:00+00:00,czech-republic,Czech Republic: 3. MSFL,Havirov,Blansko,0,1,2,1
+Oti1hAye,2026-11-15T09:15:00+00:00,czech-republic,Czech Republic: 3. CFL - Group B,Teplice B,Hradec Kralove B,0,0,1,0
+WKopVfU0,2026-11-15T09:15:00+00:00,czech-republic,Czech Republic: 3. CFL - Group A,Bohemians 1905 B,Kraluv Dvur,1,0,1,1
+fuh6xwxR,2026-11-15T09:15:00+00:00,czech-republic,Czech Republic: 3. CFL - Group A,Admira Prague,Slavia Prague U20,1,1,3,1
+2erZMR7N,2026-11-15T09:30:00+00:00,austria,Austria: Wien,Slovan HAC,Simmeringer,1,0,4,0
+AZCLWLSh,2026-11-15T09:30:00+00:00,slovakia,Slovakia: 4. liga - West,Nitra B,Gbely,2,0,3,0
+MB9Y0xRr,2026-11-15T09:30:00+00:00,slovakia,Slovakia: 2. liga,Zilina B,I. Bratislava,0,1,0,1
+QR836b3L,2026-11-15T09:30:00+00:00,slovakia,Slovakia: 2. liga,Slovan Bratislava B,Malzenice,1,0,2,0
+WnQxcB3c,2026-11-15T09:30:00+00:00,slovakia,Slovakia: 3. Liga - West,Raca,Velke Ludince,0,1,1,1
+pUpofCGM,2026-11-15T09:30:00+00:00,ukraine,Ukraine: Druha Liga,SC Poltava 2,Lozova,1,0,1,1
+vDTpekY9,2026-11-15T09:30:00+00:00,slovakia,Slovakia: 3. Liga - West,Dun. Streda B,Trencin B,3,0,4,2
+WI02Wjb5,2026-11-15T09:45:00+00:00,germany,Germany: Oberliga Hamburg,HEBC Hamburg,Paloma,0,0,0,1
+0GJDRhCO,2026-11-15T10:00:00+00:00,hungary,Hungary: NB III - Northwest,Puskas Academy II,Bicskei,0,0,1,1
+4pCA5Ba5,2026-11-15T10:00:00+00:00,turkey,Turkey: 3. Lig Group 2,Alanya 1221,Denizli IY Gureller,1,0,2,0
+4xAf2ph4,2026-11-15T10:00:00+00:00,turkey,Turkey: 3. Lig Group 1,Amasyaspor,Zonguldak,0,0,1,1
+6F5ea38K,2026-11-15T10:00:00+00:00,hungary,Hungary: NB III - Northeast,DVTK II,Nyiregyhaza II,0,0,1,0
+6HWsL8qn,2026-11-15T10:00:00+00:00,turkey,Turkey: 3. Lig Group 3,Karakopru,Agri 1970,1,0,4,1
+8Q0ojlpC,2026-11-15T10:00:00+00:00,turkey,Turkey: 3. Lig Group 3,Diyarbekirspor,Silifke,2,0,3,1
+AHL9b2iT,2026-11-15T10:00:00+00:00,turkey,Turkey: 3. Lig Group 1,Karadeniz Eregli,Pazarspor,0,3,2,4
+CtUIXqEa,2026-11-15T10:00:00+00:00,hong-kong,Hong Kong: League Cup,Lee Man Warriors,Tai Po,0,0,2,1
+GrWVZR6l,2026-11-15T10:00:00+00:00,greece,Greece: Division A Women,REA W,Asteras Tripolis W,0,1,0,4
+KU7ZLWqn,2026-11-15T10:00:00+00:00,turkey,Turkey: 3. Lig Group 2,Aksehirspor,Kepez Bld.,0,2,1,3
+MLtKmvae,2026-11-15T10:00:00+00:00,austria,Austria: Bundesliga Women,SCR Altach W,SK Rapid W,1,1,2,2
+OOqA8JeB,2026-11-15T10:00:00+00:00,turkey,Turkey: Super Lig Women,Trabzonspor W,Yuksekova W,1,0,2,0
+Q53CFLaM,2026-11-15T10:00:00+00:00,poland,Poland: III Liga - Group IV,Korona Kielce II,Moravia Morawica,1,0,1,1
+SKCj4JQr,2026-11-15T10:00:00+00:00,russia,Russia: FNL,Chelyabinsk,Veles Moscow,3,1,4,2
+SruL7psB,2026-11-15T10:00:00+00:00,russia,Russia: FNL 2 - Division A Gold,Alania Vladikavkaz,Rodina Moscow 2,1,1,4,1
+U5E0t3Vp,2026-11-15T10:00:00+00:00,turkey,Turkey: 3. Lig Group 1,Bulvarspor,Kucukcekmece,0,1,2,2
+WvldiPdU,2026-11-15T10:00:00+00:00,russia,Russia: FNL 2 - Division A Gold,Volgar-Astrakhan,Kirov,0,0,0,1
+YZSUoP7N,2026-11-15T10:00:00+00:00,turkey,Turkey: 3. Lig Group 1,Fatsa Bld.,Duzcespor,0,0,0,1
+Ys7hkxRq,2026-11-15T10:00:00+00:00,russia,Russia: FNL 2 - Division A Gold,Sibir Novosibirsk,Dynamo Vladivostok,0,1,0,1
+d4l28Vat,2026-11-15T10:00:00+00:00,turkey,Turkey: 3. Lig Group 3,Erciyes 38,Kirsehir SK,1,1,3,1
+dIVMPCIj,2026-11-15T10:00:00+00:00,hungary,Hungary: NB III - Southwest,Paks II,Majosi,0,1,1,1
+dhUH3kUH,2026-11-15T10:00:00+00:00,turkey,Turkey: 3. Lig Group 2,Gemlikspor,Bigaspor,1,0,2,0
+fVtD96Cb,2026-11-15T10:00:00+00:00,russia,Russia: FNL 2 - Division A Gold,Kaluga,Saratov,0,0,1,2
+h6doElDG,2026-11-15T10:00:00+00:00,germany,Germany: Oberliga Bremen,Geestemunde,Aumund-Vegesack,1,0,1,0
+hQ0cwk4T,2026-11-15T10:00:00+00:00,slovenia,Slovenia: 1. SZNL Women,Cerklje W,Aluminij W,1,5,1,7
+j5dY05bU,2026-11-15T10:00:00+00:00,turkey,Turkey: 3. Lig Group 3,Mazidagi,Nigde Bld.,0,0,2,0
+ldnyl3rT,2026-11-15T10:00:00+00:00,ukraine,Ukraine: Championship Women,Kryvbas W,FC Kharkiv W,0,2,0,3
+n5w5BSsn,2026-11-15T10:00:00+00:00,russia,Russia: FNL 2 - Division A Gold,D. Bryansk,Mashuk,1,1,1,1
+nP7cGSDN,2026-11-15T10:00:00+00:00,turkey,Turkey: 3. Lig Group 2,Etimesgut,Gaziemirspor,1,0,5,0
+p8gQ2RTH,2026-11-15T10:00:00+00:00,turkey,Turkey: 3. Lig Group 3,Adanaspor AS,Yozgat,1,0,4,0
+tvaglSEO,2026-11-15T10:00:00+00:00,turkey,Turkey: 3. Lig Group 3,Kirikkale FK,Bitlis 1916,1,0,3,0
+xj820OMG,2026-11-15T10:00:00+00:00,turkey,Turkey: 3. Lig Group 1,Orduspor 1967,Beykoz Anadolu,2,0,3,1
+8l73NbVb,2026-11-15T10:30:00+00:00,greece,Greece: Super League 2,Kalamaria,Athens Kallithea,0,1,1,1
+8liYE7qB,2026-11-15T10:30:00+00:00,spain,Spain: Segunda RFEF - Group 3,Lorca Deportiva,Mallorca B,1,0,2,1
+CtxEFDyg,2026-11-15T10:30:00+00:00,spain,Spain: Tercera RFEF - Group 7,CP Parla,Pozuelo de Alarcon,1,0,1,1
+GEftDoEN,2026-11-15T10:30:00+00:00,spain,Spain: Segunda RFEF - Group 3,Deportiva Minera,Poblense,0,0,2,0
+IRjysQpJ,2026-11-15T10:30:00+00:00,denmark,Denmark: A-Liga Women,ASA Aarhus W,Brondby W,0,0,0,0
+K0dRp0Yi,2026-11-15T10:30:00+00:00,spain,Spain: Tercera RFEF - Group 16,Casalarreina,Vianes,0,1,1,3
+MLUPuP3L,2026-11-15T10:30:00+00:00,india,India: IFL,Dempo,Chanmari,1,1,1,2
+UwjIIkpn,2026-11-15T10:30:00+00:00,spain,Spain: Segunda RFEF - Group 3,Ilicitano,Baleares,0,1,1,2
+bHtxA95U,2026-11-15T10:30:00+00:00,spain,Spain: Tercera RFEF - Group 7,AD Torrejon,Rayo Vallecano B,0,1,0,1
+nNjIhfe4,2026-11-15T10:30:00+00:00,spain,Spain: Tercera RFEF - Group 6,Levante B,Eldense B,0,0,2,0
+pfzMDi65,2026-11-15T10:30:00+00:00,spain,Spain: Tercera RFEF - Group 7,Siello,Real Aranjuez,0,0,0,1
+vFA8bnaU,2026-11-15T10:30:00+00:00,spain,Spain: Segunda RFEF - Group 3,Cieza,Pena Deportiva,1,0,1,1
+00abK1UH,2026-11-15T10:45:00+00:00,kenya,Kenya: Premier League,Police FC,Posta Rangers,2,0,2,1
+bHMvJnro,2026-11-15T10:45:00+00:00,spain,Spain: Tercera RFEF - Group 7,CD Mostoles,Trival Valderas,0,0,2,0
+bwUBA8OM,2026-11-15T10:45:00+00:00,spain,Spain: Tercera RFEF - Group 5,UE Tona,Vilassar de Mar,0,0,2,0
+0C15qfVA,2026-11-15T11:00:00+00:00,poland,Poland: Ekstraliga Women,Slask Wroclaw W,Leczna W,0,0,1,1
+2NKZzyfe,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 1,Arenteiro,Racing Club Villalbes,0,0,0,0
+2e4u1MpT,2026-11-15T11:00:00+00:00,poland,Poland: III Liga - Group IV,Wieczysta Krakow II,Hetman Zamosc,0,2,1,3
+2wTSZP4c,2026-11-15T11:00:00+00:00,germany,Germany: Oberliga Hamburg,Pinneberg,TSV Buchholz 08,2,0,5,0
+48hEeHnA,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 16,Anguiano,Comillas,2,0,4,0
+84wBj8aI,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 2,Gijon B,Gijon Industrial,3,0,5,0
+8CyUc7YI,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 17,Binefar,Epila,0,0,0,0
+CtvH4wQH,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 11,SD Ibiza,Mercadal,1,1,1,1
+E5USHYp3,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 8,Calasanz de Soria,Almazan,0,0,0,1
+E9AUAHI5,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 5,Mollerussa,Grama,0,2,0,3
+EiP51lrp,2026-11-15T11:00:00+00:00,spain,Spain: Segunda RFEF - Group 4,Puente Genil,Atletico Central,1,0,2,0
+EwGgQyPM,2026-11-15T11:00:00+00:00,portugal,Portugal: Liga Portugal 2,Tondela,SC Farense,1,0,2,0
+G6WvUVGE,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 9,Cantoria,Mancha,0,0,0,0
+Gnto8lfe,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 9,Granada CF B,Marbelli,0,0,1,0
+K84vZ6c4,2026-11-15T11:00:00+00:00,europe,Europe: Premier League (Crimea),Feodosiya,MAK,0,2,1,7
+K8W53B4s,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 17,Huesca B,Brea,1,0,3,0
+KS8EEaJt,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 5,Pobla Mafumet,San Juan Atletico de Montcada,0,0,2,0
+KzsYI58D,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 9,UD San Pedro,Huetor Vega,2,0,3,1
+MFu9adXj,2026-11-15T11:00:00+00:00,spain,Spain: Segunda RFEF - Group 2,UD Logrones B,Pena,1,1,2,2
+OWZnS9oR,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 9,Almeria B,Melilla,0,2,0,2
+SQyefj0g,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 2,Aviles Stadium,EI San Martin,0,1,1,1
+SY7nXpSG,2026-11-15T11:00:00+00:00,europe,Europe: Premier League (Crimea),Sparta-KT,TSK Simferopol,0,1,0,6
+SYaxKHF8,2026-11-15T11:00:00+00:00,spain,Spain: Segunda RFEF - Group 4,Tenerife B,Linares,1,1,1,2
+U7J6UBhA,2026-11-15T11:00:00+00:00,romania,Romania: Superliga Women,Politehnica Timisoara W,Csikszereda M. Ciuc W,0,0,1,0
+UJN1QUkB,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 7,Colonia M.,Galapagar,0,0,1,0
+ULKs5nnp,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 5,Cerdanyola,San Cristobal CP,1,0,2,1
+WAC4TE5D,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 10,Tomares UD,Egabrense,0,2,1,3
+WUEc4w4U,2026-11-15T11:00:00+00:00,poland,Poland: Central Youth League,Zaglebie U19,Legnica U19,0,2,1,4
+YT1cVaWg,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 14,Villafranca,Quintana,0,0,1,1
+Yi6WzTSi,2026-11-15T11:00:00+00:00,europe,Europe: Premier League (Crimea),Zarechnoye,Ocean Kerch,2,0,4,1
+YsVdEBiP,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 2,Praviano,Condal,1,1,3,2
+bg2v5Oun,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 17,Zaragoza B,Cuarte,0,0,0,0
+bwjK70XO,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 18,Almansa,Torrijos,0,0,1,0
+dEP9azh4,2026-11-15T11:00:00+00:00,belarus,Belarus: Pershaya Liga,Orsha,Volna Pinsk,1,0,1,2
+dfZFwgVp,2026-11-15T11:00:00+00:00,belarus,Belarus: Pershaya Liga,Molodechno,BumProm Gomel,0,2,2,3
+fmjModLs,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 10,Pozoblanco,Betis C,0,1,1,2
+fqUNXVdK,2026-11-15T11:00:00+00:00,poland,Poland: III Liga - Group III,BKS Sparta Katowice,Bytom Odrzanski,0,0,1,0
+hKwUBVzI,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 7,Union Adarve,Las Rozas,0,0,0,1
+hO7rd1oC,2026-11-15T11:00:00+00:00,belarus,Belarus: Pershaya Liga,Uni X Labs,Minsk 2,2,0,4,0
+hjzoVl5s,2026-11-15T11:00:00+00:00,spain,Spain: Segunda RFEF - Group 5,RSD Alcala,Atl. Madrid C,1,3,2,5
+jDKdrGED,2026-11-15T11:00:00+00:00,spain,Spain: Liga F Women,Real Sociedad W,Athletic Bilbao W,0,3,1,4
+jDQ3CUgA,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 5,CF Vilanova,Montanesa,0,0,0,2
+jHW9dDZa,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 10,Cordoba B,Ceuta B,1,0,2,0
+lEJc9mOc,2026-11-15T11:00:00+00:00,spain,Spain: Primera RFEF - Group 2,Atl. Madrid B,Teruel,0,0,1,0
+lIucUSJt,2026-11-15T11:00:00+00:00,portugal,Portugal: Liga Portugal 2,Amarante,Felgueiras,0,0,1,1
+lK44PwKs,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 4,Aurrera de Vitoria,Beasain,0,1,0,2
+lMXfNaPc,2026-11-15T11:00:00+00:00,spain,Spain: Segunda RFEF - Group 2,Naxara,Manresa,0,0,0,2
+lUixrEK6,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 10,Dos Hermanas,San Roque,0,1,1,2
+lhhH1pdl,2026-11-15T11:00:00+00:00,spain,Spain: Primera Federacion Women,Real Union W,Real Madrid B W,2,1,3,2
+llM11dNi,2026-11-15T11:00:00+00:00,belarus,Belarus: Pershaya Liga,FC Gomel 2,Smorgon,3,1,4,1
+llrW3esQ,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 10,CD Utrera,Bollullos,1,1,3,1
+n9JN6a36,2026-11-15T11:00:00+00:00,north-macedonia,North Macedonia: 1. WFL Women,ZFK Vardar W,Kamenica Sasa W,0,0,0,1
+nN8x9emI,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 5,L Hospitalet,CE Europa B,0,0,1,0
+niSfmlRP,2026-11-15T11:00:00+00:00,spain,Spain: Segunda RFEF - Group 5,San Sebastian Reyes,Real Madrid C,0,0,0,0
+p4Nr57EB,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 2,Llanes,Union Club Ceares,2,0,3,0
+pOahZ8XR,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 14,Villanovense,Santa Amalia,0,0,1,0
+pb4zbNGa,2026-11-15T11:00:00+00:00,belarus,Belarus: Pershaya Liga,BATE 2,Osipovichi,0,1,0,2
+pbpn3LUg,2026-11-15T11:00:00+00:00,poland,Poland: III Liga - Group I,T. Mazowiecki,Pelikan,0,0,3,0
+rB7xM7xQ,2026-11-15T11:00:00+00:00,south-africa,South Africa: Diski Challenge,Durban City U23,Golden Arrows U23,0,1,1,1
+rZZkbBkd,2026-11-15T11:00:00+00:00,spain,Spain: Primera Federacion Women,Cacereno W,CA Osasuna W,0,0,1,1
+t4lUqzjf,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 10,Atl. Onubense,Chiclana,0,0,0,2
+tKxuEVX8,2026-11-15T11:00:00+00:00,portugal,Portugal: Taça de Portugal Women,Leixoes W,Vitoria Guimaraes W,0,3,0,5
+tMcYJoz3,2026-11-15T11:00:00+00:00,spain,Spain: Segunda RFEF - Group 2,Barbastro,Arnedo,2,1,2,2
+v7YhTSZg,2026-11-15T11:00:00+00:00,spain,Spain: Segunda RFEF - Group 5,Valladolid Promesas,Numancia,0,0,1,1
+vR6q0qop,2026-11-15T11:00:00+00:00,spain,Spain: Primera RFEF - Group 2,UD Ibiza,FC Cartagena SAD,0,1,0,1
+xfGTdIGE,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 1,Gran Pena,Viveiro,1,0,2,1
+xvKz7Tqa,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 2,Covadonga,Astur,0,0,3,0
+zNDtnbFl,2026-11-15T11:00:00+00:00,spain,Spain: Liga F Women,Madrid CFF W,Logrono W,1,2,2,3
+ziu3hUU5,2026-11-15T11:00:00+00:00,spain,Spain: Tercera RFEF - Group 2,Lealtad,Mosconia,1,0,1,1
+zuylxYGD,2026-11-15T11:00:00+00:00,spain,Spain: Primera RFEF - Group 1,CD Extremadura,Pontevedra,1,2,2,3
+04eWoFBj,2026-11-15T11:15:00+00:00,netherlands,Netherlands: Eredivisie Women,Den Haag W,De Graafschap W,0,1,0,2
+MyaApJ8m,2026-11-15T11:15:00+00:00,spain,Spain: Segunda RFEF - Group 1,Basconia,Alaves B,0,0,0,1
+6ZyvSB0B,2026-11-15T11:30:00+00:00,italy,Italy: Serie C - Group A,Novara,Lecco,1,1,1,1
+A7EyedoR,2026-11-15T11:30:00+00:00,spain,Spain: Tercera RFEF - Group 1,Silva SD,Alondras,0,1,2,1
+E1xzXik5,2026-11-15T11:30:00+00:00,brazil,Brazil: Potiguar Women,Potyguar Seridoense W,Uniao RN W,1,1,2,2
+E52wDAgU,2026-11-15T11:30:00+00:00,bulgaria,Bulgaria: Vtora liga,Dobrudzha,Etar,1,1,2,2
+E73DRHVI,2026-11-15T11:30:00+00:00,spain,Spain: Tercera RFEF - Group 14,Jerez CF,Moralo,1,0,2,0
+ENctr9wJ,2026-11-15T11:30:00+00:00,italy,Italy: Serie C - Group C,Giugliano,Savoia,1,2,2,3
+GQtIkUH8,2026-11-15T11:30:00+00:00,spain,Spain: Tercera RFEF - Group 14,Cabeza del Buey,Castuera,0,0,0,1
+OCqg6SO7,2026-11-15T11:30:00+00:00,spain,Spain: Tercera RFEF - Group 9,Churriana de la Vega,Motril,0,1,0,1
+QPiC9M2C,2026-11-15T11:30:00+00:00,spain,Spain: Tercera RFEF - Group 18,San Clemente,Illescas,2,0,2,1
+U3RjpKoA,2026-11-15T11:30:00+00:00,croatia,Croatia: 1. HNL Women,Hajduk Split W,Zadar W,2,0,3,0
+dxMK9u3L,2026-11-15T11:30:00+00:00,russia,Russia: FNL,Ufa,S. Kostroma,2,1,3,3
+hMzAjmXj,2026-11-15T11:30:00+00:00,spain,Spain: Tercera RFEF - Group 5,Cornella,FC L'escala,1,0,3,1
+lKlWRQP1,2026-11-15T11:30:00+00:00,spain,Spain: Tercera RFEF - Group 14,Azuaga,Puebla,0,0,1,0
+lOKaNV43,2026-11-15T11:30:00+00:00,spain,Spain: Segunda RFEF - Group 4,Las Palmas B,Ciudad de Lucena,1,0,4,3
+nD3kXL1s,2026-11-15T11:30:00+00:00,spain,Spain: Tercera RFEF - Group 14,Montijo,UP Plasencia,0,0,0,1
+pGcqQMFt,2026-11-15T11:30:00+00:00,spain,Spain: Tercera RFEF - Group 9,Atletico de Marbella,Malaga Juniors,0,0,0,1
+pr6c3ygt,2026-11-15T11:30:00+00:00,italy,Italy: Serie A Women,Sassuolo W,Ternana W,1,0,1,1
+CQRhgT2M,2026-11-15T11:45:00+00:00,slovakia,Slovakia: 3. Liga - West,Komarno B,Myjava,2,1,3,1
+dMXoWq6D,2026-11-15T11:45:00+00:00,greece,Greece: Division A Women,PAOK W,Panathinaikos W,1,1,3,1
+089kIlqB,2026-11-15T12:00:00+00:00,turkey,Turkey: 3. Lig Group 2,Usak Belediyespor,Soke 1970,0,0,1,0
+0II9y0GD,2026-11-15T12:00:00+00:00,hungary,Hungary: NB III - Northeast,Hajdunanas,Debrecen II,0,1,0,1
+2Di4J9Z9,2026-11-15T12:00:00+00:00,serbia,Serbia: Srpska Liga - West,Zeleznicar Lajkovac,Radnicki Valjevo,2,1,4,2
+2sikyWo3,2026-11-15T12:00:00+00:00,scotland,Scotland: SWPL 1 Women,Celtic W,Rangers W,0,1,2,1
+65ryZGe4,2026-11-15T12:00:00+00:00,hungary,Hungary: NB III - Southwest,Szekszardi,Ivancsa,0,2,0,5
+6HKJJoR8,2026-11-15T12:00:00+00:00,serbia,Serbia: Srpska Liga - East,Vlasina,Sloga Leskovac,1,1,1,2
+6ohsDZYp,2026-11-15T12:00:00+00:00,hungary,Hungary: NB III - Southwest,Budafoki,MTK Budapest II,1,0,2,0
+82QINqBj,2026-11-15T12:00:00+00:00,hungary,Hungary: NB III - Northwest,Kiraly SE,Papai Perutz,1,1,2,2
+8vrUqWq4,2026-11-15T12:00:00+00:00,sweden,Sweden: Division 1 - Relegation,Skara,Eskilsminne,1,0,2,1
+A1oFY9Ti,2026-11-15T12:00:00+00:00,turkey,Turkey: 3. Lig Group 2,Altay,Bursa Yildirimspor,0,0,0,1
+ABfZiL0f,2026-11-15T12:00:00+00:00,hungary,Hungary: NB III - Northeast,Debreceni EAC,Tiszafuredi,2,1,4,2
+CA1d9eSi,2026-11-15T12:00:00+00:00,hungary,Hungary: NB III - Southeast,Hodmezovasarhely FC,Gyulai Termal,0,0,0,2
+CMkHhaRO,2026-11-15T12:00:00+00:00,england,England: Women’s FA Cup,Norwich W,Bournemouth W,0,1,2,1
+CQ3scTa6,2026-11-15T12:00:00+00:00,germany,Germany: Oberliga Hessen,Kassel 2,VfB Marburg,0,1,0,2
+ELIviECN,2026-11-15T12:00:00+00:00,hungary,Hungary: NB III - Southeast,Monori,ESMTK Budapest,0,0,0,3
+ELlmBwJG,2026-11-15T12:00:00+00:00,lithuania,Lithuania: TOPLYGA,FK Minija,FA Siauliai,0,1,0,2
+EPfzQ50t,2026-11-15T12:00:00+00:00,kenya,Kenya: Premier League,Muranga,Mathare Utd.,0,1,1,2
+EaD4om3c,2026-11-15T12:00:00+00:00,hungary,Hungary: NB III - Northwest,VSC Veszprem,Zalaegerszegi II,1,0,4,0
+I5uTvSMt,2026-11-15T12:00:00+00:00,bosnia-and-herzegovina,Bosnia and Herzegovina: Prva Liga - FBiH,Capljina,Sloboda,0,2,0,3
+IybsjaV6,2026-11-15T12:00:00+00:00,hungary,Hungary: NB III - Northeast,Eger SE,Cigand SE,0,1,1,2
+K8jY8Hxq,2026-11-15T12:00:00+00:00,france,France: Seconde Ligue Women,Thonon Evian W,Roubaix W,0,2,0,3
+KCEHStQP,2026-11-15T12:00:00+00:00,north-macedonia,North Macedonia: 1. WFL Women,Tiverija W,Ljuboten W,0,0,3,1
+KMcrOqVh,2026-11-15T12:00:00+00:00,kenya,Kenya: Premier League,Kakamega Homeboyz,KCB,0,0,0,0
+KvHgurHl,2026-11-15T12:00:00+00:00,hungary,Hungary: NB III - Northeast,SBTC,Godollo,0,0,1,1
+MPGCqRX9,2026-11-15T12:00:00+00:00,hungary,Hungary: NB III - Northwest,1908 SZAC KSE,Komaromi VSE,0,2,0,3
+MPdVqzSh,2026-11-15T12:00:00+00:00,hungary,Hungary: NB III - Northwest,Sopron,Haladas VSE,0,1,0,2
+OON8mGAc,2026-11-15T12:00:00+00:00,hungary,Hungary: NB III - Southwest,Dunaharaszti MTK,Pecsi MFC,1,1,1,1
+OjtScsOP,2026-11-15T12:00:00+00:00,kosovo,Kosovo: Liga e Pare,Suhareka,Trepca 89,0,0,0,0
+Qoml9RvA,2026-11-15T12:00:00+00:00,ukraine,Ukraine: Persha Liga,Nyva Ternopil,Oleksandriya,0,0,0,0
+SnV5jaGa,2026-11-15T12:00:00+00:00,kosovo,Kosovo: Liga e Pare,Dinamo Ferizaj,Ramiz Sadiku,1,0,1,1
+St412z9j,2026-11-15T12:00:00+00:00,spain,Spain: Tercera RFEF - Group 12,San Fernando,San Miguel,0,0,0,0
+SxQMmowB,2026-11-15T12:00:00+00:00,turkey,Turkey: 3. Lig Group 1,Yesil Yalova FK,Galata,0,0,1,0
+Uk0wrEd5,2026-11-15T12:00:00+00:00,hungary,Hungary: NB III - Northwest,Sarisapi Banyasz,Mosonmagyarovari TE,0,3,1,3
+UkCV2Ron,2026-11-15T12:00:00+00:00,slovenia,Slovenia: 2. SNL,Primorje,NK Jesenice,2,1,4,2
+UqycOxPj,2026-11-15T12:00:00+00:00,croatia,Croatia: 1. HNL Women,Osijek W,Agram Zagreb W,1,1,1,3
+WpsSSgpo,2026-11-15T12:00:00+00:00,slovakia,Slovakia: 4. liga - Bratislava,Ivanka pri Dunaji,Pezinok,3,0,3,0
+WvbC5DRG,2026-11-15T12:00:00+00:00,hungary,Hungary: NB III - Southeast,Sandorfalvi,Szolnoki MAV,0,1,1,1
+Wxgyog6T,2026-11-15T12:00:00+00:00,slovakia,Slovakia: 4. liga - Bratislava,Malacky,Bernolakovo,1,1,1,4
+YgaRGq7c,2026-11-15T12:00:00+00:00,turkey,Turkey: 3. Lig Group 1,Buyukcekmece Gucu,Karabuk Idmanyurdu,0,0,0,1
+YipTzwRi,2026-11-15T12:00:00+00:00,hungary,Hungary: NB III - Southwest,Siofok,Kaposvar,0,1,1,2
+baLhC5d2,2026-11-15T12:00:00+00:00,spain,Spain: Segunda RFEF - Group 4,Tamaraceite,Marbella,0,1,0,1
+biZDjcxh,2026-11-15T12:00:00+00:00,slovakia,Slovakia: 4. liga - Bratislava,Rovinka,Petrzalka B,1,1,3,1
+dC6n46Ni,2026-11-15T12:00:00+00:00,turkey,Turkey: 3. Lig Group 1,Silivrispor,Inkilapspor,2,0,3,1
+dpltzvWI,2026-11-15T12:00:00+00:00,kosovo,Kosovo: Liga e Pare,Prishtina e Re,Liria,0,1,1,1
+f7hiOhI8,2026-11-15T12:00:00+00:00,serbia,Serbia: Mozzart Bet Prva Liga,Vrsac,Javor,0,0,1,1
+fL9BHm4M,2026-11-15T12:00:00+00:00,serbia,Serbia: Srpska Liga - West,Radevac,Sloga Pozega,0,0,0,2
+fZWchLom,2026-11-15T12:00:00+00:00,kosovo,Kosovo: Liga e Pare,Kika,Vellaznimi,0,0,0,1
+fmldLV4c,2026-11-15T12:00:00+00:00,serbia,Serbia: Srpska Liga - West,Sumadija 1903,Vujan,1,0,3,1
+hE4dzdoQ,2026-11-15T12:00:00+00:00,norway,Norway: Toppserien Women,Arna-Bjornar W,Roa W,4,1,7,2
+jaiLly74,2026-11-15T12:00:00+00:00,slovakia,Slovakia: 4. liga - Bratislava,Tomasov,NSK 1922 Bratislava,0,0,0,0
+lCbNodct,2026-11-15T12:00:00+00:00,hungary,Hungary: NB III - Northwest,Tatabanya,Gyor II,0,0,2,0
+lIqptlqT,2026-11-15T12:00:00+00:00,sweden,Sweden: Division 1 - Relegation,Enskede,Vasalund,0,1,1,2
+nazMDA5l,2026-11-15T12:00:00+00:00,poland,Poland: III Liga - Group III,Brzeg,Zaglebie Sosnowiec,1,0,1,3
+p49Aohzo,2026-11-15T12:00:00+00:00,hungary,Hungary: NB III - Southeast,Csepel,III. Keruleti TVE,1,0,3,2
+pOa47Zd4,2026-11-15T12:00:00+00:00,hungary,Hungary: NB III - Southeast,BKV Elore,Ujpest II,1,2,1,2
+r9CP5Xhc,2026-11-15T12:00:00+00:00,greece,Greece: Gamma Ethniki - Group 6,Panachaiki,Lefkimmi,2,0,4,0
+rXxi65id,2026-11-15T12:00:00+00:00,denmark,Denmark: 2nd Division,Naestved,FA 2000,1,1,3,2
+t02ysgxq,2026-11-15T12:00:00+00:00,bosnia-and-herzegovina,Bosnia and Herzegovina: Prva Liga - RS,Omarska,Romanija Pale,2,1,5,1
+t0CugtFj,2026-11-15T12:00:00+00:00,turkey,Turkey: 3. Lig Group 1,Golcukspor,Tokat,1,1,3,2
+tCtVOMbm,2026-11-15T12:00:00+00:00,norway,Norway: Division 1 Women,Ovrevoll Hosle W,Kolbotn W,1,0,2,0
+tYgtxbNb,2026-11-15T12:00:00+00:00,slovakia,Slovakia: 4. liga - Bratislava,Rusovce,Rohoznik,0,0,0,1
+v30O9IGG,2026-11-15T12:00:00+00:00,spain,Spain: Tercera RFEF - Group 12,CD Marino,Tenerife C,0,0,0,0
+v51K3idT,2026-11-15T12:00:00+00:00,hungary,Hungary: NB III - Southeast,Bekescsaba 1912,Honved II,2,1,3,1
+xG3othRH,2026-11-15T12:00:00+00:00,hungary,Hungary: NB III - Northwest,Balatonalmadi SE,Dorogi,0,2,0,4
+xlkLp8of,2026-11-15T12:00:00+00:00,denmark,Denmark: A-Liga Women,FC Copenhagen W,Midtjylland W,0,0,0,1
+z31BIeBN,2026-11-15T12:00:00+00:00,hungary,Hungary: NB III - Southwest,Sarbogard,PTE-PEAC,0,0,0,0
+zFedYFMN,2026-11-15T12:00:00+00:00,slovakia,Slovakia: 4. liga - Bratislava,Kalinkovo,Karlova Ves,0,2,2,2
+zHUW3BN9,2026-11-15T12:00:00+00:00,greece,Greece: Gamma Ethniki - Group 6,Panagriniakos,Pallixouriakos,2,0,4,0
+htyPnx75,2026-11-15T12:05:00+00:00,saudi-arabia,Saudi Arabia: Division 2,Al Kawkab,Najran,2,0,3,0
+4UsmXDvn,2026-11-15T12:30:00+00:00,bulgaria,Bulgaria: Vtora liga,Svoge,Spartak Pleven,0,1,0,2
+6POV97N6,2026-11-15T12:30:00+00:00,bosnia-and-herzegovina,Bosnia and Herzegovina: Prva Liga - FBiH,Banovici,TOSK Tesanj,1,1,2,2
+6VH7As4s,2026-11-15T12:30:00+00:00,north-macedonia,North Macedonia: 1. WFL Women,ASS United W,Kochani W,4,1,5,2
+ARpeVi9b,2026-11-15T12:30:00+00:00,bulgaria,Bulgaria: Vtora liga,Nesebar,Fratria,2,2,2,3
+GI0eQS7m,2026-11-15T12:30:00+00:00,bosnia-and-herzegovina,Bosnia and Herzegovina: Prva Liga - FBiH,NK Vitez,Hadzici,1,1,1,4
+GjlnPQ7k,2026-11-15T12:30:00+00:00,egypt,Egypt: Division 2 A,WE SC,Kahrabaa Ismailia,0,0,1,0
+QcD3g2cJ,2026-11-15T12:30:00+00:00,germany,Germany: Regionalliga North,Bremer,Eimsbutteler,0,1,1,4
+SCYfTnPk,2026-11-15T12:30:00+00:00,bulgaria,Bulgaria: Third League - South-East,Botev Plovdiv II,Levski Karlovo,1,0,1,0
+SfBsKAEb,2026-11-15T12:30:00+00:00,turkey,Turkey: 3. Lig Group 2,Balikesirspor,Eskisehir Anadolu,1,0,1,1
+U5SP1TbU,2026-11-15T12:30:00+00:00,turkey,Turkey: 3. Lig Group 2,Eskisehirspor,Ayvalikgucu,1,2,2,2
+WrARubCQ,2026-11-15T12:30:00+00:00,hungary,Hungary: NB I Women,Astra Hungary W,MTK Budapest W,0,1,0,1
+bXjwShWQ,2026-11-15T12:30:00+00:00,kenya,Kenya: Premier League,Leopards,Mombasa United,1,0,1,0
+d4Er91hd,2026-11-15T12:30:00+00:00,bulgaria,Bulgaria: Vtora liga,Rilski Sportist,Hebar,0,0,1,1
+dd2BMp7C,2026-11-15T12:30:00+00:00,bosnia-and-herzegovina,Bosnia and Herzegovina: Prva Liga - FBiH,Bratstvo Gracanica,Jedinstvo Bihac,1,0,2,2
+djTrntHc,2026-11-15T12:30:00+00:00,croatia,Croatia: 1. HNL Women,Medimurje Cakovec W,Gorica W,1,1,1,1
+jDEyTwSH,2026-11-15T12:30:00+00:00,slovakia,Slovakia: 4. liga - West,Trebatice,Imel,1,0,2,0
+lWb3O6x0,2026-11-15T12:30:00+00:00,bosnia-and-herzegovina,Bosnia and Herzegovina: Prva Liga - FBiH,Tomislav,Gradacac,0,0,1,1
+lb1UW4p3,2026-11-15T12:30:00+00:00,bulgaria,Bulgaria: Vtora liga,Lok. Gorna,CSKA Sofia II,0,0,0,0
+ruq3TVwB,2026-11-15T12:30:00+00:00,bulgaria,Bulgaria: Vtora liga,Yantra Gabrovo,Ludogorets II,0,1,3,1
+th4VEWOH,2026-11-15T12:30:00+00:00,bulgaria,Bulgaria: Vtora liga,Pirin Blagoevgrad,Montana,0,1,0,1
+vwNw8ohJ,2026-11-15T12:30:00+00:00,bosnia-and-herzegovina,Bosnia and Herzegovina: Prva Liga - FBiH,Kakanj,GOSK Gabela,0,0,1,1
+xUUbrbGM,2026-11-15T12:30:00+00:00,croatia,Croatia: 1. HNL Women,Din. Zagreb W,ZNK Split W,2,0,3,0
+xYCuuiXr,2026-11-15T12:30:00+00:00,austria,Austria: Regionalliga West,Altach U21,Wolfurt,3,0,4,0
+xrjI4ma5,2026-11-15T12:30:00+00:00,turkey,Turkey: 3. Lig Group 3,Malatya,Adana Adaletgucu,2,2,6,2
+2JxNgAlA,2026-11-15T12:45:00+00:00,slovenia,Slovenia: 1. SZNL Women,Olimpija W,Zalec Trbovlje W,12,0,24,0
+Q3bT5GXQ,2026-11-15T12:50:00+00:00,united-arab-emirates,United Arab Emirates: League Cup,United FC,Al Sharjah,1,1,1,1
+fJla0fel,2026-11-15T12:50:00+00:00,united-arab-emirates,United Arab Emirates: League Cup,Al Wahda,Khorfakkan,2,0,3,1
+06tMlVjo,2026-11-15T13:00:00+00:00,germany,Germany: Regionalliga Bayern,Landsberg,Nurnberg II,1,0,1,2
+0IQ0ulqR,2026-11-15T13:00:00+00:00,greece,Greece: Division A Women,Kifisia W,Volos W,0,1,0,4
+0SVc1Ohe,2026-11-15T13:00:00+00:00,france,France: Coupe de France,Verson,RC Calais,0,3,1,5
+0SsAbwFM,2026-11-15T13:00:00+00:00,germany,Germany: Oberliga Rheinland-Pfalz/Saar,TuS Koblenz,Pirmasens,1,0,3,0
+0h3Gql3L,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 8,Proodeftiki,Ialisos,1,0,1,0
+21DMN6t2,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 8,Apollon Kalythion,Rouf FC,1,0,1,0
+2DTXEap9,2026-11-15T13:00:00+00:00,germany,Germany: Oberliga Niedersachsen,Vorsfelde,Hemmingen,1,1,2,1
+4AeKeAvJ,2026-11-15T13:00:00+00:00,slovenia,Slovenia: 2. SNL,Slovan Ljubljana,Krsko Posavje,2,0,4,1
+4CQmV4T0,2026-11-15T13:00:00+00:00,england,England: Women’s FA Cup,Exeter W,Portsmouth W,1,1,2,5
+4fZrpRpC,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 10,Chersonissos,Panakrotiriakos,0,1,1,1
+6HCKIgxf,2026-11-15T13:00:00+00:00,czech-republic,Czech Republic: 4. liga - Group A,Milevsko,SK Strakonice 1908,0,2,1,4
+6TEc9UhK,2026-11-15T13:00:00+00:00,south-africa,South Africa: Diski Challenge,Milford FC U23,Kaizer Chiefs U23,0,2,1,2
+6mw3rP46,2026-11-15T13:00:00+00:00,france,France: Coupe de France,OCPAM,Olympique Marcquois,1,0,2,0
+8EOR6CTb,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 5,Lamia,Thiva F.C.,0,0,0,0
+8Oqgzn0U,2026-11-15T13:00:00+00:00,south-africa,South Africa: Super League Women,Ramatlaohle W,University of Johannesburg W,0,0,1,0
+8Qtt9KB5,2026-11-15T13:00:00+00:00,england,England: Women’s FA Cup,Stoke City LFC W,Liverpool Feds W,1,0,6,1
+8USv2khM,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 6,Preveza,Aris Filiaton,1,0,1,0
+A3WzY3Z9,2026-11-15T13:00:00+00:00,germany,Germany: Oberliga Hamburg,Niendorfer TSV,Tesla Hamburg,0,1,2,1
+A5Rnidh2,2026-11-15T13:00:00+00:00,germany,Germany: Oberliga Niedersachsen,Luneburger Hansa,Heeslinger,1,0,1,0
+A7QXcKfd,2026-11-15T13:00:00+00:00,slovenia,Slovenia: 3. SNL - East,Odranci,Podvinci,0,2,0,3
+A7fcZ9GF,2026-11-15T13:00:00+00:00,scotland,Scotland: SWPL 1 Women,Aberdeen W,Motherwell W,0,0,1,0
+A7x4sbXb,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 3,Anagennisi Arta,Thyella Katsikas,0,1,1,1
+CATRGlzh,2026-11-15T13:00:00+00:00,france,France: Coupe de France,Montigny,Pontarlier,0,3,0,5
+CAX2jiqI,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 5,Nea Artaki,Fokikos FC,2,0,4,0
+CEe2zpQ7,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 8,Amfiali,Afantou,0,0,0,0
+CYMuLYEL,2026-11-15T13:00:00+00:00,sweden,Sweden: Allsvenskan Women,Eskilstuna Utd W,Djurgarden W,0,0,0,1
+Cd5SBUy8,2026-11-15T13:00:00+00:00,sweden,Sweden: Allsvenskan Women,Norrkoping W,AIK W,0,0,1,1
+EZLJ5e7e,2026-11-15T13:00:00+00:00,germany,Germany: Oberliga Niedersachsen,Verden,Nordhorn,1,0,1,1
+EeLF8LYg,2026-11-15T13:00:00+00:00,north-macedonia,North Macedonia: 1. WFL Women,ZFK Istatov W,ZFK Pelister Pro 2026 W,0,0,0,1
+EiR4O9sm,2026-11-15T13:00:00+00:00,germany,Germany: 2. Bundesliga Women,Ingolstadt W,Andernach W,0,0,2,1
+GvSZ4jbB,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 5,Kifissos,Tamynaikos Aliveriou,1,1,1,2
+GzEjjuCO,2026-11-15T13:00:00+00:00,czech-republic,Czech Republic: 3. CFL - Group B,Caslav,Banik Most-Sous,2,1,2,2
+IRzeZLHt,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 9,Pannaxiakos,Kyanos A. V.,0,0,0,0
+IVrm6SRI,2026-11-15T13:00:00+00:00,germany,Germany: 2. Bundesliga Women,SGS Essen W,Hertha Berlin W,0,0,1,0
+IaKdqK2n,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 3,Naousa,Vatolakkos,2,0,4,0
+Is1VN2L0,2026-11-15T13:00:00+00:00,czech-republic,Czech Republic: 4. liga - Group D,FS Trebic,Bystrc,1,0,1,0
+K2Rtgoro,2026-11-15T13:00:00+00:00,france,France: Coupe de France,Kellermann,Metz,0,0,1,0
+K8U1GZVg,2026-11-15T13:00:00+00:00,austria,Austria: Tirol,Telfs,SV Worgl,1,1,2,2
+KYk3UMMs,2026-11-15T13:00:00+00:00,france,France: Coupe de France,Sedan,Bourges 18,0,0,2,0
+KzXZES44,2026-11-15T13:00:00+00:00,france,France: Coupe de France,Seyssinet,Nimes,0,2,0,2
+MJyK860L,2026-11-15T13:00:00+00:00,france,France: Coupe de France,Paris 13 Atl.,Red Star,0,2,0,2
+MTUkYgfo,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 3,Makedonikos Siatista,Veria,1,0,3,1
+MwAF4FL8,2026-11-15T13:00:00+00:00,france,France: Coupe de France,Marseille Endoume,Toulon,0,1,2,1
+O8iTXSRj,2026-11-15T13:00:00+00:00,slovenia,Slovenia: 1. SZNL Women,Primorje W,Malecnik W,7,1,10,1
+OSPXgmbK,2026-11-15T13:00:00+00:00,greece,Greece: Division A Women,Odysseas Moschato W,AEK Athens FC W,0,1,0,2
+OhBGz5m2,2026-11-15T13:00:00+00:00,slovenia,Slovenia: 3. SNL - West,Fama Vipava,Skofja Loka,3,0,6,1
+OrxC5TV1,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 4,Pierikos,Ethnikos Neou,1,0,3,0
+OvMXGSMh,2026-11-15T13:00:00+00:00,spain,Spain: LaLiga2,Tenerife,Ceuta,1,0,2,0
+Q74wMtjD,2026-11-15T13:00:00+00:00,czech-republic,Czech Republic: 4. liga - Group D,Humpolec,Pelhrimov,0,0,0,0
+S4Ohvbo2,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 1,Thrakis,Apollon Paralimniou,0,0,0,0
+SfqBzt56,2026-11-15T13:00:00+00:00,czech-republic,Czech Republic: 4. liga - Group D,Zdar nad Sazavou,Kurim,1,0,1,2
+SnaN3PZP,2026-11-15T13:00:00+00:00,england,England: Women’s FA Cup,Derby W,Bolton W,3,0,7,0
+Sv58oAY8,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 8,Doxa Vyronas,Apollon Smyrnis,2,0,3,0
+UBJywtkJ,2026-11-15T13:00:00+00:00,netherlands,Netherlands: Derde Divisie,HVV Hollandia,Hoogeveen,1,1,2,3
+WWkITHoI,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 9,Thyella D.,AO Ilisiakos,0,0,0,0
+WdR7FbTi,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 2,PAOK Kristonis,Finikas Polichnis,0,1,1,1
+WzfnvSQr,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 8,PAE Egaleo,Ionikos,0,0,2,1
+Y7APKA1M,2026-11-15T13:00:00+00:00,scotland,Scotland: SWPL 1 Women,Glasgow City W,Montrose W,4,0,6,0
+YLN5fGuB,2026-11-15T13:00:00+00:00,france,France: Coupe de France,Talange,Baume Dames,0,0,2,0
+YN2cS6lJ,2026-11-15T13:00:00+00:00,czech-republic,Czech Republic: 4. liga - Group E,Kromeriz B,Brumov,0,2,0,2
+YelGPigU,2026-11-15T13:00:00+00:00,czech-republic,Czech Republic: 4. liga - Group C,Turnov,Vykan,1,1,2,1
+b5xBVwH5,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 9,Acharnaikos,Magoulas,0,2,0,2
+bFX5RAhL,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 4,Elassona,Digenis Neochori,1,0,1,1
+bNV9JWr9,2026-11-15T13:00:00+00:00,england,England: Women’s FA Cup,SJR Worksop W,FC Halifax W,0,7,0,11
+bPURGX66,2026-11-15T13:00:00+00:00,czech-republic,Czech Republic: 4. liga - Group A,Domazlice B,Horovice,0,1,0,3
+bTANQxlL,2026-11-15T13:00:00+00:00,cameroon,Cameroon: Elite One,Gazelle,Stade Renard,1,0,3,0
+bwUfhz8T,2026-11-15T13:00:00+00:00,zambia,Zambia: Super League,Konkola,Nchanga Rangers,1,0,2,3
+dnNuXQbl,2026-11-15T13:00:00+00:00,england,England: Women’s FA Cup,Moneyfields W,Bristol Rovers W,2,1,5,1
+dnRDa2Yg,2026-11-15T13:00:00+00:00,england,England: Women’s FA Cup,Loughborough Lightning W,International Soccer Academy W,1,1,3,2
+fBGv21w9,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 1,Kavala,Aetos Ofryniou,0,1,3,2
+fVSKKRtC,2026-11-15T13:00:00+00:00,germany,Germany: 2. Bundesliga Women,Potsdam W,Sand W,0,0,1,0
+fZMV4wYI,2026-11-15T13:00:00+00:00,north-macedonia,North Macedonia: 1. WFL Women,Recica W,ZFK Skopje 2014 W,0,4,0,7
+fq4TsrD6,2026-11-15T13:00:00+00:00,england,England: Women’s FA Cup,Marine Academy Plymouth W,Brentford W,0,1,1,3
+h2dWJuRO,2026-11-15T13:00:00+00:00,germany,Germany: Oberliga Baden-Württemberg,Singen,Young Boys Reutlingen,0,0,0,1
+h4Lez3Rr,2026-11-15T13:00:00+00:00,india,India: IFL,Samaleswari SC,Rajasthan United,0,0,0,2
+hYtcgVNP,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 10,PAE Chania,Agios Nikolaos,0,1,3,1
+j3wJehvm,2026-11-15T13:00:00+00:00,germany,Germany: Regionalliga North,Todesfelde,Hannover II,1,2,1,3
+jJYWMfp9,2026-11-15T13:00:00+00:00,sweden,Sweden: Allsvenskan Women,Hacken W,Pitea W,0,0,2,0
+jVw47k1k,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 4,Iraklis Larissa,Sarakinos Volos,0,3,0,4
+ja9wE1x1,2026-11-15T13:00:00+00:00,france,France: Coupe de France,St. Renan,Laval,0,2,1,2
+jovKwGWN,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 3,Alexandros Florinas,Kastoria,0,1,0,1
+l4SSm9om,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 10,Ergotelis,AE Neapolis,1,0,1,0
+l6wCASV8,2026-11-15T13:00:00+00:00,france,France: Coupe de France,Castelbourgeois,Nantes,0,5,1,9
+lbHYIFk5,2026-11-15T13:00:00+00:00,zambia,Zambia: Super League,Mufulira,Nkwazi,1,0,1,1
+lprevO5s,2026-11-15T13:00:00+00:00,czech-republic,Czech Republic: 4. liga - Group D,Znojmo,Velke Mezirici,1,0,2,1
+neWgIe1s,2026-11-15T13:00:00+00:00,austria,Austria: Tirol,Munster,Innsbrucker AC,0,1,0,3
+nqFCHKPQ,2026-11-15T13:00:00+00:00,sweden,Sweden: Allsvenskan Women,Malmo FF W,Vittsjo W,1,1,1,1
+nwNIf7pd,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 6,Plataria,Tilikratis L.,1,1,2,2
+pEzyM7KD,2026-11-15T13:00:00+00:00,france,France: Coupe de France,Tatinghem,Racing CFF,1,0,1,2
+pIpu8lc6,2026-11-15T13:00:00+00:00,germany,Germany: 2. Bundesliga Women,B. Monchengladbach W,Meppen W,1,0,2,0
+pIvFotgS,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 1,MAS Ardas Kastanion,Eleftheroupolis,0,0,1,2
+pdLvFLBi,2026-11-15T13:00:00+00:00,brazil,Brazil: Catarinense Women,Criciuma W,Meninas de Jaragua W,1,1,6,1
+rDUSbdqg,2026-11-15T13:00:00+00:00,germany,Germany: Oberliga Schleswig-Holstein,Eichede,Kaltenkirchen,2,0,4,2
+rHDBFCxq,2026-11-15T13:00:00+00:00,sweden,Sweden: Allsvenskan Women,Hammarby W,Kristianstad W,1,0,1,0
+rLzCux2B,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 3,Giannina,Eordaikos,2,0,2,0
+rwCaGiFD,2026-11-15T13:00:00+00:00,switzerland,Switzerland: 1.Liga Classic Group 3,FC Widnau,Wettswil-Bonstetten,1,1,2,1
+tUqwXLsm,2026-11-15T13:00:00+00:00,france,France: Coupe de France,Vandoeuvre,Epinal,0,1,0,3
+tlQptKGk,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 1,Doxa Dramas,Pontion Nea Amisos,2,0,5,0
+tvq2kMMi,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 10,Giouchtas,Platanias FC,0,1,2,2
+v1cfx6ee,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 8,Diagoras,Ethnikos Piraeus,0,0,1,1
+vDJAdTFq,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 6,Panegialios FC,Levante,2,0,4,0
+vJB4JteE,2026-11-15T13:00:00+00:00,sweden,Sweden: Allsvenskan Women,Uppsala W,Vaxjo DFF W,0,3,0,3
+vX94IAx3,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 6,Agios Matthaios,Atromitos Patras,0,1,0,2
+vcgQReGU,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 9,Saronikos Anavyssou,Ilioupoli,0,0,0,1
+vq7KDj7e,2026-11-15T13:00:00+00:00,sweden,Sweden: Allsvenskan Women,IF Brommapojkarna W,Rosengard W,0,0,2,0
+xhy7m2OF,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 1,Sidirochori,Xanthi,0,3,0,3
+z5YYCBwS,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 4,AO Trikala,Anthoupoli,1,0,1,0
+zLnJYJZI,2026-11-15T13:00:00+00:00,czech-republic,Czech Republic: 4. liga - Group D,Tasovice,Bohunice,1,1,1,4
+zPtzOPbC,2026-11-15T13:00:00+00:00,denmark,Denmark: B-Liga Women,Esbjerg W,Sundby W,0,3,1,5
+zZ9gqZ8b,2026-11-15T13:00:00+00:00,switzerland,Switzerland: 1.Liga Classic Group 1,Servette U21,La Chaux-De-Fonds,2,0,2,0
+zmBK8Ybn,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 5,Anagennisi Schimatariou,Asteras Stavrou,4,0,4,2
+zsdGRIUp,2026-11-15T13:00:00+00:00,greece,Greece: Gamma Ethniki - Group 10,Episkopi,AO Tympakiou,1,0,2,0
+YVIOlgGP,2026-11-15T13:15:00+00:00,spain,Spain: Primera RFEF - Group 1,Zamora,Real Aviles,0,0,2,2
+djqFGDZi,2026-11-15T13:15:00+00:00,germany,Germany: Oberliga Westfalen,Vreden,Preussen Munster 2,0,1,2,2
+0AAlYIYi,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group B,Club Milano,Caldiero Terme,0,0,0,1
+0Ef1HDD7,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group E,Terranuova Traiana,SCD Progresso,0,1,1,1
+0OHRB5zI,2026-11-15T13:30:00+00:00,belgium,Belgium: Second Amateur Division Group VFV A,Kalken,Waregem 2,0,2,1,3
+0QIoIwjJ,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group F,Santegidiese,Teramo,0,3,1,3
+0dVQrUzH,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group D,Pro Patria,Castellanzese,1,0,1,0
+0vdOJfG5,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group A,Bra,Gozzano,0,2,0,2
+27rNlia3,2026-11-15T13:30:00+00:00,germany,Germany: Oberliga Niederrhein,Baumberg,Holzheim,1,1,1,2
+4SdbQLKk,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group D,USD Casatese,Varese FC,1,0,1,0
+4W0IM18F,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group G,Unipomezia,Certosa V. Campagnano,0,0,0,0
+4bByqzmA,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group B,Ciserano-Bergamo,Scanzorosciate,0,1,0,1
+4nmhn3s9,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group D,Pavia,Pro Sesto,2,0,3,0
+4vLsNhQj,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group B,Villa Valle,Nibbiano & Valtidone,0,0,0,0
+698YavEl,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group I,Vigor Lamezia,Gela,0,0,0,0
+6JTPpXDM,2026-11-15T13:30:00+00:00,tunisia,Tunisia: Ligue 2,CO Medenine,Ariana,0,0,1,3
+6ZJUBpfc,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group G,Gelbison,Aranova,2,1,2,1
+6eexufNj,2026-11-15T13:30:00+00:00,germany,Germany: Oberliga Mittelrhein,Hennef,Neunkirchen-Seelscheid,0,0,1,0
+8rxWvLZr,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group D,Sant'Angelo,Oltrepo,1,0,4,0
+A7WtP4FG,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group E,Follonica Gavorrano,Lucchese,1,0,1,1
+A9gzIVom,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group C,Sandona,Campodarsego,1,0,2,2
+AFI3wk6d,2026-11-15T13:30:00+00:00,tunisia,Tunisia: Ligue 2,Olympique Kef,Moknine,1,0,3,1
+AXXmzG0n,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group A,Celle Varazze,Millesimo,1,0,2,0
+AXoVnVTF,2026-11-15T13:30:00+00:00,germany,Germany: Oberliga Niederrhein,Sonsbeck,Buderich,3,0,5,0
+AZYk9r7l,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group F,Angelana,L Aquila,0,0,0,1
+Aqz8Hjug,2026-11-15T13:30:00+00:00,switzerland,Switzerland: Promotion League,Bellinzona,Luzern II,1,1,1,2
+CMDNNsMs,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group F,Notaresco Calcio,Trestina,0,0,1,0
+CU3shue2,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group H,Real Forio 2014,A.C.D. Nardo,1,1,2,2
+ChrO2cFc,2026-11-15T13:30:00+00:00,germany,Germany: Oberliga Mittelrhein,Wegberg-Beeck,Siegburger,0,1,1,2
+EZiabRxp,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group I,USD Ragusa,Castrumfavara,0,0,1,0
+EiDm3533,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group H,Gladiator,Ebolitana,1,0,1,0
+EiLOQBMj,2026-11-15T13:30:00+00:00,tunisia,Tunisia: Ligue 2,Kasserine,Redeyef,0,0,2,0
+EyRDw4U9,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group E,Prato,Tau,0,0,1,0
+G8oGTR6C,2026-11-15T13:30:00+00:00,netherlands,Netherlands: Eerste Divisie,Maastricht,Vitesse,1,0,2,1
+GC5k1hb3,2026-11-15T13:30:00+00:00,tunisia,Tunisia: Ligue 2,Korba,JS Kairouan,1,0,2,0
+IVpE7VFc,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group I,Licata,Milazzo,1,0,2,0
+IXZlNrpT,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group E,Ghiviborgo,Ternana,0,1,1,3
+IeCG2tHq,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group G,Ossese,Citta di Anagni,1,0,4,2
+IqU48sQ6,2026-11-15T13:30:00+00:00,netherlands,Netherlands: Derde Divisie,Groene Ster,UDI'19,0,0,0,1
+KnHVLLjf,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group F,Pietralunga,Atletico Ascoli,0,2,1,2
+KzgoLeEr,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group E,San Donato,Siena,1,0,1,0
+MHGe1qYF,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group H,Gravina,Bisceglie,0,0,2,0
+MJo1InUF,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group I,Vibonese,Modica,1,0,4,0
+MPEyVrFF,2026-11-15T13:30:00+00:00,bulgaria,Bulgaria: Vtora liga,Beroe,Vihren,0,2,0,3
+Mae7d57d,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group I,Reggina,Sambiase,2,1,3,2
+MmHGOVn2,2026-11-15T13:30:00+00:00,austria,Austria: Regionalliga West,Schwaz,Fugen,0,1,0,2
+MukE98bd,2026-11-15T13:30:00+00:00,belgium,Belgium: Second Amateur Division Group ACFF,Entite Manageoise,Hutoise,1,0,1,0
+Ofv4WXaB,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group A,Derthona FbC,Fezzanese,1,0,1,2
+QBpW9viI,2026-11-15T13:30:00+00:00,italy,Italy: Serie B Women,Arezzo W,Cesena W,0,0,0,0
+QelM59pA,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group I,Nissa,Enna,2,0,3,0
+QocuzVVp,2026-11-15T13:30:00+00:00,switzerland,Switzerland: 1.Liga Classic Group 1,Payerne,Coffrane,0,0,0,0
+QuS9lFEc,2026-11-15T13:30:00+00:00,tunisia,Tunisia: Ligue 2,EGS Gafsa,Bouchamma,1,0,3,1
+SCKwKaL6,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group F,Recanatese,Fossombrone,1,0,1,1
+SW49JrNi,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group C,Legnago Salus,Triestina,0,0,1,1
+SjTsPkho,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group A,Saluzzo,Valenzana,0,1,0,1
+URB18nXA,2026-11-15T13:30:00+00:00,italy,Italy: Serie B Women,Genoa W,Moncalieri W,1,1,4,1
+UwjjEmoC,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group C,Calvi Noale,Altavilla,1,2,3,2
+YqdQoivf,2026-11-15T13:30:00+00:00,italy,Italy: Serie C - Group C,Cavese,Crotone,0,0,1,0
+bgQHngqA,2026-11-15T13:30:00+00:00,tunisia,Tunisia: Ligue 2,Kalaa,Jendouba Sport,1,0,1,1
+bsxXFyJN,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group B,Pavonese,Brusaporto,0,0,0,0
+d6cAONw3,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group G,Trastevere Calcio,Albalonga,1,1,2,2
+d8xCUBUN,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group A,Ligorna,Imperia,1,1,1,1
+dURTqwFU,2026-11-15T13:30:00+00:00,brazil,Brazil: Mineiro 3,Novo Esporte,Paracatu,0,1,0,4
+dfec0jgm,2026-11-15T13:30:00+00:00,italy,Italy: Serie C - Group C,Salernitana,Catania,0,0,1,0
+fDN2AFto,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group B,Chievo,Pro Palazzolo,0,0,1,1
+fLcvGCFU,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group A,Borgosesia,Lascaris,1,1,1,1
+hIQo4Yzi,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group G,Afragolese,Monastir,0,1,0,2
+hWRIpj64,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group D,Arconatese,Crema,0,0,0,1
+hbEJDR55,2026-11-15T13:30:00+00:00,belgium,Belgium: Second Amateur Division Group VFV A,Voorde Appelterre,KV Mechelen 2,2,2,4,2
+hligJZre,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group E,Sasso Marconi,Rondinella,1,1,1,1
+j9AO0Kod,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group G,Sarnese,Anzio Calcio 1924,0,0,2,0
+jDz6506D,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group F,Montecchio Gallo,Vigor Senigallia,1,1,1,2
+jHAoCUXo,2026-11-15T13:30:00+00:00,italy,Italy: Serie B Women,Catania W,Verona W,0,0,2,1
+jRTD2h5d,2026-11-15T13:30:00+00:00,italy,Italy: Serie C - Group B,Pescara,Sambenedettese,3,0,3,1
+l6mgK8a3,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group I,Trapani,Athletic Palermo,2,1,3,3
+lEFCSE2T,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group B,Tritium,Real Calepina,1,1,4,1
+lGQKHM7j,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group E,Grassina,Seravezza Pozzi,0,1,1,1
+lzgoywZ7,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group D,Varesina,Pontedera,0,0,3,1
+n5mS0B0s,2026-11-15T13:30:00+00:00,germany,Germany: Oberliga Hessen,Pohlheim,RW Walldorf,1,0,1,0
+nefWHYpI,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group A,AS Biellese,Asti,2,0,2,0
+niAdITVp,2026-11-15T13:30:00+00:00,belgium,Belgium: 1st National Women,Stade Mouscronnois W,RSC Anderlecht II W,1,1,3,5
+pIWNnpJM,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group H,Brindisi,Ischia,0,1,1,1
+rLGlReGP,2026-11-15T13:30:00+00:00,switzerland,Switzerland: 1.Liga Classic Group 2,Courtetelle,Delemont,0,0,0,0
+rNirG9Ga,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group C,Schio,LME,1,1,3,1
+rZyZzkCr,2026-11-15T13:30:00+00:00,italy,Italy: Serie B Women,Venezia W,Frosinone W,0,0,0,2
+rmXc7My1,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group F,Foligno,Termoli,0,0,1,0
+t4rRaiE8,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group H,Virtus Francavilla,Real Normanna,1,0,1,2
+tUkS5CVP,2026-11-15T13:30:00+00:00,italy,Italy: Serie C - Group C,Potenza,Scafatese,1,0,4,0
+tfBPF0MG,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group C,Union Clodiense,FC Obermais,1,1,3,2
+tlC4UzYG,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group B,Rovato Vertovese,Piacenza,0,1,1,3
+v5ySBdrA,2026-11-15T13:30:00+00:00,italy,Italy: Serie C - Group B,Guidonia,Ostiamare,0,0,2,2
+virKE4qR,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group F,Ancona,Lanciano FC,0,0,1,1
+vmIxAOO9,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group G,Paganese,Atl. Lodigiani,1,0,1,1
+x2IFMDdS,2026-11-15T13:30:00+00:00,italy,Italy: Serie C - Group B,Spezia,Vado,1,0,3,0
+x2KeuByp,2026-11-15T13:30:00+00:00,tunisia,Tunisia: Ligue 2,Ksour Essef,Stade Gabesien,0,0,1,0
+xfYYQQp4,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group E,Flaminia,Montevarchi,0,0,0,1
+xhqLKY6c,2026-11-15T13:30:00+00:00,belgium,Belgium: Second Amateur Division Group ACFF,Aywaille,Stade Vervietois,1,0,1,3
+zc8HHMi4,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group C,Luparense,Bassano,0,0,0,1
+zwINeuVp,2026-11-15T13:30:00+00:00,italy,Italy: Serie D - Group C,Este,Mestre,0,0,0,0
+08PcdxBb,2026-11-15T14:00:00+00:00,france,France: Coupe de France,GFA74,St Etienne,0,0,1,2
+0SwPBX5E,2026-11-15T14:00:00+00:00,belgium,Belgium: National Division 1 - VV,Cercle Brugge KSV 2,Houtvenne,1,0,1,1
+297ytMsJ,2026-11-15T14:00:00+00:00,england,England: Women’s FA Cup,Maidenhead W,AFC Wimbledon W,0,2,0,5
+4ppF09Hq,2026-11-15T14:00:00+00:00,europe,Europe: UEFA Nations League,Cyprus,Montenegro,0,1,1,4
+69IB7Hxq,2026-11-15T14:00:00+00:00,germany,Germany: Oberliga Niedersachsen,Drochtersen/Assel II,Spelle-Venhaus,1,0,2,0
+6DCoScfA,2026-11-15T14:00:00+00:00,portugal,Portugal: Liga Portugal 2,Portimonense,Academica,0,0,0,0
+6NqagcKj,2026-11-15T14:00:00+00:00,belgium,Belgium: Second Amateur Division Group VFV A,Torhout,FC Lebbeke,2,0,2,0
+6PQK5fMk,2026-11-15T14:00:00+00:00,germany,Germany: Oberliga Rheinland-Pfalz/Saar,TSV 1881 Gau-Odernheim,Elversberg II,0,0,1,0
+6R5dgPkm,2026-11-15T14:00:00+00:00,belgium,Belgium: National Division 1 - VV,Zelzate,Belisia Bilzen,1,2,1,2
+AJdSICyA,2026-11-15T14:00:00+00:00,belgium,Belgium: Second Amateur Division Group ACFF,Acren,Schaerbeek-Evere,1,1,2,2
+AqtVilJM,2026-11-15T14:00:00+00:00,slovenia,Slovenia: 1. SZNL Women,Gazon W,ZNK Ljubljana W,0,2,0,6
+AwXuDwFL,2026-11-15T14:00:00+00:00,germany,Germany: Oberliga Niedersachsen,Wilhelmshaven,Braunschweig U23,2,1,2,1
+C0z9umMk,2026-11-15T14:00:00+00:00,germany,Germany: Oberliga Niederrhein,Juchen-Garzweiler,FC Monheim,0,1,1,1
+E1KkObIs,2026-11-15T14:00:00+00:00,england,England: WSL 2,Sunderland W,Newcastle Utd W,0,0,0,0
+E9O0RPhA,2026-11-15T14:00:00+00:00,france,France: Seconde Ligue Women,Le Mans W,Grenoble W,1,0,3,0
+EF532iiT,2026-11-15T14:00:00+00:00,belgium,Belgium: Second Amateur Division Group ACFF,Binche,Namur,0,0,2,0
+EFo6BUTq,2026-11-15T14:00:00+00:00,belgium,Belgium: Second Amateur Division Group ACFF,Ganshoren,Richelle Utd.,0,1,0,2
+EZu5KGH6,2026-11-15T14:00:00+00:00,england,England: WSL 2,Nottingham W,Leicester W,1,0,1,1
+EikNiCEr,2026-11-15T14:00:00+00:00,belgium,Belgium: National Division 1 - VV,Leuven B,Merelbeke,0,0,1,0
+GUlwo9bS,2026-11-15T14:00:00+00:00,germany,Germany: Oberliga Niederrhein,SW Essen,Dingden,0,1,0,1
+GjSiT3bK,2026-11-15T14:00:00+00:00,italy,Italy: Serie D - Group F,Maceratese,Giulianova,1,0,1,0
+I36T3mFM,2026-11-15T14:00:00+00:00,italy,Italy: Serie D - Group I,Igea Virtus,Siracusa,1,1,2,2
+IVYJTKfK,2026-11-15T14:00:00+00:00,england,England: WSL 2,Burnley W,Southampton W,0,2,0,5
+IcydYgVb,2026-11-15T14:00:00+00:00,italy,Italy: Serie D - Group A,Chisola,Sestri Levante,0,0,0,0
+Iq0zHj6M,2026-11-15T14:00:00+00:00,belgium,Belgium: Second Amateur Division Group ACFF,SG-Tertre Hautrage,Ostiches,2,1,4,4
+KIoW0ypA,2026-11-15T14:00:00+00:00,germany,Germany: Oberliga Mittelrhein,Porz,Merten,1,1,1,2
+KQwHwRj2,2026-11-15T14:00:00+00:00,germany,Germany: Oberliga Niederrhein,Meerbusch,Schonnebeck,0,0,1,2
+MHhVkjqe,2026-11-15T14:00:00+00:00,belgium,Belgium: National Division 1 - VV,Knokke,Tienen,0,1,3,2
+MRNcMxmf,2026-11-15T14:00:00+00:00,england,England: WSL 2,Wolverhampton W,Durham W,3,0,4,2
+McQ1u2Bd,2026-11-15T14:00:00+00:00,italy,Italy: Serie D - Group H,Turris,Francavilla,1,0,1,0
+Msfafwl2,2026-11-15T14:00:00+00:00,angola,Angola: Girabola,Cabinda,Kabuscorp,0,0,1,0
+O4c2zrcM,2026-11-15T14:00:00+00:00,england,England: WSL,West Ham W,Charlton W,1,0,2,0
+QD5Zg1Qk,2026-11-15T14:00:00+00:00,italy,Italy: Serie D - Group H,Martina Calcio,Melfi,0,2,1,2
+QL7Dagh5,2026-11-15T14:00:00+00:00,italy,Italy: Serie A Women,Como 1907 W,Como W,2,0,3,0
+Qm2m5Zy8,2026-11-15T14:00:00+00:00,france,France: Seconde Ligue Women,Bourges 18 W,Cannes W,0,0,0,1
+QybSqSNj,2026-11-15T14:00:00+00:00,italy,Italy: Serie D - Group I,Calcio Avola,Digiesse PraiaTortora,0,0,1,1
+SnuQC2Ct,2026-11-15T14:00:00+00:00,england,England: Women’s FA Cup,Keynsham Town W,Millwall W,2,0,3,1
+UsK3aN2S,2026-11-15T14:00:00+00:00,italy,Italy: Serie D - Group H,Manfredonia,Palmese 1914,0,2,1,4
+WGwOeTj2,2026-11-15T14:00:00+00:00,england,England: Women’s FA Cup,Kidderminster W,Chester-Le-Street Town W,1,1,1,5
+WlNQ9VC7,2026-11-15T14:00:00+00:00,europe,Europe: UEFA Nations League,Latvia,Armenia,0,0,0,0
+b1ztdcCN,2026-11-15T14:00:00+00:00,portugal,Portugal: Taça de Portugal Women,Famalicao W,Real SC W,0,1,0,3
+bHWpH0Cc,2026-11-15T14:00:00+00:00,belgium,Belgium: Second Amateur Division Group VFV A,Wetteren,Oudenaarde,0,1,4,1
+buuXbOl3,2026-11-15T14:00:00+00:00,russia,Russia: FNL,Sochi,Shinnik Yaroslavl,0,0,0,0
+dpU1lMjS,2026-11-15T14:00:00+00:00,poland,Poland: Division 2,Tychy,Bielsko-Biala,1,0,1,0
+f7vSj3s3,2026-11-15T14:00:00+00:00,england,England: WSL,Aston Villa W,Birmingham W,0,0,1,0
+fJQmqY7O,2026-11-15T14:00:00+00:00,italy,Italy: Serie A Women,Inter W,Juventus W,0,0,2,3
+fNtXCoeE,2026-11-15T14:00:00+00:00,france,France: Seconde Ligue Women,Metz W,Auxerre W,1,1,2,1
+fVjwlUD7,2026-11-15T14:00:00+00:00,belgium,Belgium: National Division 1 - VV,SK Roeselare,KRC Harelbeke,1,0,3,0
+fZpP665j,2026-11-15T14:00:00+00:00,germany,Germany: Oberliga Bremen,Grohn,Woltmershausen,1,1,3,3
+fcLTngph,2026-11-15T14:00:00+00:00,italy,Italy: Serie D - Group A,Sanremese,Alessandria,0,1,1,2
+hOJrLqKD,2026-11-15T14:00:00+00:00,england,England: Women’s FA Cup,Durham Cestria W,Middlesbrough W,0,2,1,6
+jPtY5H2D,2026-11-15T14:00:00+00:00,england,England: WSL 2,Watford W,Ipswich W,0,1,1,2
+l6orq9cn,2026-11-15T14:00:00+00:00,czech-republic,Czech Republic: 4. liga - Group F,Frydek-Mistek B,Kravare,2,1,5,1
+nDLp82gM,2026-11-15T14:00:00+00:00,italy,Italy: Serie D - Group G,Budoni,Latte Dolce,1,0,1,2
+nXV21Ur9,2026-11-15T14:00:00+00:00,germany,Germany: Oberliga Niederrhein,Scherpenberg,SC St.Tonis,0,0,0,1
+nXewp85U,2026-11-15T14:00:00+00:00,france,France: Coupe de France,Atlas Paillade,Cannes,0,0,0,2
+nckiI3JD,2026-11-15T14:00:00+00:00,belgium,Belgium: National Division 1 - ACFF,St. Liege U23,Royal Union SG 2,0,2,0,3
+pbdZdVEj,2026-11-15T14:00:00+00:00,belgium,Belgium: Second Amateur Division Group ACFF,Eupen 2,Jette,2,0,3,0
+pzAPVlpQ,2026-11-15T14:00:00+00:00,bosnia-and-herzegovina,Bosnia and Herzegovina: Prva Liga - FBiH,Posusje,Stupcanica,1,1,1,1
+tKOzQFxK,2026-11-15T14:00:00+00:00,belgium,Belgium: National Division 1 - ACFF,Charleroi B,Onhaye,0,0,0,0
+vD5ZbkVg,2026-11-15T14:00:00+00:00,germany,Germany: Oberliga Hessen,Hanauer SC,Giessen,2,1,3,1
+vq4AUUSH,2026-11-15T14:00:00+00:00,germany,Germany: Oberliga Hamburg,Sasel,Wandsbeker Concordia,2,1,4,1
+vwPS3Yj2,2026-11-15T14:00:00+00:00,germany,Germany: Oberliga Rheinland-Pfalz/Saar,Gonsenheim,Ahrweiler,0,0,1,0
+z1pVCVYG,2026-11-15T14:00:00+00:00,germany,Germany: Oberliga Westfalen,Lippstadt,TuS Hordel,0,0,1,1
+63RfTjJc,2026-11-15T14:15:00+00:00,germany,Germany: Oberliga Westfalen,SpVgg Herne Horsthausen,Westfalia Kinderhaus,0,1,1,3
+0Gkeux3E,2026-11-15T14:30:00+00:00,cameroon,Cameroon: Elite One,Union SA,APEJES Academy,0,0,0,1
+8Gu3Fza3,2026-11-15T14:30:00+00:00,germany,Germany: Oberliga Mittelrhein,Eintracht Hohkeppel,Lindenthal-Hohenlind,0,0,1,2
+8M29HYA7,2026-11-15T14:30:00+00:00,cameroon,Cameroon: Elite One,Panthere,Victoria United,3,0,6,2
+CGpI9Hu0,2026-11-15T14:30:00+00:00,cameroon,Cameroon: Elite Two,Elecsport,Bamboutos FC,0,0,1,0
+E9v95mRj,2026-11-15T14:30:00+00:00,germany,Germany: Oberliga Westfalen,Sprockhovel,Erkenschwick,1,0,1,0
+G0NgsOtp,2026-11-15T14:30:00+00:00,italy,Italy: Serie D - Group H,Fidelis Andria,Nocerina,0,0,1,0
+GMhHiX6d,2026-11-15T14:30:00+00:00,germany,Germany: Oberliga Mittelrhein,Konigsdorf,Frechen,0,2,1,4
+OEzAggxp,2026-11-15T14:30:00+00:00,germany,Germany: Oberliga Mittelrhein,Bornheim,VfL Vichttal,0,2,1,4
+fadgLGBr,2026-11-15T14:30:00+00:00,cameroon,Cameroon: Elite One,Aigle Royal,Bamenda,1,0,3,0
+hWqvaFEM,2026-11-15T14:30:00+00:00,germany,Germany: Oberliga Mittelrhein,Fortuna Koln II,Hurth,1,1,3,1
+rRmwB93T,2026-11-15T14:30:00+00:00,germany,Germany: Oberliga Westfalen,Schermbeck 2020,Ennepetal,0,1,0,1
+tAkwwa4e,2026-11-15T14:30:00+00:00,italy,Italy: Serie D - Group D,Solbiatese,Cittadella Vis Modena,0,1,1,1
+zawMaT36,2026-11-15T14:30:00+00:00,spain,Spain: Tercera RFEF - Group 17,Robres,CF Illueca,2,1,3,2
+vLkwx8Pq,2026-11-15T14:45:00+00:00,france,France: Coupe de France,Saint-Pauloise,Tamponnaise,0,0,1,2
+022v9IKT,2026-11-15T15:00:00+00:00,ghana,Ghana: Premier League,Aduana,Bechem United,0,1,0,1
+0KN0x7e2,2026-11-15T15:00:00+00:00,ghana,Ghana: Division One League,Ebusua,Elmina Sharks,0,0,2,1
+0pTAP8IM,2026-11-15T15:00:00+00:00,germany,Germany: Oberliga Westfalen,Verl II,Maaslingen,0,0,1,2
+2XeaMWnL,2026-11-15T15:00:00+00:00,serbia,Serbia: Mozzart Bet Prva Liga,TSC,Jedinstvo U.,1,0,2,0
+40pwFlue,2026-11-15T15:00:00+00:00,serbia,Serbia: Mozzart Bet Prva Liga,Metalac,Napredak,0,0,0,0
+4Gz96ae5,2026-11-15T15:00:00+00:00,spain,Spain: Tercera RFEF - Group 11,Manacor,Alcudia,0,1,0,1
+6FDUzSl1,2026-11-15T15:00:00+00:00,ghana,Ghana: Division One League,Inter Allies,Semper,1,1,1,2
+8dyom2Th,2026-11-15T15:00:00+00:00,portugal,Portugal: Taça de Portugal Women,Belenenses W,Valadares Gaia W,1,1,1,2
+CUmZo4m4,2026-11-15T15:00:00+00:00,morocco,Morocco: Botola 2,Chabab Mohammedia,Olympique de Safi,0,0,0,2
+Cp0QkJoQ,2026-11-15T15:00:00+00:00,spain,Spain: Segunda RFEF - Group 2,Calamocha,Reus FCR,0,0,0,1
+EDpgjSu2,2026-11-15T15:00:00+00:00,portugal,Portugal: Taça de Portugal Women,Aldeia Nova W,SL Benfica W,0,2,0,5
+EXzmC92L,2026-11-15T15:00:00+00:00,portugal,Portugal: Taça de Portugal Women,Gil Vicente W,Braga W,0,1,0,1
+GrvnSbqf,2026-11-15T15:00:00+00:00,ghana,Ghana: Division One League,Bectero Sasana,VC Warriors,1,0,3,1
+I3CG3vAb,2026-11-15T15:00:00+00:00,nigeria,Nigeria: NPFL,Katsina Utd,Nasarawa,2,0,2,1
+ILsCNHZM,2026-11-15T15:00:00+00:00,ghana,Ghana: Premier League,Samartex,Hearts of Oak,0,0,0,0
+IVjBYBrH,2026-11-15T15:00:00+00:00,germany,Germany: Bundesliga Women,1.FC Nurnberg W,Koln W,0,1,0,1
+K0ASJD8a,2026-11-15T15:00:00+00:00,switzerland,Switzerland: 1.Liga Classic Group 2,Black Stars,Buochs,1,0,2,1
+MV5Lq4rf,2026-11-15T15:00:00+00:00,england,England: Women’s FA Cup,Barking W,Cambridge Utd W,0,1,1,4
+OIpgb3cm,2026-11-15T15:00:00+00:00,england,England: Women’s FA Cup,Chesterfield W,Leafield Athletic W,0,2,1,2
+OSgJWkDT,2026-11-15T15:00:00+00:00,germany,Germany: Bundesliga Women,RB Leipzig W,Eintracht Frankfurt W,0,2,1,5
+QTFO1IvB,2026-11-15T15:00:00+00:00,nigeria,Nigeria: NPFL,Warri Wolves,Sporting Lagos,1,0,2,1
+S2uj0536,2026-11-15T15:00:00+00:00,nigeria,Nigeria: NPFL,Enyimba,Ikorodu City,0,0,0,1
+SYZD1kZg,2026-11-15T15:00:00+00:00,spain,Spain: Tercera RFEF - Group 17,Almudevar,Tamarite,1,0,2,0
+Sl4WAvjH,2026-11-15T15:00:00+00:00,ghana,Ghana: Premier League,Young Apostles,Medeama,0,2,1,2
+WCHFWka6,2026-11-15T15:00:00+00:00,ghana,Ghana: Division One League,Real Tamale,Sankara Nationals,0,1,0,1
+drZxIsBm,2026-11-15T15:00:00+00:00,portugal,Portugal: Campeonato de Portugal - Group D,1º Dezembro,Santa Clara B,1,1,1,4
+faheZEDd,2026-11-15T15:00:00+00:00,ghana,Ghana: Division One League,Home Stars,Nania,1,1,2,1
+fksr2RYg,2026-11-15T15:00:00+00:00,nigeria,Nigeria: NPFL,Inter Lagos,Abia Warriors,2,0,2,1
+fscppJE8,2026-11-15T15:00:00+00:00,ghana,Ghana: Division One League,Future Stars,Nations FC,0,0,0,0
+h8kkrMnT,2026-11-15T15:00:00+00:00,morocco,Morocco: Botola 2,Jeunesse Sportive Soualem,Olympique Khouribga,0,1,1,1
+hMOQauDb,2026-11-15T15:00:00+00:00,portugal,Portugal: Taça de Portugal Women,Escola Setubal W,Amora W,0,0,1,0
+hf4uNdto,2026-11-15T15:00:00+00:00,spain,Spain: Tercera RFEF - Group 16,Alfaro,River Ebro,0,0,0,0
+j33HtcLM,2026-11-15T15:00:00+00:00,ghana,Ghana: Division One League,Kotoku Royals,Accra Lions,1,2,1,3
+j37FSbJ8,2026-11-15T15:00:00+00:00,cameroon,Cameroon: Elite One,Cotonsport,Aigle Moungo,3,0,4,0
+jRslTL5o,2026-11-15T15:00:00+00:00,ghana,Ghana: Premier League,Holy Stars,Vision,0,0,1,0
+l4YsIecp,2026-11-15T15:00:00+00:00,ghana,Ghana: Premier League,Ashanti,Karela,0,0,1,0
+lUM1HIB4,2026-11-15T15:00:00+00:00,georgia,Georgia: Crystalbet Erovnuli Liga,Spaeri,Iberia 1999,1,1,2,2
+ldxfQxE6,2026-11-15T15:00:00+00:00,ghana,Ghana: Division One League,Mighty Royals,Eleven Wonders,0,0,1,0
+lj5rxCNp,2026-11-15T15:00:00+00:00,poland,Poland: Ekstraliga Women,Pogon Szczecin W,GKS Katowice W,2,0,3,0
+nc72aK9N,2026-11-15T15:00:00+00:00,spain,Spain: Tercera RFEF - Group 17,La Almunia,Andorra CF,0,0,2,1
+ncoC7Pyo,2026-11-15T15:00:00+00:00,spain,Spain: Segunda RFEF - Group 3,Real Murcia B,UCAM Murcia,0,1,0,1
+neOyvwK3,2026-11-15T15:00:00+00:00,ghana,Ghana: Premier League,Swedru All Blacks,Berekum Chelsea,0,0,0,0
+no5gZQ3b,2026-11-15T15:00:00+00:00,morocco,Morocco: Botola 2,Wydad Fes,Chabab Atlas Khenifra,1,1,2,1
+pd5Io6lD,2026-11-15T15:00:00+00:00,nigeria,Nigeria: NPFL,Niger Tornadoes,Rangers Int'l,1,0,1,1
+r77r6J6K,2026-11-15T15:00:00+00:00,spain,Spain: Liga F Women,Sevilla FC W,Atl. Madrid W,1,2,1,2
+rP6Lz9Sj,2026-11-15T15:00:00+00:00,africa,Africa: CAF Champions League Women,Mamelodi Sundowns W,FAR Rabat W,1,2,1,3
+tbLTuaki,2026-11-15T15:00:00+00:00,ghana,Ghana: Premier League,Debibi,Port City,1,0,1,3
+vTBxZ5JD,2026-11-15T15:00:00+00:00,ghana,Ghana: Division One League,7th Wave,Okwawu,1,0,1,0
+xURFjptm,2026-11-15T15:00:00+00:00,chile,Chile: Liga de Ascenso,S. Wanderers,Copiapo,0,1,1,1
+xW1AmSJ0,2026-11-15T15:00:00+00:00,nigeria,Nigeria: NPFL,Kwara,Rivers United,0,0,1,1
+z1KDAdRG,2026-11-15T15:00:00+00:00,portugal,Portugal: Taça de Portugal Women,Ponte de Vagos W,Sporting W,0,0,0,3
+AHyeKtCm,2026-11-15T15:15:00+00:00,spain,Spain: LaLiga2,Granada CF,Las Palmas,0,0,1,0
+G6IQsSlm,2026-11-15T15:15:00+00:00,spain,Spain: Segunda RFEF - Group 5,Atl. Tordesillas,Atl. Paso,1,1,3,2
+hKP2RUmA,2026-11-15T15:15:00+00:00,germany,Germany: Oberliga Westfalen,ASC 09 Dortmund,Clarholz,1,1,2,2
+0zt2Myu2,2026-11-15T15:30:00+00:00,spain,Spain: Tercera RFEF - Group 1,Antela,Sarriana,1,0,3,2
+6J5n32Ab,2026-11-15T15:30:00+00:00,spain,Spain: Tercera RFEF - Group 17,Caspe,CD Sietamo,0,0,2,0
+6q7MCwlg,2026-11-15T15:30:00+00:00,spain,Spain: Tercera RFEF - Group 5,Peralada,CF Badalona,0,0,1,0
+Eg2BMAoo,2026-11-15T15:30:00+00:00,spain,Spain: Tercera RFEF - Group 13,Olimpico de Totana,FC Cartagena SAD B,0,0,0,0
+Ial4BrYa,2026-11-15T15:30:00+00:00,spain,Spain: Tercera RFEF - Group 18,Toledo,Villarrobledo,0,0,1,1
+KrRC5gcM,2026-11-15T15:30:00+00:00,spain,Spain: Primera Federacion Women,Athletic Bilbao B W,Albacete W,0,0,1,0
+Kt07kz9l,2026-11-15T15:30:00+00:00,spain,Spain: Tercera RFEF - Group 1,Pontevedra B,Atletico Arteixo,2,0,2,0
+M7RBopWj,2026-11-15T15:30:00+00:00,spain,Spain: Primera RFEF - Group 2,Algeciras,Antequera,0,0,2,1
+Oxoz9XtK,2026-11-15T15:30:00+00:00,spain,Spain: Tercera RFEF - Group 17,Atletico Monzon,Ejea,1,1,3,3
+S2Ri6GXj,2026-11-15T15:30:00+00:00,portugal,Portugal: Liga Portugal 2,Penafiel,Lusitania FC,1,0,1,2
+SCWqOLH5,2026-11-15T15:30:00+00:00,spain,Spain: Tercera RFEF - Group 18,Villacanas,Tarancon,1,0,1,0
+SQaZrv34,2026-11-15T15:30:00+00:00,spain,Spain: Tercera RFEF - Group 16,Calahorra,Varea,1,2,4,2
+SWn7bYP0,2026-11-15T15:30:00+00:00,united-arab-emirates,United Arab Emirates: League Cup,Al Jazira,Bani Yas,0,0,1,0
+SnwZay9K,2026-11-15T15:30:00+00:00,spain,Spain: Primera RFEF - Group 1,Lugo,Mirandes,0,2,1,3
+UDdTC7kD,2026-11-15T15:30:00+00:00,spain,Spain: Segunda RFEF - Group 5,Navalcarnero,Getafe B,0,0,1,1
+WtcXdEe5,2026-11-15T15:30:00+00:00,spain,Spain: Tercera RFEF - Group 15,Cirbonero,Valle Egues,0,0,1,0
+drk6cwIc,2026-11-15T15:30:00+00:00,spain,Spain: Tercera RFEF - Group 16,Calasancio,Cenicero,0,2,1,2
+j7VRWLZ0,2026-11-15T15:30:00+00:00,burkina-faso,Burkina Faso: Premier League,Salitas,Maya,1,2,2,3
+nJUvM4Lr,2026-11-15T15:30:00+00:00,burkina-faso,Burkina Faso: Premier League,Vitesse,CFFEB,0,0,1,0
+p6YSlB0J,2026-11-15T15:30:00+00:00,spain,Spain: Primera RFEF - Group 1,UD Logrones,Arenas Getxo,0,1,2,2
+tf55Tw16,2026-11-15T15:30:00+00:00,spain,Spain: Tercera RFEF - Group 14,Llerenense,Pueblonuevo,2,1,2,2
+tfoOTnek,2026-11-15T15:30:00+00:00,spain,Spain: Tercera RFEF - Group 14,Guadiana,Gevora,0,0,1,2
+vRdpyV2F,2026-11-15T15:30:00+00:00,spain,Spain: Tercera RFEF - Group 14,Jaraiz,CD Zafra,1,0,2,0
+vX3f1tuB,2026-11-15T15:30:00+00:00,spain,Spain: Tercera RFEF - Group 17,Fraga,Belchite 97,2,0,2,1
+xpq9RQcL,2026-11-15T15:30:00+00:00,burkina-faso,Burkina Faso: Premier League,Sonabel Ouagadougou,USFA,1,2,3,2
+zcjFdCfD,2026-11-15T15:30:00+00:00,united-arab-emirates,United Arab Emirates: League Cup,Ittihad Kalba,Shabab Al Ahli Dubai,1,0,1,1
+4Y90iylT,2026-11-15T15:45:00+00:00,netherlands,Netherlands: Eredivisie Women,Twente W,PSV W,0,0,0,1
+61C008UH,2026-11-15T15:45:00+00:00,spain,Spain: Segunda RFEF - Group 3,Castellonense,Orihuela,0,0,0,0
+GzxdiPNq,2026-11-15T15:45:00+00:00,peru,Peru: Liga 2,U. San Martin,Union Comercio,1,0,1,1
+SAmI9I3c,2026-11-15T15:45:00+00:00,netherlands,Netherlands: Eredivisie Women,Feyenoord W,Heerenveen W,1,1,3,2
+Y7jQ7dY9,2026-11-15T15:45:00+00:00,netherlands,Netherlands: Eredivisie Women,PEC Zwolle W,Utrecht W,1,0,1,1
+d86hgcJG,2026-11-15T15:45:00+00:00,netherlands,Netherlands: Eredivisie Women,AZ Alkmaar W,Ajax W,1,1,1,1
+2XL9O8KN,2026-11-15T16:00:00+00:00,spain,Spain: Tercera RFEF - Group 7,San Sebastian Reyes B,RC Alcobendas,2,1,2,2
+4QLS8kFn,2026-11-15T16:00:00+00:00,spain,Spain: Tercera RFEF - Group 2,L'Entregu,Andes,1,1,3,1
+4j1eFlPq,2026-11-15T16:00:00+00:00,scotland,Scotland: SWPL 1 Women,Partick Thistle W,Spartans W,0,1,1,2
+4l2KZZPj,2026-11-15T16:00:00+00:00,spain,Spain: Tercera RFEF - Group 16,Oyonesa,Pradejon,1,0,3,0
+61njcdhg,2026-11-15T16:00:00+00:00,spain,Spain: Segunda RFEF - Group 1,Gernika,Oviedo B,1,0,1,2
+8C3YvFxP,2026-11-15T16:00:00+00:00,spain,Spain: Segunda RFEF - Group 1,Coruxo FC,Llanera,2,1,3,1
+Aev4Pw5A,2026-11-15T16:00:00+00:00,ghana,Ghana: Premier League,Asante Kotoko,Bibiani Gold Stars,0,0,0,0
+AmOsZEO7,2026-11-15T16:00:00+00:00,spain,Spain: Tercera RFEF - Group 1,Somozas,Estradense,1,1,3,1
+I3Y1bZ4m,2026-11-15T16:00:00+00:00,spain,Spain: Tercera RFEF - Group 10,Conil,Xerez D.F.C.,0,0,0,0
+I3jfUELj,2026-11-15T16:00:00+00:00,mali,Mali: Premiere Division,Binga,Djoliba,0,1,1,2
+I7bTA6yo,2026-11-15T16:00:00+00:00,turkey,Turkey: 3. Lig Group 2,Bucaspor 1928,Karsiyaka,0,1,1,2
+IwsP2HfU,2026-11-15T16:00:00+00:00,spain,Spain: Tercera RFEF - Group 11,PE Sant Jordi,Porreres,0,1,1,1
+K0YndCVt,2026-11-15T16:00:00+00:00,spain,Spain: Tercera RFEF - Group 2,Langreo,Club Siero,1,0,4,0
+Kpz9PpZI,2026-11-15T16:00:00+00:00,spain,Spain: Segunda RFEF - Group 5,Gimnastica Segoviana,Real Avila,0,0,1,0
+MHSDaSCd,2026-11-15T16:00:00+00:00,spain,Spain: Segunda RFEF - Group 4,CD Badajoz,Don Benito,1,1,2,1
+MsjpthkJ,2026-11-15T16:00:00+00:00,spain,Spain: Tercera RFEF - Group 10,Linense,Portuense,0,0,0,0
+MyJ7L9ZF,2026-11-15T16:00:00+00:00,spain,Spain: Segunda RFEF - Group 4,Mijas Las Lagunas,CD Estepona,3,2,3,4
+S0hYlCfT,2026-11-15T16:00:00+00:00,spain,Spain: Tercera RFEF - Group 6,Ontinyent 1931,Atzeneta,2,2,2,3
+SUF6tfdU,2026-11-15T16:00:00+00:00,spain,Spain: Tercera RFEF - Group 3,Castro,Guarnizo,1,1,1,3
+WvxvixiK,2026-11-15T16:00:00+00:00,czech-republic,Czech Republic: 3. CFL - Group A,Pisek,Benesov,1,0,1,2
+Y5Blud2T,2026-11-15T16:00:00+00:00,spain,Spain: Tercera RFEF - Group 16,Haro Deportivo,Berceo,1,0,2,0
+YkHYMKun,2026-11-15T16:00:00+00:00,spain,Spain: Tercera RFEF - Group 11,Cardassar,Llosetense,1,0,1,0
+by9h2Ua5,2026-11-15T16:00:00+00:00,spain,Spain: Segunda RFEF - Group 3,Alcoyano,CF Intercity,2,1,4,1
+dKlFzBsK,2026-11-15T16:00:00+00:00,spain,Spain: Segunda RFEF - Group 5,Puertollano C.F.,CF Talavera,2,1,4,1
+fHHbrGRH,2026-11-15T16:00:00+00:00,spain,Spain: Tercera RFEF - Group 3,Tropezon,Vimenor,0,1,0,2
+fXu9sbcU,2026-11-15T16:00:00+00:00,portugal,Portugal: Taça de Portugal Women,Feirense W,Torreense W,0,6,0,16
+faYyQsmg,2026-11-15T16:00:00+00:00,spain,Spain: Tercera RFEF - Group 18,Huracan de Balazote,Guadalajara B,2,0,3,0
+fmfQjYPG,2026-11-15T16:00:00+00:00,spain,Spain: Tercera RFEF - Group 6,Utiel,SC Torrevieja,0,0,0,0
+l8xrt7dR,2026-11-15T16:00:00+00:00,africa,Africa: Africa Cup of Nations U23,Congo U23,Angola U23,1,0,1,0
+lKGYu6Ja,2026-11-15T16:00:00+00:00,spain,Spain: Segunda RFEF - Group 5,Conquense,Guadalajara,1,0,3,1
+naOlCZGd,2026-11-15T16:00:00+00:00,spain,Spain: Segunda RFEF - Group 2,Terrassa,Tudelano,1,0,1,0
+p4PWAv5l,2026-11-15T16:00:00+00:00,spain,Spain: Tercera RFEF - Group 4,Leioa,Real Sociedad C,0,2,1,3
+pxcIXzfn,2026-11-15T16:00:00+00:00,spain,Spain: Tercera RFEF - Group 13,Cotillas CD,CD Algar,0,0,0,1
+viYcVSTi,2026-11-15T16:00:00+00:00,spain,Spain: Segunda RFEF - Group 3,Yeclano,Castellon B,1,0,2,0
+zNejCzJE,2026-11-15T16:00:00+00:00,belgium,Belgium: Super League Women,Leuven W,Genk W,1,0,1,2
+za5Qty8C,2026-11-15T16:00:00+00:00,spain,Spain: Segunda RFEF - Group 1,Compostela,Ourense CF,0,0,0,1
+zygQGTEb,2026-11-15T16:00:00+00:00,spain,Spain: Segunda RFEF - Group 3,La Nucia,Valencia B,1,0,1,1
+GpmWNn2E,2026-11-15T16:15:00+00:00,sierra-leone,Sierra Leone: Premier League,Bo Rangers,Bullom Stars,1,0,3,0
+OAjvMQWQ,2026-11-15T16:15:00+00:00,sierra-leone,Sierra Leone: Premier League,Waterloo,Mighty Blackpool,1,1,1,2
+U9MRxcPr,2026-11-15T16:15:00+00:00,spain,Spain: Tercera RFEF - Group 1,Barco,Boiro,0,1,2,1
+fgsAG4fl,2026-11-15T16:15:00+00:00,sierra-leone,Sierra Leone: Premier League,Western,Kamboi Eagles,0,0,0,0
+4z1nvQcc,2026-11-15T16:30:00+00:00,england,England: WSL,Arsenal W,London City Lionesses W,1,1,1,1
+CAwQKRw1,2026-11-15T16:30:00+00:00,spain,Spain: Tercera RFEF - Group 9,Atletico de Porcuna,Torredonjimeno,1,2,1,2
+Gtyo6LP8,2026-11-15T16:30:00+00:00,italy,Italy: Serie C - Group C,Barletta,Altamura,0,0,2,0
+IaEcqFBG,2026-11-15T16:30:00+00:00,senegal,Senegal: Ligue 1,Linguere,Casa,1,0,1,0
+Kb7J7sFd,2026-11-15T16:30:00+00:00,italy,Italy: Serie C - Group A,Pergolettese,Pro Vercelli,0,0,0,0
+QPH5sgtT,2026-11-15T16:30:00+00:00,senegal,Senegal: Ligue 1,Pikine,Ouakam,2,0,2,1
+SOzOVg1n,2026-11-15T16:30:00+00:00,italy,Italy: Serie C - Group A,Juventus U23,Treviso,1,0,3,0
+dY7TpdIc,2026-11-15T16:30:00+00:00,italy,Italy: Serie D - Group B,Virtus Verona,Fiorenzuola,1,1,4,2
+rLGaQec3,2026-11-15T16:30:00+00:00,italy,Italy: Serie C - Group B,Ravenna,Forli,1,0,2,0
+tAaYqV86,2026-11-15T16:30:00+00:00,italy,Italy: Serie C - Group C,Cosenza,Casertana,2,0,2,1
+x0eEBjGU,2026-11-15T16:30:00+00:00,italy,Italy: Serie C - Group A,Cittadella,Folgore Caratese,0,1,2,2
+AoaMhFKb,2026-11-15T17:00:00+00:00,europe,Europe: UEFA Nations League,Belarus,Albania,0,1,0,2
+EcQoYjFa,2026-11-15T17:00:00+00:00,costa-rica,Costa Rica: Liga de Ascenso,ADR Jicaral,Guadalupe,0,0,3,1
+IgeG0csn,2026-11-15T17:00:00+00:00,spain,Spain: Tercera RFEF - Group 3,Revilla,Cayon,0,0,3,1
+YV2pIepL,2026-11-15T17:00:00+00:00,spain,Spain: Segunda RFEF - Group 4,Xerez CD,Antoniano,2,0,2,0
+b7cuQMQp,2026-11-15T17:00:00+00:00,morocco,Morocco: Botola 2,Yacoub El Mansour,USM Oujda,0,0,1,0
+dOS9WO3d,2026-11-15T17:00:00+00:00,europe,Europe: UEFA Nations League,Finland,San Marino,5,1,7,2
+dny3LwfA,2026-11-15T17:00:00+00:00,spain,Spain: Segunda RFEF - Group 2,Olot,Espanyol B,0,0,0,0
+fu8yxX3j,2026-11-15T17:00:00+00:00,senegal,Senegal: Ligue 1,Jaraaf,Teungueth,1,0,1,0
+lEBFEKo8,2026-11-15T17:00:00+00:00,spain,Spain: Tercera RFEF - Group 2,Caudal Deportivo,CD Colunga,0,0,1,2
+nqA3gtNE,2026-11-15T17:00:00+00:00,spain,Spain: Liga F Women,Dep. A Coruna W,Barcelona W,0,0,1,1
+rTULXS2d,2026-11-15T17:00:00+00:00,mexico,Mexico: Primera Premier,Purepechas,Inter Playa Del Carmen,1,0,1,2
+htgE0cUs,2026-11-15T17:15:00+00:00,spain,Spain: Liga F Women,Valencia W,Granada CF W,0,0,0,0
+EojPP2lQ,2026-11-15T17:30:00+00:00,spain,Spain: LaLiga2,Eldense,Sabadell,2,0,2,0
+l8bw2adJ,2026-11-15T17:30:00+00:00,spain,Spain: LaLiga2,Eibar,Cadiz CF,0,0,1,1
+vV23urI7,2026-11-15T17:35:00+00:00,wales,Wales: FAW Welsh Cup,Cambrian United,Bangor 1876,0,0,1,0
+KOpi2iYR,2026-11-15T17:45:00+00:00,spain,Spain: Primera RFEF - Group 2,Murcia,Alcorcon,1,0,1,2
+6NchGRPO,2026-11-15T18:00:00+00:00,argentina,Argentina: Primera Nacional,Deportivo Moron,Colegiales,1,1,1,1
+C0xTNTk1,2026-11-15T18:00:00+00:00,brazil,Brazil: Carioca B2,Friburguense,Belford Roxo,0,0,0,0
+Eq1vmbFO,2026-11-15T18:00:00+00:00,peru,Peru: Liga 1,Comerciantes Unidos,Sport Boys,2,1,3,3
+G2vFeWJc,2026-11-15T18:00:00+00:00,slovenia,Slovenia: 1. SZNL Women,Krim W,Mura W,1,2,1,4
+IsDosQqC,2026-11-15T18:00:00+00:00,brazil,Brazil: Copa Fares Lopes,Ceara B,Vila Real,1,1,1,1
+KpCmrbyG,2026-11-15T18:00:00+00:00,brazil,Brazil: Carioca B2,Serra Macaense,Santa Cruz RJ,0,0,2,0
+M3aKOOmI,2026-11-15T18:00:00+00:00,portugal,Portugal: Liga Portugal 2,Leixoes,Chaves,1,0,2,0
+O0wyuXr1,2026-11-15T18:00:00+00:00,brazil,Brazil: Mineiro Women,Itabirito W,Atletico-MG W,0,0,1,1
+QyvF3qKH,2026-11-15T18:00:00+00:00,mexico,Mexico: Liga de Expansion MX,Leones Negros,Atl. Morelia,0,0,0,0
+SddlzDcE,2026-11-15T18:00:00+00:00,brazil,Brazil: Carioca U20,Sampaio Correa FE U20,Madureira U20,0,0,0,0
+dAFC3ltJ,2026-11-15T18:00:00+00:00,brazil,Brazil: Copa Santa Catarina,Hercilio Luz,Joinville,0,1,1,3
+rNmWKzd3,2026-11-15T18:00:00+00:00,brazil,Brazil: Paraibano Women,Fluminense-PB W,Uniao FC W,6,0,10,0
+viAfEKWb,2026-11-15T18:00:00+00:00,brazil,Brazil: Pernambucano U20,Sport Recife U20,Retro U20,0,0,1,0
+xMCd2pac,2026-11-15T18:00:00+00:00,argentina,Argentina: Torneo Federal,Cipolletti,Juventud Antoniana,1,0,3,0
+2JQYrjjt,2026-11-15T18:30:00+00:00,brazil,Brazil: Goiano Women,Planalto EC W,Vila Nova FC W,1,0,4,0
+2sDCewbe,2026-11-15T18:30:00+00:00,poland,Poland: Division 2,S. Wola,Ol. Grudziadz,0,0,0,0
+6NBt5Jp1,2026-11-15T18:30:00+00:00,brazil,Brazil: Goiano 3,Novo Horizonte,Atletico Itumbiara,2,3,2,4
+IaECb2bM,2026-11-15T19:00:00+00:00,argentina,Argentina: Torneo Federal,Alvarado,Sarmiento de La Banda,0,0,0,0
+M3VBlEjJ,2026-11-15T19:00:00+00:00,brazil,Brazil: Copa Paraiba,Campinense,Treze PB,0,2,1,2
+M9zS3YOM,2026-11-15T19:00:00+00:00,brazil,Brazil: Copa do Brasil Women,Internacional W,Flamengo W,0,0,1,0
+Mu7isUCs,2026-11-15T19:00:00+00:00,bolivia,Bolivia: Copa Simon Bolivar,Virginia,San Juan FC,1,1,2,3
+U5Aau8sf,2026-11-15T19:00:00+00:00,bolivia,Bolivia: Copa Simon Bolivar,Mineros Potosi,San Martin de Yacuiba,1,0,5,0
+bc057E2n,2026-11-15T19:00:00+00:00,colombia,Colombia: Primera B,Boca Juniors,Ind. Valle del Cauca,1,1,1,2
+zgzwF1x0,2026-11-15T19:00:00+00:00,bolivia,Bolivia: Copa Pacena,Always Ready,Independiente,1,0,2,0
+6aaV0pRb,2026-11-15T19:30:00+00:00,uruguay,Uruguay: Liga AUF Uruguaya,Danubio,Liverpool M.,1,0,1,2
+CEeV5JLG,2026-11-15T19:30:00+00:00,venezuela,Venezuela: Liga FUTVE 2,Urena,Barquisimeto,1,1,2,2
+EiVS5LhS,2026-11-15T19:30:00+00:00,uruguay,Uruguay: Segunda Division,Fenix,Atenas,0,0,1,1
+UNy15IQN,2026-11-15T19:30:00+00:00,suriname,Suriname: SML,Inter Moengotapoe,Flora,1,1,5,1
+4YNzMsxg,2026-11-15T19:45:00+00:00,europe,Europe: UEFA Nations League,Belgium,Italy,3,1,4,1
+GfK2VlAr,2026-11-15T19:45:00+00:00,europe,Europe: UEFA Nations League,Croatia,Czech Republic,1,0,2,1
+pWwJD4Rr,2026-11-15T19:45:00+00:00,europe,Europe: UEFA Nations League,France,Turkey,0,0,2,1
+zs0jyKt4,2026-11-15T19:45:00+00:00,europe,Europe: UEFA Nations League,Spain,England,0,1,2,3
+CtORPwhT,2026-11-15T20:00:00+00:00,jamaica,Jamaica: Premier League,Molynes,Portmore,1,2,2,5
+GKLHxXMk,2026-11-15T20:00:00+00:00,chile,Chile: Primera Division Women,Colo-Colo W,Coquimbo W,1,1,2,1
+Gf06EJGt,2026-11-15T20:00:00+00:00,jamaica,Jamaica: Premier League,Racing United,Tru-Juice,0,0,0,2
+KYHldx1C,2026-11-15T20:00:00+00:00,jamaica,Jamaica: Premier League,Tivoli,Montego Bay,0,3,0,4
+OG7bRiYP,2026-11-15T20:00:00+00:00,argentina,Argentina: Primera Nacional,Godoy Cruz,Tristan Suarez,2,1,3,1
+OpPPzBi2,2026-11-15T20:00:00+00:00,chile,Chile: Primera Division Women,U. Catolica W,U. De Chile W,1,0,2,0
+UN31Ken1,2026-11-15T20:00:00+00:00,brazil,Brazil: Pernambucano,Central SC,Ypiranga,0,0,1,0
+dY1MAyG5,2026-11-15T20:00:00+00:00,jamaica,Jamaica: Premier League,Humble Lions,Arnett Gardens,0,2,0,3
+l8bECcog,2026-11-15T20:00:00+00:00,jamaica,Jamaica: Premier League,Cavalier,Treasure Beach,1,1,3,1
+nLJtbbWa,2026-11-15T20:00:00+00:00,jamaica,Jamaica: Premier League,Dunbeholden,Chapelton,2,1,2,1
+nsNcCHrQ,2026-11-15T20:00:00+00:00,brazil,Brazil: Copa Paraiba,EC de Patos,Atl. Cajazeirense,0,1,0,1
+xGwnuZ1C,2026-11-15T20:00:00+00:00,usa,USA: NWSL Women,Gotham W,Kansas City Current W,0,1,1,2
+zJgpD1DF,2026-11-15T20:00:00+00:00,argentina,Argentina: Torneo Federal,Chivilcoy,Douglas Haig,1,0,2,2
+tW2WlKpC,2026-11-15T20:15:00+00:00,peru,Peru: Liga 1,Juan Pablo II,Deportivo Garcilaso,1,1,2,2
+EyBS6JNF,2026-11-15T20:30:00+00:00,argentina,Argentina: Primera A Women,San Luis W,San Lorenzo W,0,2,1,2
+6N3D5hXb,2026-11-15T20:50:00+00:00,colombia,Colombia: Primera B,Envigado,U. Magdalena,2,2,2,3
+2Hqk0vM8,2026-11-15T21:00:00+00:00,guatemala,Guatemala: Liga Nacional,Deportivo San Pedro,Marquense,1,0,2,0
+2yDuotAO,2026-11-15T21:00:00+00:00,chile,Chile: Liga de Ascenso,CD Santa Cruz,Rangers,0,0,0,0
+69JWn2uC,2026-11-15T21:00:00+00:00,chile,Chile: Liga de Ascenso,San Felipe,U. Espanola,1,2,3,4
+Cntb3NPh,2026-11-15T21:00:00+00:00,chile,Chile: Liga de Ascenso,Cobreloa,D. Puerto Montt,1,0,3,0
+YeLOlOAa,2026-11-15T21:00:00+00:00,chile,Chile: Liga de Ascenso,San Marcos de Arica,San Luis,0,0,0,1
+rXtMduEN,2026-11-15T21:00:00+00:00,el-salvador,El Salvador: Primera Division,Platense Municipal,Atletico Balboa,1,2,1,2
+tpRpd6IP,2026-11-15T21:00:00+00:00,chile,Chile: Liga de Ascenso,Magallanes,Antofagasta,1,1,2,3
+OlVDJgm4,2026-11-15T21:30:00+00:00,bolivia,Bolivia: Copa Pacena,Nacional Potosi,Real Potosi,0,1,0,2
