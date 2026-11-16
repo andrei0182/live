@@ -81,7 +81,7 @@ Biletele se țin în `state["tickets"]`.
 
 **Tendințele de ≥ 90%** (mesaj separat după programul de dimineață, `livemon/trends.py`):
 meciurile zilei pentru 10 reguli găsite pe istoric și verificate pe perioade
-separate (tenis T1–T5 din cotele Superbet și istoricul jucătorilor; fotbal F1–F5
+separate (tenis T1, T2, T4, T5 din cotele Superbet și istoricul jucătorilor; fotbal F1, F2, F4, F5
 din istoricul BetExplorer, fără amicale și cupe), câte 6 pe regulă în mesaj, toate
 urmărite. A doua zi dimineață vin rezultatele zilei de ieri și totalul de la
 început. Selecțiile și rezultatele sunt în `data/trends_log.csv`, iar istoricul de
