@@ -35,13 +35,13 @@ def _m(eid, home, away, oh, oa, start="2026-11-05 12:00:00", status=""):
 def test_tennis_selections_rules():
     stats = {"visker n.": T.PlayerStats(20, True, 9.5)}
     offer = [_m(1, "Ana Pop", "Ioana Ene", 1.80, 1.95),          # T1
-             _m(2, "Big Fav", "Niels Visker", 1.01, 12.0),       # T2, T3, T5, T4 (Visker)
+             _m(2, "Big Fav", "Niels Visker", 1.01, 12.0),       # T2, T5, T4 (Visker)
              _m(3, "Big Fav", "Niels Visker", 1.05, 9.0, start="2026-11-05 06:00:00"),  # deja început
              _m(4, "A / B", "C / D", 1.5, 2.5),                  # dublu
              _m(5, "X Y", "Z W", 1.30, 3.4)]                     # p ~0,72: nicio regulă
     rows = T.tennis_selections(offer, stats, TODAY, NOW)
     got = sorted((r["ref"], r["rule"]) for r in rows)
-    assert got == [("1", "T1"), ("2", "T2"), ("2", "T3"), ("2", "T4"), ("2", "T5")]
+    assert got == [("1", "T1"), ("2", "T2"), ("2", "T4"), ("2", "T5")]
 
 
 def _event(home_games, away_games):
@@ -58,8 +58,9 @@ def test_tennis_outcome():
     assert T.tennis_outcome(rows["T2"], ev) == (T.WON, "6-4 7-5")
     assert T.tennis_outcome(rows["T4"], ev)[0] == T.WON
     assert T.tennis_outcome(rows["T4"], _event([6, 6], [1, 2]))[0] == T.LOST
-    assert T.tennis_outcome(rows["T3"], _event([4, 3], [6, 6]))[0] == T.LOST
-    assert T.tennis_outcome(rows["T3"], _event([6, 2], [4, 1]))[0] == T.VOID  # abandon
+    assert T.tennis_outcome(rows["T2"], _event([4, 3], [6, 6]))[0] == T.LOST
+    assert T.tennis_outcome(rows["T2"], _event([6, 2], [4, 1]))[0] == T.VOID  # abandon
+    assert "T3" not in rows
 
 
 def _fx(mid, day, home, away, h, a, league="Ruritania: Liga 1", hour=12):

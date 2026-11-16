@@ -1,14 +1,15 @@
 """Tendințe de >= 90% urmărite pe hârtie (cercetarea din 04–05.11.2026).
 
-Dimineața se aleg meciurile zilei pentru 10 reguli (5 tenis, 5 fotbal), se
+Dimineața se aleg meciurile zilei pentru 8 reguli (4 tenis, 4 fotbal), se
 salvează în data/trends_log.csv (comis de workflow, ca să nu se piardă) și a
 doua zi se completează rezultatul. Ținta e cât de des se repetă rezultatul,
-nu profitul: la 90–96% cotele sunt ~1,02–1,10.
+nu profitul: la 90–96% cotele sunt ~1,02–1,10. T3 (favorit sub ~1,20 câștigă) și
+F3 (gol în repriza a doua) au fost scoase pe 16.11: 89,0% / 88,3% față de 91,2% / 90,8%
+așteptat; rândurile lor vechi rămân în jurnal.
 
 Tenis (oferta prematch Superbet; p = probabilitatea favoritului din cote, fără marjă):
 - T1  p < 0,70 (meci echilibrat)        -> outsiderul face >= 4 game-uri   (~94,5%)
 - T2  p >= 0,85                         -> favoritul câștigă la −1,5 game-uri (~92,4%)
-- T3  p >= 0,80                         -> favoritul câștigă meciul       (~91,2%)
 - T4  bărbați, outsiderul are >= 10 meciuri în istoric și face în medie
       >= 9 game-uri când pierde        -> outsiderul face >= 5 game-uri   (~91,7%)
 - T5  p >= 0,90                         -> favoritul câștigă și sub 26,5 game-uri (~93,1%)
@@ -18,8 +19,6 @@ cu >= 5 meciuri în ultimele 10, liga cu >= 30 de meciuri în istoric):
                                         -> gazda marchează (~94,2%)
 - F2  golaveraj în ligă >= 2 și gazda cu >= 0,6 puncte/meci mai mult (ultimele 10)
                                         -> gazda nu pierde, 1X (~93,6%)
-- F3  liga >= 2,15 goluri/meci și goluri așteptate în meci >= 4,2
-                                        -> gol în repriza a doua (~90,8%)
 - F4  liga cu >= 91% meciuri sub 4.5 (ultimele 150) -> sub 4.5 goluri (~90,0%)
 - F5  liga >= 74% peste 2.5, ambele echipe <= 50% sub 3.5 și echipa mai slabă
       primește >= 2,8 goluri/meci       -> peste 1.5 goluri (~96,4%)
@@ -64,12 +63,10 @@ HCP_LINES = (3.5, 4.5, 5.5)
 RULES = {
     "T1": ("🎾", "Meci echilibrat → cel mai slab face ≥4 game-uri", 94.5),
     "T2": ("🎾", "Favorit sub ~1,13 → câștigă la handicap −1,5 game-uri", 92.4),
-    "T3": ("🎾", "Favorit sub ~1,20 → câștigă meciul", 91.2),
     "T4": ("🎾", "Bărbați, cel mai slab pierde strâns → face ≥5 game-uri", 91.7),
     "T5": ("🎾", "Favorit sub ~1,07 → câștigă și sub 26,5 game-uri", 93.1),
     "F1": ("⚽", "Gazda mult mai bună → gazda marchează", 94.2),
     "F2": ("⚽", "Gazda mult mai bună → gazda nu pierde (1X)", 93.6),
-    "F3": ("⚽", "Ligă și echipe ofensive → gol în repriza a 2-a", 90.8),
     "F4": ("⚽", "Ligă „închisă” → sub 4.5 goluri", 90.0),
     "F5": ("⚽", "Varianta strictă → peste 1.5 goluri", 96.4),
 }
@@ -185,8 +182,6 @@ def tennis_selections(offer: list[LiveMatch], stats: dict[str, PlayerStats], tod
             rules.append(("T1", f"fav={side};p={p:.3f};{dog} ≥4 game-uri;{odds}"))
         if p >= 0.85:
             rules.append(("T2", f"fav={side};p={p:.3f};{fav} −1,5 game-uri;{odds}"))
-        if p >= 0.80:
-            rules.append(("T3", f"fav={side};p={p:.3f};{fav} câștigă;{odds}"))
         if p >= 0.90:
             rules.append(("T5", f"fav={side};p={p:.3f};{fav} câștigă și sub 26,5;{odds}"))
         st = stats.get(short_name(dog))
@@ -433,8 +428,6 @@ def football_rules(f: dict) -> list[tuple[str, str]]:
         out.append(("F1", f"gazda marchează (golaveraj +{f['lgd_gap']:.1f})"))
     if f["ln5"] and f["lgd_gap"] >= 2 and f["ppg_gap"] >= 0.6:
         out.append(("F2", f"1X (golaveraj +{f['lgd_gap']:.1f})"))
-    if f["lg_tg"] >= 2.15 and f["xg"] >= 4.2:
-        out.append(("F3", f"gol în repriza 2 (goluri așteptate {f['xg']:.1f})"))
     if f["lg_u45"] >= 0.91:
         out.append(("F4", f"sub 4.5 (liga {f['lg_u45']:.0%} sub 4.5)"))
     if f["lg_o25"] >= 0.74 and f["max_u35"] <= 0.5 and f["dog_ga"] >= 2.8:
