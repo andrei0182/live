@@ -1,18 +1,18 @@
 """Tendințe de >= 90% urmărite pe hârtie (cercetarea din 04–05.11.2026).
 
-Dimineața se aleg meciurile zilei pentru 8 reguli (4 tenis, 4 fotbal), se
+Dimineața se aleg meciurile zilei pentru 7 reguli (3 tenis, 4 fotbal), se
 salvează în data/trends_log.csv (comis de workflow, ca să nu se piardă) și a
 doua zi se completează rezultatul. Ținta e cât de des se repetă rezultatul,
 nu profitul: la 90–96% cotele sunt ~1,02–1,10. T3 (favorit sub ~1,20 câștigă) și
 F3 (gol în repriza a doua) au fost scoase pe 16.11: 89,0% / 88,3% față de 91,2% / 90,8%
-așteptat; rândurile lor vechi rămân în jurnal.
+așteptat; T5 (favorit sub ~1,07 câștigă și sub 26,5) pe 23.11: 90,2% față de 93,1%.
+Rândurile lor vechi rămân în jurnal.
 
 Tenis (oferta prematch Superbet; p = probabilitatea favoritului din cote, fără marjă):
 - T1  p < 0,70 (meci echilibrat)        -> outsiderul face >= 4 game-uri   (~94,5%)
 - T2  p >= 0,85                         -> favoritul câștigă la −1,5 game-uri (~92,4%)
 - T4  bărbați, outsiderul are >= 10 meciuri în istoric și face în medie
       >= 9 game-uri când pierde        -> outsiderul face >= 5 game-uri   (~91,7%)
-- T5  p >= 0,90                         -> favoritul câștigă și sub 26,5 game-uri (~93,1%)
 Fotbal (programul și istoricul BetExplorer; fără amicale și cupe; ambele echipe
 cu >= 5 meciuri în ultimele 10, liga cu >= 30 de meciuri în istoric):
 - F1  golaveraj/meci în ligă gazdă − oaspete >= 1,5 și goluri așteptate gazdă >= 1,8
@@ -64,7 +64,6 @@ RULES = {
     "T1": ("🎾", "Meci echilibrat → cel mai slab face ≥4 game-uri", 94.5),
     "T2": ("🎾", "Favorit sub ~1,13 → câștigă la handicap −1,5 game-uri", 92.4),
     "T4": ("🎾", "Bărbați, cel mai slab pierde strâns → face ≥5 game-uri", 91.7),
-    "T5": ("🎾", "Favorit sub ~1,07 → câștigă și sub 26,5 game-uri", 93.1),
     "F1": ("⚽", "Gazda mult mai bună → gazda marchează", 94.2),
     "F2": ("⚽", "Gazda mult mai bună → gazda nu pierde (1X)", 93.6),
     "F4": ("⚽", "Ligă „închisă” → sub 4.5 goluri", 90.0),
@@ -182,8 +181,6 @@ def tennis_selections(offer: list[LiveMatch], stats: dict[str, PlayerStats], tod
             rules.append(("T1", f"fav={side};p={p:.3f};{dog} ≥4 game-uri;{odds}"))
         if p >= 0.85:
             rules.append(("T2", f"fav={side};p={p:.3f};{fav} −1,5 game-uri;{odds}"))
-        if p >= 0.90:
-            rules.append(("T5", f"fav={side};p={p:.3f};{fav} câștigă și sub 26,5;{odds}"))
         st = stats.get(short_name(dog))
         if st and st.male and st.n >= 10 and st.lose_games is not None and st.lose_games >= 9:
             rules.append(("T4", f"fav={side};p={p:.3f};{dog} ≥5 game-uri (media {st.lose_games:.1f} când pierde);{odds}"))
