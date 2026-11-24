@@ -88,7 +88,8 @@ urmărite. A doua zi dimineață vin rezultatele zilei de ieri și totalul de la
 fotbal (rezultate cu scor la pauză, ~400 de zile) în `data/football_history.csv`;
 workflow-ul le comite, ca să nu se piardă. La T4 se notează și cota Superbet la
 handicapul celui mai slab (+3.5/+4.5/+5.5 game-uri; „peste 4.5 game-uri” pe jucător
-nu există la Superbet), iar rezultatele arată profitul pe hârtie pe fiecare linie. E urmărire pe hârtie: la 90–96% cotele
+nu există la Superbet), iar din 24.11 și cotele „Peste X” la „Total game-uri” pentru cel mai slab
+(liniile 4.5–9.5, coloana `odds_tot`); rezultatele arată profitul pe hârtie pe fiecare linie. E urmărire pe hârtie: la 90–96% cotele
 sunt ~1,02–1,10.
 
 Rezultatul unei alerte: 🎾 set 1 = favoritul a câștigat meciul; 📉 game-uri =
