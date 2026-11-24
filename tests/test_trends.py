@@ -127,7 +127,7 @@ def test_texts_and_split():
 def test_log_roundtrip(tmp_path):
     path = tmp_path / "log.csv"
     rows = [{"date": "2026-11-05", "rule": "T1", "ref": "1", "start_utc": "x", "home": "a", "away": "b",
-             "info": "fav=home;p=0.6;b ≥4;1.8/2.0", "result": "", "score": "", "odds": ""}]
+             "info": "fav=home;p=0.6;b ≥4;1.8/2.0", "result": "", "score": "", "odds": "", "odds_tot": ""}]
     T.save_log(rows, path)
     assert T.load_log(path) == rows
 
@@ -203,3 +203,26 @@ def test_football_resolved_by_kickoff_day():
     assert T._kickoff_day(row) == dt.date(2026, 11, 5)   # 01:30 RO
     fx = T.Fixture("x", dt.datetime(2026, 11, 4, 23, 30, tzinfo=UTC), "c", "C: L", "A", "B", "finished", 1, 0, 2, 0)
     assert T.resolve_football([row], {"x": fx}) == 1 and row["result"] == T.WON
+
+
+def _tot_markets(player):
+    return [{"name": f"Total game-uri {player}", "odds": [
+        {"price": 1.46, "status": 1, "metadata": {"name": "Peste 6.5", "specifiers": {"total": "6.5"}}},
+        {"price": 2.60, "status": 1, "metadata": {"name": "Sub 6.5", "specifiers": {"total": "6.5"}}},
+        {"price": 1.85, "status": 1, "metadata": {"name": "Peste 7.5", "specifiers": {"total": "7.5"}}},
+        {"price": 1.20, "status": 1, "metadata": {"name": "Peste 11.5", "specifiers": {"total": "11.5"}}}]}]
+
+
+def test_t4_total_games_odds_and_profit():
+    assert T.total_odds(_tot_markets("Niels Visker"), "Niels Visker") == {6.5: 1.46, 7.5: 1.85}
+    stats = {"visker n.": T.PlayerStats(20, True, 9.5)}
+    rows = [r for r in T.tennis_selections([_m(2, "Big Fav", "Niels Visker", 1.30, 3.6)], stats, TODAY, NOW)
+            if r["rule"] == "T4"]
+    both = lambda eid: _tot_markets("Niels Visker") + _hcp_markets("Niels Visker")
+    assert T.add_t4_odds(rows, TODAY.isoformat(), markets=both) == 1
+    assert rows[0]["odds_tot"] == "6.5:1.46;7.5:1.85" and rows[0]["odds"]
+    assert "peste 6.5 @1.46" in T.today_text(rows, TODAY)
+    seven = dict(rows[0], result=T.WON, score="6-4 6-3")   # cel mai slab: 7 game-uri
+    five = dict(rows[0], result=T.WON, score="6-3 6-2")    # 5 game-uri
+    text = T.t4_total_text([seven, five])
+    assert "peste 6.5: 1/2, -0.54 u" in text and "peste 7.5: 0/2, -2.00 u" in text
