@@ -186,3 +186,20 @@ def test_football_retry(monkeypatch, tmp_path):
     assert msgs and "F1" in msgs[-1] and "T1" not in msgs[-1]
     assert T.football_retry(NOW) == []   # deja făcut azi
     assert "F1" in {r["rule"] for r in T.load_log()}
+
+
+def test_window_covers_night_matches():
+    stats = {}
+    offer = [_m(10, "Night A", "Night B", 1.80, 1.95, start="2026-11-06 04:00:00"),   # 06:00 RO mâine
+             _m(11, "Late A", "Late B", 1.80, 1.95, start="2026-11-06 08:00:00")]    # după 24 h
+    rows = T.tennis_selections(offer, stats, TODAY, NOW)
+    assert [r["ref"] for r in rows] == ["10"]
+    assert "06:00 (mâine) Night A – Night B" in T.today_text(rows, TODAY)
+
+
+def test_football_resolved_by_kickoff_day():
+    row = {"date": "2026-11-04", "rule": "F1", "ref": "x", "start_utc": "2026-11-04 23:30", "home": "A",
+           "away": "B", "info": "L;gazda marchează", "result": "", "score": ""}
+    assert T._kickoff_day(row) == dt.date(2026, 11, 5)   # 01:30 RO
+    fx = T.Fixture("x", dt.datetime(2026, 11, 4, 23, 30, tzinfo=UTC), "c", "C: L", "A", "B", "finished", 1, 0, 2, 0)
+    assert T.resolve_football([row], {"x": fx}) == 1 and row["result"] == T.WON
