@@ -52,6 +52,10 @@ LOG_PATH = Path("data") / "trends_log.csv"
 HISTORY_PATH = Path("data") / "football_history.csv"
 HISTORY_DAYS = 400  # ligile au nevoie de ultimele 150 de meciuri, echipele de ultimele 40 din ligă
 SHOW = 6  # câte meciuri afișăm pe regulă (le urmărim pe toate)
+# Lista de dimineață acoperă următoarele 24 de ore, ca să prindă și meciurile de
+# noapte / dimineața devreme (Australia, Asia, America de Sud) de dinaintea
+# postării de a doua zi; rândurile poartă data postării.
+WINDOW = dt.timedelta(hours=24)
 WON, LOST, VOID = "won", "lost", "void"
 LOG_COLUMNS = ["date", "rule", "ref", "start_utc", "home", "away", "info", "result", "score", "odds"]
 # T4: cota Superbet la handicap pentru cel mai slab (+X game-uri). Superbet nu are
@@ -164,7 +168,7 @@ def tennis_selections(offer: list[LiveMatch], stats: dict[str, PlayerStats], tod
     out, seen = [], set()
     for m in offer:
         start = _start(m)
-        if (m.event_id in seen or not start or start <= now or start.astimezone(RO_TZ).date() != today
+        if (m.event_id in seen or not start or start <= now or start > now + WINDOW
                 or m.status not in ("", "NOT_STARTED") or not m.odds_home or not m.odds_away
                 or "/" in m.home + m.away or m.odds_home == m.odds_away):
             continue
@@ -433,7 +437,7 @@ def football_rules(f: dict) -> list[tuple[str, str]]:
 
 
 def football_selections(page: list[Fixture], history: dict[str, Fixture], day: dt.date, now: dt.datetime) -> list[dict]:
-    targets = [fx for fx in page if fx.status == "scheduled" and fx.kickoff_utc > now
+    targets = [fx for fx in page if fx.status == "scheduled" and now < fx.kickoff_utc <= now + WINDOW
                and not _FRIENDLY_RE.search(fx.league)]
     feats = football_features(list(history.values()), targets)
     out = []
@@ -569,6 +573,12 @@ def resolve_football(rows: list[dict], fixtures: dict[str, Fixture]) -> int:
     return n
 
 
+def _when(row: dict) -> str:
+    """Ora RO a meciului, cu „mâine” dacă începe după ziua listei."""
+    later = _kickoff_day(row) > dt.date.fromisoformat(row["date"])
+    return f"{_ro(row['start_utc'])}{' (mâine)' if later else ''}"
+
+
 def _ro(start_utc: str) -> str:
     try:
         t = dt.datetime.strptime(start_utc, "%Y-%m-%d %H:%M").replace(tzinfo=dt.timezone.utc)
@@ -621,7 +631,7 @@ FOOTBALL_PENDING = "\n⚽ Fotbal: BetExplorer nu răspunde acum; reîncerc în c
 
 def today_text(rows: list[dict], day: dt.date, prefix: str = "", football_ok: bool = True) -> str:
     key = day.isoformat()
-    lines = [f"📈 Tendințe de ≥90% – meciurile de azi, {day:%d.%m} (urmărire pe hârtie)"]
+    lines = [f"📈 Tendințe de ≥90% – meciurile până mâine la ora postării, {day:%d.%m} (urmărire pe hârtie)"]
     for rule, (icon, name, exp) in RULES.items():
         if not rule.startswith(prefix) or (rule.startswith("F") and not football_ok):
             continue
@@ -636,10 +646,10 @@ def today_text(rows: list[dict], day: dt.date, prefix: str = "", football_ok: bo
                 odds = r["info"].rsplit(";", 1)[-1]
                 hcp = _parse_odds(r.get("odds", ""))
                 extra = (" | handicap " + ", ".join(f"+{k:g} @{v:.2f}" for k, v in sorted(hcp.items()))) if hcp else ""
-                lines.append(f"  {_ro(r['start_utc'])} {r['home']} – {r['away']} ({odds}) → {info['text']}{extra}")
+                lines.append(f"  {_when(r)} {r['home']} – {r['away']} ({odds}) → {info['text']}{extra}")
             else:
                 league, _, what = r["info"].partition(";")
-                lines.append(f"  {_ro(r['start_utc'])} {r['home']} – {r['away']} ({league}) → {what}")
+                lines.append(f"  {_when(r)} {r['home']} – {r['away']} ({league}) → {what}")
         if len(mine) > SHOW:
             lines.append(f"  … și încă {len(mine) - SHOW} (le urmăresc pe toate)")
     if not football_ok:
@@ -686,19 +696,28 @@ def update_football_history(hist: dict[str, Fixture], today: dt.date, pages: dic
         day += dt.timedelta(days=1)
 
 
+def _kickoff_day(row: dict) -> dt.date:
+    """Ziua (ora RO) în care începe meciul; dacă ora lipsește, data rândului."""
+    try:
+        t = dt.datetime.strptime(row["start_utc"], "%Y-%m-%d %H:%M").replace(tzinfo=dt.timezone.utc)
+    except ValueError:
+        return dt.date.fromisoformat(row["date"])
+    return t.astimezone(RO_TZ).date()
+
+
 def _football_update(rows: list[dict], today: dt.date, now: dt.datetime, pages: dict, select: bool) -> bool:
     """Rezultatele de fotbal încă deschise (ultimele 4 zile), istoricul și, cu
     `select`, meciurile de azi. Întoarce False dacă paginile de azi n-au putut fi citite."""
-    for day in sorted({r["date"] for r in rows if r["rule"].startswith("F") and not r["result"]}):
-        d = dt.date.fromisoformat(day)
+    for d in sorted({_kickoff_day(r) for r in rows if r["rule"].startswith("F") and not r["result"]}):
         if today - dt.timedelta(days=4) <= d < today:
             resolve_football(rows, {fx.match_id: fx for fx in day_fixtures(d, pages)})
     hist = load_history()
     update_football_history(hist, today, pages)
     ok = True
     if select:
-        fixtures = day_fixtures(today, pages)
-        ok = pages.get(today) is not None and pages.get(today + dt.timedelta(days=1)) is not None
+        tomorrow = today + dt.timedelta(days=1)
+        fixtures = day_fixtures(today, pages) + day_fixtures(tomorrow, pages)
+        ok = all(pages.get(today + dt.timedelta(days=k)) is not None for k in range(3))
         if ok:
             rows += football_selections(fixtures, hist, today, now)
     save_history(hist, today)
